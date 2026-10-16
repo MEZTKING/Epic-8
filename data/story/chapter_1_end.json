@@ -1,0 +1,12 @@
+{
+  "id": "ch1_warden",
+  "title": "The Warden of the Mire",
+  "lines": [
+    {"speaker": "Narrator", "text": "The Wyrm of Ash coiled across the drowned causeway, steam rising where its scales met the water."},
+    {"speaker": "Thorne Ironroot", "text": "It should not be this far north. Ash wyrms die in the cold."},
+    {"speaker": "Mira Frostwhisper", "text": "Then it was brought here. Someone wanted the marsh burned."},
+    {"speaker": "Kaelen Ashvow", "text": "Questions after. Mira, slow it. Thorne, hold the causeway. I will take the head."},
+    {"speaker": "Narrator", "text": "The wyrm's eye found Kaelen, and in it there was no hunger at all. Only recognition."}
+  ],
+  "after_stage": "1-10"
+}

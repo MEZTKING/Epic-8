@@ -1,0 +1,5941 @@
+[
+ {
+  "id": "1-1",
+  "type": "adventure",
+  "chapter": 1,
+  "index": 1,
+  "name": "Mire of Thornwick 1",
+  "element": "verdant",
+  "energy": 5,
+  "level": 3,
+  "enemies": [
+   "marsh_archer",
+   "thorn_spider"
+  ],
+  "rewards": {
+   "gold": 190,
+   "xp": 155,
+   "materials": {
+    "verdant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": ""
+ },
+ {
+  "id": "1-2",
+  "type": "adventure",
+  "chapter": 1,
+  "index": 2,
+  "name": "Mire of Thornwick 2",
+  "element": "verdant",
+  "energy": 5,
+  "level": 4,
+  "enemies": [
+   "thorn_spider",
+   "bog_shaman"
+  ],
+  "rewards": {
+   "gold": 220,
+   "xp": 180,
+   "materials": {
+    "verdant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "1-1"
+ },
+ {
+  "id": "1-3",
+  "type": "adventure",
+  "chapter": 1,
+  "index": 3,
+  "name": "Mire of Thornwick 3",
+  "element": "verdant",
+  "energy": 5,
+  "level": 4,
+  "enemies": [
+   "bog_shaman",
+   "grunt"
+  ],
+  "rewards": {
+   "gold": 220,
+   "xp": 180,
+   "materials": {
+    "verdant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "1-2"
+ },
+ {
+  "id": "1-4",
+  "type": "adventure",
+  "chapter": 1,
+  "index": 4,
+  "name": "Mire of Thornwick 4",
+  "element": "verdant",
+  "energy": 5,
+  "level": 5,
+  "enemies": [
+   "grunt",
+   "marsh_archer",
+   "thorn_spider"
+  ],
+  "rewards": {
+   "gold": 250,
+   "xp": 205,
+   "materials": {
+    "verdant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "1-3"
+ },
+ {
+  "id": "1-5",
+  "type": "adventure",
+  "chapter": 1,
+  "index": 5,
+  "name": "Mire of Thornwick 5",
+  "element": "verdant",
+  "energy": 5,
+  "level": 5,
+  "enemies": [
+   "marsh_archer",
+   "thorn_spider",
+   "bog_shaman"
+  ],
+  "rewards": {
+   "gold": 250,
+   "xp": 205,
+   "materials": {
+    "verdant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "1-4"
+ },
+ {
+  "id": "1-6",
+  "type": "adventure",
+  "chapter": 1,
+  "index": 6,
+  "name": "Mire of Thornwick 6",
+  "element": "verdant",
+  "energy": 5,
+  "level": 6,
+  "enemies": [
+   "thorn_spider",
+   "bog_shaman",
+   "grunt"
+  ],
+  "rewards": {
+   "gold": 280,
+   "xp": 230,
+   "materials": {
+    "verdant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "1-5"
+ },
+ {
+  "id": "1-7",
+  "type": "adventure",
+  "chapter": 1,
+  "index": 7,
+  "name": "Mire of Thornwick 7",
+  "element": "verdant",
+  "energy": 5,
+  "level": 6,
+  "enemies": [
+   "bog_shaman",
+   "grunt",
+   "marsh_archer",
+   "thorn_spider"
+  ],
+  "rewards": {
+   "gold": 280,
+   "xp": 230,
+   "materials": {
+    "verdant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "1-6"
+ },
+ {
+  "id": "1-8",
+  "type": "adventure",
+  "chapter": 1,
+  "index": 8,
+  "name": "Mire of Thornwick 8",
+  "element": "verdant",
+  "energy": 5,
+  "level": 7,
+  "enemies": [
+   "grunt",
+   "marsh_archer",
+   "thorn_spider",
+   "bog_shaman"
+  ],
+  "rewards": {
+   "gold": 310,
+   "xp": 255,
+   "materials": {
+    "verdant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "1-7"
+ },
+ {
+  "id": "1-9",
+  "type": "adventure",
+  "chapter": 1,
+  "index": 9,
+  "name": "Mire of Thornwick 9",
+  "element": "verdant",
+  "energy": 5,
+  "level": 7,
+  "enemies": [
+   "marsh_archer",
+   "thorn_spider",
+   "bog_shaman",
+   "grunt"
+  ],
+  "rewards": {
+   "gold": 310,
+   "xp": 255,
+   "materials": {
+    "verdant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "1-8"
+ },
+ {
+  "id": "1-10",
+  "type": "adventure",
+  "chapter": 1,
+  "index": 10,
+  "name": "Mire of Thornwick: Warden",
+  "element": "verdant",
+  "energy": 5,
+  "level": 8,
+  "enemies": [
+   "wyrm_of_ash",
+   "thorn_spider",
+   "bog_shaman"
+  ],
+  "rewards": {
+   "gold": 340,
+   "xp": 280,
+   "materials": {
+    "verdant_shard": 2
+   }
+  },
+  "first_clear": {
+   "crystals": 100
+  },
+  "turn_limit_for_star": 36,
+  "requires": "1-9"
+ },
+ {
+  "id": "2-1",
+  "type": "adventure",
+  "chapter": 2,
+  "index": 1,
+  "name": "Cinder Steppe 1",
+  "element": "flame",
+  "energy": 5,
+  "level": 9,
+  "enemies": [
+   "ember_brute",
+   "cinder_bat",
+   "grunt"
+  ],
+  "rewards": {
+   "gold": 370,
+   "xp": 305,
+   "materials": {
+    "flame_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "1-10"
+ },
+ {
+  "id": "2-2",
+  "type": "adventure",
+  "chapter": 2,
+  "index": 2,
+  "name": "Cinder Steppe 2",
+  "element": "flame",
+  "energy": 5,
+  "level": 10,
+  "enemies": [
+   "cinder_bat",
+   "grunt",
+   "ember_imp"
+  ],
+  "rewards": {
+   "gold": 400,
+   "xp": 330,
+   "materials": {
+    "flame_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "2-1"
+ },
+ {
+  "id": "2-3",
+  "type": "adventure",
+  "chapter": 2,
+  "index": 3,
+  "name": "Cinder Steppe 3",
+  "element": "flame",
+  "energy": 5,
+  "level": 10,
+  "enemies": [
+   "grunt",
+   "ember_imp",
+   "ember_brute"
+  ],
+  "rewards": {
+   "gold": 400,
+   "xp": 330,
+   "materials": {
+    "flame_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "2-2"
+ },
+ {
+  "id": "2-4",
+  "type": "adventure",
+  "chapter": 2,
+  "index": 4,
+  "name": "Cinder Steppe 4",
+  "element": "flame",
+  "energy": 5,
+  "level": 11,
+  "enemies": [
+   "ember_imp",
+   "ember_brute",
+   "cinder_bat"
+  ],
+  "rewards": {
+   "gold": 430,
+   "xp": 355,
+   "materials": {
+    "flame_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "2-3"
+ },
+ {
+  "id": "2-5",
+  "type": "adventure",
+  "chapter": 2,
+  "index": 5,
+  "name": "Cinder Steppe 5",
+  "element": "flame",
+  "energy": 5,
+  "level": 11,
+  "enemies": [
+   "ember_brute",
+   "cinder_bat",
+   "grunt"
+  ],
+  "rewards": {
+   "gold": 430,
+   "xp": 355,
+   "materials": {
+    "flame_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "2-4"
+ },
+ {
+  "id": "2-6",
+  "type": "adventure",
+  "chapter": 2,
+  "index": 6,
+  "name": "Cinder Steppe 6",
+  "element": "flame",
+  "energy": 5,
+  "level": 12,
+  "enemies": [
+   "cinder_bat",
+   "grunt",
+   "ember_imp"
+  ],
+  "rewards": {
+   "gold": 460,
+   "xp": 380,
+   "materials": {
+    "flame_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "2-5"
+ },
+ {
+  "id": "2-7",
+  "type": "adventure",
+  "chapter": 2,
+  "index": 7,
+  "name": "Cinder Steppe 7",
+  "element": "flame",
+  "energy": 5,
+  "level": 12,
+  "enemies": [
+   "grunt",
+   "ember_imp",
+   "ember_brute",
+   "cinder_bat"
+  ],
+  "rewards": {
+   "gold": 460,
+   "xp": 380,
+   "materials": {
+    "flame_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "2-6"
+ },
+ {
+  "id": "2-8",
+  "type": "adventure",
+  "chapter": 2,
+  "index": 8,
+  "name": "Cinder Steppe 8",
+  "element": "flame",
+  "energy": 5,
+  "level": 13,
+  "enemies": [
+   "ember_imp",
+   "ember_brute",
+   "cinder_bat",
+   "grunt"
+  ],
+  "rewards": {
+   "gold": 490,
+   "xp": 405,
+   "materials": {
+    "flame_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "2-7"
+ },
+ {
+  "id": "2-9",
+  "type": "adventure",
+  "chapter": 2,
+  "index": 9,
+  "name": "Cinder Steppe 9",
+  "element": "flame",
+  "energy": 5,
+  "level": 13,
+  "enemies": [
+   "ember_brute",
+   "cinder_bat",
+   "grunt",
+   "ember_imp"
+  ],
+  "rewards": {
+   "gold": 490,
+   "xp": 405,
+   "materials": {
+    "flame_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "2-8"
+ },
+ {
+  "id": "2-10",
+  "type": "adventure",
+  "chapter": 2,
+  "index": 10,
+  "name": "Cinder Steppe: Warden",
+  "element": "flame",
+  "energy": 5,
+  "level": 14,
+  "enemies": [
+   "wyrm_of_ash",
+   "cinder_bat",
+   "grunt"
+  ],
+  "rewards": {
+   "gold": 520,
+   "xp": 430,
+   "materials": {
+    "flame_shard": 2
+   }
+  },
+  "first_clear": {
+   "crystals": 100
+  },
+  "turn_limit_for_star": 36,
+  "requires": "2-9"
+ },
+ {
+  "id": "3-1",
+  "type": "adventure",
+  "chapter": 3,
+  "index": 1,
+  "name": "Hoarfrost Pass 1",
+  "element": "frost",
+  "energy": 5,
+  "level": 15,
+  "enemies": [
+   "frost_golem",
+   "ice_lurker",
+   "marsh_archer"
+  ],
+  "rewards": {
+   "gold": 550,
+   "xp": 455,
+   "materials": {
+    "frost_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "2-10"
+ },
+ {
+  "id": "3-2",
+  "type": "adventure",
+  "chapter": 3,
+  "index": 2,
+  "name": "Hoarfrost Pass 2",
+  "element": "frost",
+  "energy": 5,
+  "level": 16,
+  "enemies": [
+   "ice_lurker",
+   "marsh_archer",
+   "frost_wisp"
+  ],
+  "rewards": {
+   "gold": 580,
+   "xp": 480,
+   "materials": {
+    "frost_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "3-1"
+ },
+ {
+  "id": "3-3",
+  "type": "adventure",
+  "chapter": 3,
+  "index": 3,
+  "name": "Hoarfrost Pass 3",
+  "element": "frost",
+  "energy": 5,
+  "level": 16,
+  "enemies": [
+   "marsh_archer",
+   "frost_wisp",
+   "frost_golem"
+  ],
+  "rewards": {
+   "gold": 580,
+   "xp": 480,
+   "materials": {
+    "frost_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "3-2"
+ },
+ {
+  "id": "3-4",
+  "type": "adventure",
+  "chapter": 3,
+  "index": 4,
+  "name": "Hoarfrost Pass 4",
+  "element": "frost",
+  "energy": 5,
+  "level": 17,
+  "enemies": [
+   "frost_wisp",
+   "frost_golem",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 610,
+   "xp": 505,
+   "materials": {
+    "frost_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "3-3"
+ },
+ {
+  "id": "3-5",
+  "type": "adventure",
+  "chapter": 3,
+  "index": 5,
+  "name": "Hoarfrost Pass 5",
+  "element": "frost",
+  "energy": 5,
+  "level": 17,
+  "enemies": [
+   "frost_golem",
+   "ice_lurker",
+   "marsh_archer"
+  ],
+  "rewards": {
+   "gold": 610,
+   "xp": 505,
+   "materials": {
+    "frost_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "3-4"
+ },
+ {
+  "id": "3-6",
+  "type": "adventure",
+  "chapter": 3,
+  "index": 6,
+  "name": "Hoarfrost Pass 6",
+  "element": "frost",
+  "energy": 5,
+  "level": 18,
+  "enemies": [
+   "ice_lurker",
+   "marsh_archer",
+   "frost_wisp"
+  ],
+  "rewards": {
+   "gold": 640,
+   "xp": 530,
+   "materials": {
+    "frost_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "3-5"
+ },
+ {
+  "id": "3-7",
+  "type": "adventure",
+  "chapter": 3,
+  "index": 7,
+  "name": "Hoarfrost Pass 7",
+  "element": "frost",
+  "energy": 5,
+  "level": 18,
+  "enemies": [
+   "marsh_archer",
+   "frost_wisp",
+   "frost_golem",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 640,
+   "xp": 530,
+   "materials": {
+    "frost_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "3-6"
+ },
+ {
+  "id": "3-8",
+  "type": "adventure",
+  "chapter": 3,
+  "index": 8,
+  "name": "Hoarfrost Pass 8",
+  "element": "frost",
+  "energy": 5,
+  "level": 19,
+  "enemies": [
+   "frost_wisp",
+   "frost_golem",
+   "ice_lurker",
+   "marsh_archer"
+  ],
+  "rewards": {
+   "gold": 670,
+   "xp": 555,
+   "materials": {
+    "frost_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "3-7"
+ },
+ {
+  "id": "3-9",
+  "type": "adventure",
+  "chapter": 3,
+  "index": 9,
+  "name": "Hoarfrost Pass 9",
+  "element": "frost",
+  "energy": 5,
+  "level": 19,
+  "enemies": [
+   "frost_golem",
+   "ice_lurker",
+   "marsh_archer",
+   "frost_wisp"
+  ],
+  "rewards": {
+   "gold": 670,
+   "xp": 555,
+   "materials": {
+    "frost_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "3-8"
+ },
+ {
+  "id": "3-10",
+  "type": "adventure",
+  "chapter": 3,
+  "index": 10,
+  "name": "Hoarfrost Pass: Warden",
+  "element": "frost",
+  "energy": 5,
+  "level": 20,
+  "enemies": [
+   "glacial_matriarch",
+   "ice_lurker",
+   "marsh_archer"
+  ],
+  "rewards": {
+   "gold": 700,
+   "xp": 580,
+   "materials": {
+    "frost_shard": 2
+   }
+  },
+  "first_clear": {
+   "crystals": 100
+  },
+  "turn_limit_for_star": 36,
+  "requires": "3-9"
+ },
+ {
+  "id": "4-1",
+  "type": "adventure",
+  "chapter": 4,
+  "index": 1,
+  "name": "Barrowlands 1",
+  "element": "umbral",
+  "energy": 5,
+  "level": 21,
+  "enemies": [
+   "shadow_cutpurse",
+   "gloom_hound",
+   "thorn_spider"
+  ],
+  "rewards": {
+   "gold": 730,
+   "xp": 605,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "3-10"
+ },
+ {
+  "id": "4-2",
+  "type": "adventure",
+  "chapter": 4,
+  "index": 2,
+  "name": "Barrowlands 2",
+  "element": "umbral",
+  "energy": 5,
+  "level": 22,
+  "enemies": [
+   "gloom_hound",
+   "thorn_spider",
+   "tomb_wraith"
+  ],
+  "rewards": {
+   "gold": 760,
+   "xp": 630,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "4-1"
+ },
+ {
+  "id": "4-3",
+  "type": "adventure",
+  "chapter": 4,
+  "index": 3,
+  "name": "Barrowlands 3",
+  "element": "umbral",
+  "energy": 5,
+  "level": 22,
+  "enemies": [
+   "thorn_spider",
+   "tomb_wraith",
+   "shadow_cutpurse"
+  ],
+  "rewards": {
+   "gold": 760,
+   "xp": 630,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "4-2"
+ },
+ {
+  "id": "4-4",
+  "type": "adventure",
+  "chapter": 4,
+  "index": 4,
+  "name": "Barrowlands 4",
+  "element": "umbral",
+  "energy": 5,
+  "level": 23,
+  "enemies": [
+   "tomb_wraith",
+   "shadow_cutpurse",
+   "gloom_hound"
+  ],
+  "rewards": {
+   "gold": 790,
+   "xp": 655,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "4-3"
+ },
+ {
+  "id": "4-5",
+  "type": "adventure",
+  "chapter": 4,
+  "index": 5,
+  "name": "Barrowlands 5",
+  "element": "umbral",
+  "energy": 5,
+  "level": 23,
+  "enemies": [
+   "shadow_cutpurse",
+   "gloom_hound",
+   "thorn_spider"
+  ],
+  "rewards": {
+   "gold": 790,
+   "xp": 655,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "4-4"
+ },
+ {
+  "id": "4-6",
+  "type": "adventure",
+  "chapter": 4,
+  "index": 6,
+  "name": "Barrowlands 6",
+  "element": "umbral",
+  "energy": 5,
+  "level": 24,
+  "enemies": [
+   "gloom_hound",
+   "thorn_spider",
+   "tomb_wraith"
+  ],
+  "rewards": {
+   "gold": 820,
+   "xp": 680,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "4-5"
+ },
+ {
+  "id": "4-7",
+  "type": "adventure",
+  "chapter": 4,
+  "index": 7,
+  "name": "Barrowlands 7",
+  "element": "umbral",
+  "energy": 5,
+  "level": 24,
+  "enemies": [
+   "thorn_spider",
+   "tomb_wraith",
+   "shadow_cutpurse",
+   "gloom_hound"
+  ],
+  "rewards": {
+   "gold": 820,
+   "xp": 680,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "4-6"
+ },
+ {
+  "id": "4-8",
+  "type": "adventure",
+  "chapter": 4,
+  "index": 8,
+  "name": "Barrowlands 8",
+  "element": "umbral",
+  "energy": 5,
+  "level": 25,
+  "enemies": [
+   "tomb_wraith",
+   "shadow_cutpurse",
+   "gloom_hound",
+   "thorn_spider"
+  ],
+  "rewards": {
+   "gold": 850,
+   "xp": 705,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "4-7"
+ },
+ {
+  "id": "4-9",
+  "type": "adventure",
+  "chapter": 4,
+  "index": 9,
+  "name": "Barrowlands 9",
+  "element": "umbral",
+  "energy": 5,
+  "level": 25,
+  "enemies": [
+   "shadow_cutpurse",
+   "gloom_hound",
+   "thorn_spider",
+   "tomb_wraith"
+  ],
+  "rewards": {
+   "gold": 850,
+   "xp": 705,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "4-8"
+ },
+ {
+  "id": "4-10",
+  "type": "adventure",
+  "chapter": 4,
+  "index": 10,
+  "name": "Barrowlands: Warden",
+  "element": "umbral",
+  "energy": 5,
+  "level": 26,
+  "enemies": [
+   "hollow_king",
+   "gloom_hound",
+   "thorn_spider"
+  ],
+  "rewards": {
+   "gold": 880,
+   "xp": 730,
+   "materials": {
+    "umbral_shard": 2
+   }
+  },
+  "first_clear": {
+   "crystals": 100
+  },
+  "turn_limit_for_star": 36,
+  "requires": "4-9"
+ },
+ {
+  "id": "5-1",
+  "type": "adventure",
+  "chapter": 5,
+  "index": 1,
+  "name": "Lantern Reach 1",
+  "element": "radiant",
+  "energy": 7,
+  "level": 27,
+  "enemies": [
+   "gilded_sentinel",
+   "bog_shaman",
+   "ember_imp"
+  ],
+  "rewards": {
+   "gold": 910,
+   "xp": 755,
+   "materials": {
+    "radiant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "4-10"
+ },
+ {
+  "id": "5-2",
+  "type": "adventure",
+  "chapter": 5,
+  "index": 2,
+  "name": "Lantern Reach 2",
+  "element": "radiant",
+  "energy": 7,
+  "level": 28,
+  "enemies": [
+   "bog_shaman",
+   "ember_imp",
+   "lantern_acolyte"
+  ],
+  "rewards": {
+   "gold": 940,
+   "xp": 780,
+   "materials": {
+    "radiant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "5-1"
+ },
+ {
+  "id": "5-3",
+  "type": "adventure",
+  "chapter": 5,
+  "index": 3,
+  "name": "Lantern Reach 3",
+  "element": "radiant",
+  "energy": 7,
+  "level": 28,
+  "enemies": [
+   "ember_imp",
+   "lantern_acolyte",
+   "gilded_sentinel"
+  ],
+  "rewards": {
+   "gold": 940,
+   "xp": 780,
+   "materials": {
+    "radiant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "5-2"
+ },
+ {
+  "id": "5-4",
+  "type": "adventure",
+  "chapter": 5,
+  "index": 4,
+  "name": "Lantern Reach 4",
+  "element": "radiant",
+  "energy": 7,
+  "level": 29,
+  "enemies": [
+   "lantern_acolyte",
+   "gilded_sentinel",
+   "bog_shaman"
+  ],
+  "rewards": {
+   "gold": 970,
+   "xp": 805,
+   "materials": {
+    "radiant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "5-3"
+ },
+ {
+  "id": "5-5",
+  "type": "adventure",
+  "chapter": 5,
+  "index": 5,
+  "name": "Lantern Reach 5",
+  "element": "radiant",
+  "energy": 7,
+  "level": 29,
+  "enemies": [
+   "gilded_sentinel",
+   "bog_shaman",
+   "ember_imp"
+  ],
+  "rewards": {
+   "gold": 970,
+   "xp": 805,
+   "materials": {
+    "radiant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "5-4"
+ },
+ {
+  "id": "5-6",
+  "type": "adventure",
+  "chapter": 5,
+  "index": 6,
+  "name": "Lantern Reach 6",
+  "element": "radiant",
+  "energy": 7,
+  "level": 30,
+  "enemies": [
+   "bog_shaman",
+   "ember_imp",
+   "lantern_acolyte"
+  ],
+  "rewards": {
+   "gold": 1000,
+   "xp": 830,
+   "materials": {
+    "radiant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "5-5"
+ },
+ {
+  "id": "5-7",
+  "type": "adventure",
+  "chapter": 5,
+  "index": 7,
+  "name": "Lantern Reach 7",
+  "element": "radiant",
+  "energy": 7,
+  "level": 30,
+  "enemies": [
+   "ember_imp",
+   "lantern_acolyte",
+   "gilded_sentinel",
+   "bog_shaman"
+  ],
+  "rewards": {
+   "gold": 1000,
+   "xp": 830,
+   "materials": {
+    "radiant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "5-6"
+ },
+ {
+  "id": "5-8",
+  "type": "adventure",
+  "chapter": 5,
+  "index": 8,
+  "name": "Lantern Reach 8",
+  "element": "radiant",
+  "energy": 7,
+  "level": 31,
+  "enemies": [
+   "lantern_acolyte",
+   "gilded_sentinel",
+   "bog_shaman",
+   "ember_imp"
+  ],
+  "rewards": {
+   "gold": 1030,
+   "xp": 855,
+   "materials": {
+    "radiant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "5-7"
+ },
+ {
+  "id": "5-9",
+  "type": "adventure",
+  "chapter": 5,
+  "index": 9,
+  "name": "Lantern Reach 9",
+  "element": "radiant",
+  "energy": 7,
+  "level": 31,
+  "enemies": [
+   "gilded_sentinel",
+   "bog_shaman",
+   "ember_imp",
+   "lantern_acolyte"
+  ],
+  "rewards": {
+   "gold": 1030,
+   "xp": 855,
+   "materials": {
+    "radiant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "5-8"
+ },
+ {
+  "id": "5-10",
+  "type": "adventure",
+  "chapter": 5,
+  "index": 10,
+  "name": "Lantern Reach: Warden",
+  "element": "radiant",
+  "energy": 7,
+  "level": 32,
+  "enemies": [
+   "glacial_matriarch",
+   "bog_shaman",
+   "ember_imp"
+  ],
+  "rewards": {
+   "gold": 1060,
+   "xp": 880,
+   "materials": {
+    "radiant_shard": 2
+   }
+  },
+  "first_clear": {
+   "crystals": 100
+  },
+  "turn_limit_for_star": 36,
+  "requires": "5-9"
+ },
+ {
+  "id": "6-1",
+  "type": "adventure",
+  "chapter": 6,
+  "index": 1,
+  "name": "Ashen Delta 1",
+  "element": "flame",
+  "energy": 7,
+  "level": 33,
+  "enemies": [
+   "cinder_bat",
+   "gloom_hound",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 1090,
+   "xp": 905,
+   "materials": {
+    "flame_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "5-10"
+ },
+ {
+  "id": "6-2",
+  "type": "adventure",
+  "chapter": 6,
+  "index": 2,
+  "name": "Ashen Delta 2",
+  "element": "flame",
+  "energy": 7,
+  "level": 34,
+  "enemies": [
+   "gloom_hound",
+   "ice_lurker",
+   "ember_brute"
+  ],
+  "rewards": {
+   "gold": 1120,
+   "xp": 930,
+   "materials": {
+    "flame_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "6-1"
+ },
+ {
+  "id": "6-3",
+  "type": "adventure",
+  "chapter": 6,
+  "index": 3,
+  "name": "Ashen Delta 3",
+  "element": "flame",
+  "energy": 7,
+  "level": 34,
+  "enemies": [
+   "ice_lurker",
+   "ember_brute",
+   "cinder_bat"
+  ],
+  "rewards": {
+   "gold": 1120,
+   "xp": 930,
+   "materials": {
+    "flame_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "6-2"
+ },
+ {
+  "id": "6-4",
+  "type": "adventure",
+  "chapter": 6,
+  "index": 4,
+  "name": "Ashen Delta 4",
+  "element": "flame",
+  "energy": 7,
+  "level": 35,
+  "enemies": [
+   "ember_brute",
+   "cinder_bat",
+   "gloom_hound"
+  ],
+  "rewards": {
+   "gold": 1150,
+   "xp": 955,
+   "materials": {
+    "flame_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "6-3"
+ },
+ {
+  "id": "6-5",
+  "type": "adventure",
+  "chapter": 6,
+  "index": 5,
+  "name": "Ashen Delta 5",
+  "element": "flame",
+  "energy": 7,
+  "level": 35,
+  "enemies": [
+   "cinder_bat",
+   "gloom_hound",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 1150,
+   "xp": 955,
+   "materials": {
+    "flame_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "6-4"
+ },
+ {
+  "id": "6-6",
+  "type": "adventure",
+  "chapter": 6,
+  "index": 6,
+  "name": "Ashen Delta 6",
+  "element": "flame",
+  "energy": 7,
+  "level": 36,
+  "enemies": [
+   "gloom_hound",
+   "ice_lurker",
+   "ember_brute"
+  ],
+  "rewards": {
+   "gold": 1180,
+   "xp": 980,
+   "materials": {
+    "flame_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "6-5"
+ },
+ {
+  "id": "6-7",
+  "type": "adventure",
+  "chapter": 6,
+  "index": 7,
+  "name": "Ashen Delta 7",
+  "element": "flame",
+  "energy": 7,
+  "level": 36,
+  "enemies": [
+   "ice_lurker",
+   "ember_brute",
+   "cinder_bat",
+   "gloom_hound"
+  ],
+  "rewards": {
+   "gold": 1180,
+   "xp": 980,
+   "materials": {
+    "flame_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "6-6"
+ },
+ {
+  "id": "6-8",
+  "type": "adventure",
+  "chapter": 6,
+  "index": 8,
+  "name": "Ashen Delta 8",
+  "element": "flame",
+  "energy": 7,
+  "level": 37,
+  "enemies": [
+   "ember_brute",
+   "cinder_bat",
+   "gloom_hound",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 1210,
+   "xp": 1005,
+   "materials": {
+    "flame_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "6-7"
+ },
+ {
+  "id": "6-9",
+  "type": "adventure",
+  "chapter": 6,
+  "index": 9,
+  "name": "Ashen Delta 9",
+  "element": "flame",
+  "energy": 7,
+  "level": 37,
+  "enemies": [
+   "cinder_bat",
+   "gloom_hound",
+   "ice_lurker",
+   "ember_brute"
+  ],
+  "rewards": {
+   "gold": 1210,
+   "xp": 1005,
+   "materials": {
+    "flame_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "6-8"
+ },
+ {
+  "id": "6-10",
+  "type": "adventure",
+  "chapter": 6,
+  "index": 10,
+  "name": "Ashen Delta: Warden",
+  "element": "flame",
+  "energy": 7,
+  "level": 38,
+  "enemies": [
+   "wyrm_of_ash",
+   "gloom_hound",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 1240,
+   "xp": 1030,
+   "materials": {
+    "flame_shard": 2
+   }
+  },
+  "first_clear": {
+   "crystals": 100
+  },
+  "turn_limit_for_star": 36,
+  "requires": "6-9"
+ },
+ {
+  "id": "7-1",
+  "type": "adventure",
+  "chapter": 7,
+  "index": 1,
+  "name": "Glass Tundra 1",
+  "element": "frost",
+  "energy": 7,
+  "level": 39,
+  "enemies": [
+   "ice_lurker",
+   "gilded_sentinel",
+   "tomb_wraith"
+  ],
+  "rewards": {
+   "gold": 1270,
+   "xp": 1055,
+   "materials": {
+    "frost_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "6-10"
+ },
+ {
+  "id": "7-2",
+  "type": "adventure",
+  "chapter": 7,
+  "index": 2,
+  "name": "Glass Tundra 2",
+  "element": "frost",
+  "energy": 7,
+  "level": 40,
+  "enemies": [
+   "gilded_sentinel",
+   "tomb_wraith",
+   "frost_golem"
+  ],
+  "rewards": {
+   "gold": 1300,
+   "xp": 1080,
+   "materials": {
+    "frost_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "7-1"
+ },
+ {
+  "id": "7-3",
+  "type": "adventure",
+  "chapter": 7,
+  "index": 3,
+  "name": "Glass Tundra 3",
+  "element": "frost",
+  "energy": 7,
+  "level": 40,
+  "enemies": [
+   "tomb_wraith",
+   "frost_golem",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 1300,
+   "xp": 1080,
+   "materials": {
+    "frost_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "7-2"
+ },
+ {
+  "id": "7-4",
+  "type": "adventure",
+  "chapter": 7,
+  "index": 4,
+  "name": "Glass Tundra 4",
+  "element": "frost",
+  "energy": 7,
+  "level": 41,
+  "enemies": [
+   "frost_golem",
+   "ice_lurker",
+   "gilded_sentinel"
+  ],
+  "rewards": {
+   "gold": 1330,
+   "xp": 1105,
+   "materials": {
+    "frost_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "7-3"
+ },
+ {
+  "id": "7-5",
+  "type": "adventure",
+  "chapter": 7,
+  "index": 5,
+  "name": "Glass Tundra 5",
+  "element": "frost",
+  "energy": 7,
+  "level": 41,
+  "enemies": [
+   "ice_lurker",
+   "gilded_sentinel",
+   "tomb_wraith"
+  ],
+  "rewards": {
+   "gold": 1330,
+   "xp": 1105,
+   "materials": {
+    "frost_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "7-4"
+ },
+ {
+  "id": "7-6",
+  "type": "adventure",
+  "chapter": 7,
+  "index": 6,
+  "name": "Glass Tundra 6",
+  "element": "frost",
+  "energy": 7,
+  "level": 42,
+  "enemies": [
+   "gilded_sentinel",
+   "tomb_wraith",
+   "frost_golem"
+  ],
+  "rewards": {
+   "gold": 1360,
+   "xp": 1130,
+   "materials": {
+    "frost_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "7-5"
+ },
+ {
+  "id": "7-7",
+  "type": "adventure",
+  "chapter": 7,
+  "index": 7,
+  "name": "Glass Tundra 7",
+  "element": "frost",
+  "energy": 7,
+  "level": 42,
+  "enemies": [
+   "tomb_wraith",
+   "frost_golem",
+   "ice_lurker",
+   "gilded_sentinel"
+  ],
+  "rewards": {
+   "gold": 1360,
+   "xp": 1130,
+   "materials": {
+    "frost_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "7-6"
+ },
+ {
+  "id": "7-8",
+  "type": "adventure",
+  "chapter": 7,
+  "index": 8,
+  "name": "Glass Tundra 8",
+  "element": "frost",
+  "energy": 7,
+  "level": 43,
+  "enemies": [
+   "frost_golem",
+   "ice_lurker",
+   "gilded_sentinel",
+   "tomb_wraith"
+  ],
+  "rewards": {
+   "gold": 1390,
+   "xp": 1155,
+   "materials": {
+    "frost_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "7-7"
+ },
+ {
+  "id": "7-9",
+  "type": "adventure",
+  "chapter": 7,
+  "index": 9,
+  "name": "Glass Tundra 9",
+  "element": "frost",
+  "energy": 7,
+  "level": 43,
+  "enemies": [
+   "ice_lurker",
+   "gilded_sentinel",
+   "tomb_wraith",
+   "frost_golem"
+  ],
+  "rewards": {
+   "gold": 1390,
+   "xp": 1155,
+   "materials": {
+    "frost_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "7-8"
+ },
+ {
+  "id": "7-10",
+  "type": "adventure",
+  "chapter": 7,
+  "index": 10,
+  "name": "Glass Tundra: Warden",
+  "element": "frost",
+  "energy": 7,
+  "level": 44,
+  "enemies": [
+   "glacial_matriarch",
+   "gilded_sentinel",
+   "tomb_wraith"
+  ],
+  "rewards": {
+   "gold": 1420,
+   "xp": 1180,
+   "materials": {
+    "frost_shard": 2
+   }
+  },
+  "first_clear": {
+   "crystals": 100
+  },
+  "turn_limit_for_star": 36,
+  "requires": "7-9"
+ },
+ {
+  "id": "8-1",
+  "type": "adventure",
+  "chapter": 8,
+  "index": 1,
+  "name": "Duskmantle Vale 1",
+  "element": "umbral",
+  "energy": 7,
+  "level": 45,
+  "enemies": [
+   "gloom_hound",
+   "tomb_wraith",
+   "lantern_acolyte"
+  ],
+  "rewards": {
+   "gold": 1450,
+   "xp": 1205,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "7-10"
+ },
+ {
+  "id": "8-2",
+  "type": "adventure",
+  "chapter": 8,
+  "index": 2,
+  "name": "Duskmantle Vale 2",
+  "element": "umbral",
+  "energy": 7,
+  "level": 46,
+  "enemies": [
+   "tomb_wraith",
+   "lantern_acolyte",
+   "shadow_cutpurse"
+  ],
+  "rewards": {
+   "gold": 1480,
+   "xp": 1230,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "8-1"
+ },
+ {
+  "id": "8-3",
+  "type": "adventure",
+  "chapter": 8,
+  "index": 3,
+  "name": "Duskmantle Vale 3",
+  "element": "umbral",
+  "energy": 7,
+  "level": 46,
+  "enemies": [
+   "lantern_acolyte",
+   "shadow_cutpurse",
+   "gloom_hound"
+  ],
+  "rewards": {
+   "gold": 1480,
+   "xp": 1230,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "8-2"
+ },
+ {
+  "id": "8-4",
+  "type": "adventure",
+  "chapter": 8,
+  "index": 4,
+  "name": "Duskmantle Vale 4",
+  "element": "umbral",
+  "energy": 7,
+  "level": 47,
+  "enemies": [
+   "shadow_cutpurse",
+   "gloom_hound",
+   "tomb_wraith"
+  ],
+  "rewards": {
+   "gold": 1510,
+   "xp": 1255,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "8-3"
+ },
+ {
+  "id": "8-5",
+  "type": "adventure",
+  "chapter": 8,
+  "index": 5,
+  "name": "Duskmantle Vale 5",
+  "element": "umbral",
+  "energy": 7,
+  "level": 47,
+  "enemies": [
+   "gloom_hound",
+   "tomb_wraith",
+   "lantern_acolyte"
+  ],
+  "rewards": {
+   "gold": 1510,
+   "xp": 1255,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "8-4"
+ },
+ {
+  "id": "8-6",
+  "type": "adventure",
+  "chapter": 8,
+  "index": 6,
+  "name": "Duskmantle Vale 6",
+  "element": "umbral",
+  "energy": 7,
+  "level": 48,
+  "enemies": [
+   "tomb_wraith",
+   "lantern_acolyte",
+   "shadow_cutpurse"
+  ],
+  "rewards": {
+   "gold": 1540,
+   "xp": 1280,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "8-5"
+ },
+ {
+  "id": "8-7",
+  "type": "adventure",
+  "chapter": 8,
+  "index": 7,
+  "name": "Duskmantle Vale 7",
+  "element": "umbral",
+  "energy": 7,
+  "level": 48,
+  "enemies": [
+   "lantern_acolyte",
+   "shadow_cutpurse",
+   "gloom_hound",
+   "tomb_wraith"
+  ],
+  "rewards": {
+   "gold": 1540,
+   "xp": 1280,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "8-6"
+ },
+ {
+  "id": "8-8",
+  "type": "adventure",
+  "chapter": 8,
+  "index": 8,
+  "name": "Duskmantle Vale 8",
+  "element": "umbral",
+  "energy": 7,
+  "level": 49,
+  "enemies": [
+   "shadow_cutpurse",
+   "gloom_hound",
+   "tomb_wraith",
+   "lantern_acolyte"
+  ],
+  "rewards": {
+   "gold": 1570,
+   "xp": 1305,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "8-7"
+ },
+ {
+  "id": "8-9",
+  "type": "adventure",
+  "chapter": 8,
+  "index": 9,
+  "name": "Duskmantle Vale 9",
+  "element": "umbral",
+  "energy": 7,
+  "level": 49,
+  "enemies": [
+   "gloom_hound",
+   "tomb_wraith",
+   "lantern_acolyte",
+   "shadow_cutpurse"
+  ],
+  "rewards": {
+   "gold": 1570,
+   "xp": 1305,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "8-8"
+ },
+ {
+  "id": "8-10",
+  "type": "adventure",
+  "chapter": 8,
+  "index": 10,
+  "name": "Duskmantle Vale: Warden",
+  "element": "umbral",
+  "energy": 7,
+  "level": 50,
+  "enemies": [
+   "hollow_king",
+   "tomb_wraith",
+   "lantern_acolyte"
+  ],
+  "rewards": {
+   "gold": 1600,
+   "xp": 1330,
+   "materials": {
+    "umbral_shard": 2
+   }
+  },
+  "first_clear": {
+   "crystals": 100
+  },
+  "turn_limit_for_star": 36,
+  "requires": "8-9"
+ },
+ {
+  "id": "9-1",
+  "type": "adventure",
+  "chapter": 9,
+  "index": 1,
+  "name": "The Covenant Road 1",
+  "element": "radiant",
+  "energy": 7,
+  "level": 51,
+  "enemies": [
+   "lantern_acolyte",
+   "ember_brute",
+   "frost_golem"
+  ],
+  "rewards": {
+   "gold": 1630,
+   "xp": 1355,
+   "materials": {
+    "radiant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "8-10"
+ },
+ {
+  "id": "9-2",
+  "type": "adventure",
+  "chapter": 9,
+  "index": 2,
+  "name": "The Covenant Road 2",
+  "element": "radiant",
+  "energy": 7,
+  "level": 52,
+  "enemies": [
+   "ember_brute",
+   "frost_golem",
+   "gilded_sentinel"
+  ],
+  "rewards": {
+   "gold": 1660,
+   "xp": 1380,
+   "materials": {
+    "radiant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "9-1"
+ },
+ {
+  "id": "9-3",
+  "type": "adventure",
+  "chapter": 9,
+  "index": 3,
+  "name": "The Covenant Road 3",
+  "element": "radiant",
+  "energy": 7,
+  "level": 52,
+  "enemies": [
+   "frost_golem",
+   "gilded_sentinel",
+   "lantern_acolyte"
+  ],
+  "rewards": {
+   "gold": 1660,
+   "xp": 1380,
+   "materials": {
+    "radiant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "9-2"
+ },
+ {
+  "id": "9-4",
+  "type": "adventure",
+  "chapter": 9,
+  "index": 4,
+  "name": "The Covenant Road 4",
+  "element": "radiant",
+  "energy": 7,
+  "level": 53,
+  "enemies": [
+   "gilded_sentinel",
+   "lantern_acolyte",
+   "ember_brute"
+  ],
+  "rewards": {
+   "gold": 1690,
+   "xp": 1405,
+   "materials": {
+    "radiant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "9-3"
+ },
+ {
+  "id": "9-5",
+  "type": "adventure",
+  "chapter": 9,
+  "index": 5,
+  "name": "The Covenant Road 5",
+  "element": "radiant",
+  "energy": 7,
+  "level": 53,
+  "enemies": [
+   "lantern_acolyte",
+   "ember_brute",
+   "frost_golem"
+  ],
+  "rewards": {
+   "gold": 1690,
+   "xp": 1405,
+   "materials": {
+    "radiant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "9-4"
+ },
+ {
+  "id": "9-6",
+  "type": "adventure",
+  "chapter": 9,
+  "index": 6,
+  "name": "The Covenant Road 6",
+  "element": "radiant",
+  "energy": 7,
+  "level": 54,
+  "enemies": [
+   "ember_brute",
+   "frost_golem",
+   "gilded_sentinel"
+  ],
+  "rewards": {
+   "gold": 1720,
+   "xp": 1430,
+   "materials": {
+    "radiant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "9-5"
+ },
+ {
+  "id": "9-7",
+  "type": "adventure",
+  "chapter": 9,
+  "index": 7,
+  "name": "The Covenant Road 7",
+  "element": "radiant",
+  "energy": 7,
+  "level": 54,
+  "enemies": [
+   "frost_golem",
+   "gilded_sentinel",
+   "lantern_acolyte",
+   "ember_brute"
+  ],
+  "rewards": {
+   "gold": 1720,
+   "xp": 1430,
+   "materials": {
+    "radiant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "9-6"
+ },
+ {
+  "id": "9-8",
+  "type": "adventure",
+  "chapter": 9,
+  "index": 8,
+  "name": "The Covenant Road 8",
+  "element": "radiant",
+  "energy": 7,
+  "level": 55,
+  "enemies": [
+   "gilded_sentinel",
+   "lantern_acolyte",
+   "ember_brute",
+   "frost_golem"
+  ],
+  "rewards": {
+   "gold": 1750,
+   "xp": 1455,
+   "materials": {
+    "radiant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "9-7"
+ },
+ {
+  "id": "9-9",
+  "type": "adventure",
+  "chapter": 9,
+  "index": 9,
+  "name": "The Covenant Road 9",
+  "element": "radiant",
+  "energy": 7,
+  "level": 55,
+  "enemies": [
+   "lantern_acolyte",
+   "ember_brute",
+   "frost_golem",
+   "gilded_sentinel"
+  ],
+  "rewards": {
+   "gold": 1750,
+   "xp": 1455,
+   "materials": {
+    "radiant_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "9-8"
+ },
+ {
+  "id": "9-10",
+  "type": "adventure",
+  "chapter": 9,
+  "index": 10,
+  "name": "The Covenant Road: Warden",
+  "element": "radiant",
+  "energy": 7,
+  "level": 56,
+  "enemies": [
+   "wyrm_of_ash",
+   "ember_brute",
+   "frost_golem"
+  ],
+  "rewards": {
+   "gold": 1780,
+   "xp": 1480,
+   "materials": {
+    "radiant_shard": 2
+   }
+  },
+  "first_clear": {
+   "crystals": 100
+  },
+  "turn_limit_for_star": 36,
+  "requires": "9-9"
+ },
+ {
+  "id": "10-1",
+  "type": "adventure",
+  "chapter": 10,
+  "index": 1,
+  "name": "Hollow Throne 1",
+  "element": "umbral",
+  "energy": 7,
+  "level": 57,
+  "enemies": [
+   "shadow_cutpurse",
+   "gilded_sentinel",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 1810,
+   "xp": 1505,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "9-10"
+ },
+ {
+  "id": "10-2",
+  "type": "adventure",
+  "chapter": 10,
+  "index": 2,
+  "name": "Hollow Throne 2",
+  "element": "umbral",
+  "energy": 7,
+  "level": 58,
+  "enemies": [
+   "gilded_sentinel",
+   "ice_lurker",
+   "tomb_wraith"
+  ],
+  "rewards": {
+   "gold": 1840,
+   "xp": 1530,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "10-1"
+ },
+ {
+  "id": "10-3",
+  "type": "adventure",
+  "chapter": 10,
+  "index": 3,
+  "name": "Hollow Throne 3",
+  "element": "umbral",
+  "energy": 7,
+  "level": 58,
+  "enemies": [
+   "ice_lurker",
+   "tomb_wraith",
+   "shadow_cutpurse"
+  ],
+  "rewards": {
+   "gold": 1840,
+   "xp": 1530,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "10-2"
+ },
+ {
+  "id": "10-4",
+  "type": "adventure",
+  "chapter": 10,
+  "index": 4,
+  "name": "Hollow Throne 4",
+  "element": "umbral",
+  "energy": 7,
+  "level": 59,
+  "enemies": [
+   "tomb_wraith",
+   "shadow_cutpurse",
+   "gilded_sentinel"
+  ],
+  "rewards": {
+   "gold": 1870,
+   "xp": 1555,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "10-3"
+ },
+ {
+  "id": "10-5",
+  "type": "adventure",
+  "chapter": 10,
+  "index": 5,
+  "name": "Hollow Throne 5",
+  "element": "umbral",
+  "energy": 7,
+  "level": 59,
+  "enemies": [
+   "shadow_cutpurse",
+   "gilded_sentinel",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 1870,
+   "xp": 1555,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "10-4"
+ },
+ {
+  "id": "10-6",
+  "type": "adventure",
+  "chapter": 10,
+  "index": 6,
+  "name": "Hollow Throne 6",
+  "element": "umbral",
+  "energy": 7,
+  "level": 60,
+  "enemies": [
+   "gilded_sentinel",
+   "ice_lurker",
+   "tomb_wraith"
+  ],
+  "rewards": {
+   "gold": 1900,
+   "xp": 1580,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "10-5"
+ },
+ {
+  "id": "10-7",
+  "type": "adventure",
+  "chapter": 10,
+  "index": 7,
+  "name": "Hollow Throne 7",
+  "element": "umbral",
+  "energy": 7,
+  "level": 60,
+  "enemies": [
+   "ice_lurker",
+   "tomb_wraith",
+   "shadow_cutpurse",
+   "gilded_sentinel"
+  ],
+  "rewards": {
+   "gold": 1900,
+   "xp": 1580,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "10-6"
+ },
+ {
+  "id": "10-8",
+  "type": "adventure",
+  "chapter": 10,
+  "index": 8,
+  "name": "Hollow Throne 8",
+  "element": "umbral",
+  "energy": 7,
+  "level": 60,
+  "enemies": [
+   "tomb_wraith",
+   "shadow_cutpurse",
+   "gilded_sentinel",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 1900,
+   "xp": 1580,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "10-7"
+ },
+ {
+  "id": "10-9",
+  "type": "adventure",
+  "chapter": 10,
+  "index": 9,
+  "name": "Hollow Throne 9",
+  "element": "umbral",
+  "energy": 7,
+  "level": 60,
+  "enemies": [
+   "shadow_cutpurse",
+   "gilded_sentinel",
+   "ice_lurker",
+   "tomb_wraith"
+  ],
+  "rewards": {
+   "gold": 1900,
+   "xp": 1580,
+   "materials": {
+    "umbral_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 30
+  },
+  "turn_limit_for_star": 24,
+  "requires": "10-8"
+ },
+ {
+  "id": "10-10",
+  "type": "adventure",
+  "chapter": 10,
+  "index": 10,
+  "name": "Hollow Throne: Warden",
+  "element": "umbral",
+  "energy": 7,
+  "level": 60,
+  "enemies": [
+   "hollow_king",
+   "gilded_sentinel",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 1900,
+   "xp": 1580,
+   "materials": {
+    "umbral_shard": 2
+   }
+  },
+  "first_clear": {
+   "crystals": 100
+  },
+  "turn_limit_for_star": 36,
+  "requires": "10-9"
+ },
+ {
+  "id": "hunt_wyrm_1",
+  "type": "hunt",
+  "boss": "wyrm_of_ash",
+  "tier": 1,
+  "name": "Ash Wyrm Hunt 1",
+  "element": "flame",
+  "energy": 8,
+  "level": 23,
+  "enemies": [
+   "wyrm_of_ash",
+   "ember_imp"
+  ],
+  "rewards": {
+   "gold": 420,
+   "xp": 190,
+   "materials": {
+    "ash_scale": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.3,
+   "rarity_weights": {
+    "3": 55,
+    "4": 35,
+    "5": 8
+   },
+   "tier": 1
+  },
+  "requires": ""
+ },
+ {
+  "id": "hunt_wyrm_2",
+  "type": "hunt",
+  "boss": "wyrm_of_ash",
+  "tier": 2,
+  "name": "Ash Wyrm Hunt 2",
+  "element": "flame",
+  "energy": 8,
+  "level": 26,
+  "enemies": [
+   "wyrm_of_ash",
+   "ember_imp"
+  ],
+  "rewards": {
+   "gold": 540,
+   "xp": 230,
+   "materials": {
+    "ash_scale": 2
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.35,
+   "rarity_weights": {
+    "3": 50,
+    "4": 35,
+    "5": 11
+   },
+   "tier": 1
+  },
+  "requires": "hunt_wyrm_1"
+ },
+ {
+  "id": "hunt_wyrm_3",
+  "type": "hunt",
+  "boss": "wyrm_of_ash",
+  "tier": 3,
+  "name": "Ash Wyrm Hunt 3",
+  "element": "flame",
+  "energy": 9,
+  "level": 29,
+  "enemies": [
+   "wyrm_of_ash",
+   "ember_imp"
+  ],
+  "rewards": {
+   "gold": 660,
+   "xp": 270,
+   "materials": {
+    "ash_scale": 2
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.4,
+   "rarity_weights": {
+    "3": 45,
+    "4": 35,
+    "5": 14
+   },
+   "tier": 1
+  },
+  "requires": "hunt_wyrm_2"
+ },
+ {
+  "id": "hunt_wyrm_4",
+  "type": "hunt",
+  "boss": "wyrm_of_ash",
+  "tier": 4,
+  "name": "Ash Wyrm Hunt 4",
+  "element": "flame",
+  "energy": 9,
+  "level": 32,
+  "enemies": [
+   "wyrm_of_ash",
+   "ember_imp",
+   "cinder_bat"
+  ],
+  "rewards": {
+   "gold": 780,
+   "xp": 310,
+   "materials": {
+    "ash_scale": 3
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.45,
+   "rarity_weights": {
+    "3": 40,
+    "4": 35,
+    "5": 17
+   },
+   "tier": 1
+  },
+  "requires": "hunt_wyrm_3"
+ },
+ {
+  "id": "hunt_wyrm_5",
+  "type": "hunt",
+  "boss": "wyrm_of_ash",
+  "tier": 5,
+  "name": "Ash Wyrm Hunt 5",
+  "element": "flame",
+  "energy": 9,
+  "level": 35,
+  "enemies": [
+   "wyrm_of_ash",
+   "ember_imp",
+   "cinder_bat"
+  ],
+  "rewards": {
+   "gold": 900,
+   "xp": 350,
+   "materials": {
+    "ash_scale": 3
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.5,
+   "rarity_weights": {
+    "3": 35,
+    "4": 35,
+    "5": 20
+   },
+   "tier": 1
+  },
+  "requires": "hunt_wyrm_4"
+ },
+ {
+  "id": "hunt_wyrm_6",
+  "type": "hunt",
+  "boss": "wyrm_of_ash",
+  "tier": 6,
+  "name": "Ash Wyrm Hunt 6",
+  "element": "flame",
+  "energy": 10,
+  "level": 38,
+  "enemies": [
+   "wyrm_of_ash",
+   "ember_imp",
+   "cinder_bat"
+  ],
+  "rewards": {
+   "gold": 1020,
+   "xp": 390,
+   "materials": {
+    "ash_scale": 4
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.55,
+   "rarity_weights": {
+    "3": 30,
+    "4": 35,
+    "5": 23
+   },
+   "tier": 1
+  },
+  "requires": "hunt_wyrm_5"
+ },
+ {
+  "id": "hunt_wyrm_7",
+  "type": "hunt",
+  "boss": "wyrm_of_ash",
+  "tier": 7,
+  "name": "Ash Wyrm Hunt 7",
+  "element": "flame",
+  "energy": 10,
+  "level": 41,
+  "enemies": [
+   "wyrm_of_ash",
+   "ember_imp",
+   "cinder_bat"
+  ],
+  "rewards": {
+   "gold": 1140,
+   "xp": 430,
+   "materials": {
+    "ash_scale": 4,
+    "crafting_alloy": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.6000000000000001,
+   "rarity_weights": {
+    "3": 25,
+    "4": 35,
+    "5": 26
+   },
+   "tier": 1
+  },
+  "requires": "hunt_wyrm_6"
+ },
+ {
+  "id": "hunt_wyrm_8",
+  "type": "hunt",
+  "boss": "wyrm_of_ash",
+  "tier": 8,
+  "name": "Ash Wyrm Hunt 8",
+  "element": "flame",
+  "energy": 10,
+  "level": 44,
+  "enemies": [
+   "wyrm_of_ash",
+   "ember_imp",
+   "cinder_bat"
+  ],
+  "rewards": {
+   "gold": 1260,
+   "xp": 470,
+   "materials": {
+    "ash_scale": 5,
+    "crafting_alloy": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.65,
+   "rarity_weights": {
+    "3": 20,
+    "4": 35,
+    "5": 29
+   },
+   "tier": 1
+  },
+  "requires": "hunt_wyrm_7"
+ },
+ {
+  "id": "hunt_wyrm_9",
+  "type": "hunt",
+  "boss": "wyrm_of_ash",
+  "tier": 9,
+  "name": "Ash Wyrm Hunt 9",
+  "element": "flame",
+  "energy": 11,
+  "level": 47,
+  "enemies": [
+   "wyrm_of_ash",
+   "ember_imp",
+   "cinder_bat"
+  ],
+  "rewards": {
+   "gold": 1380,
+   "xp": 510,
+   "materials": {
+    "ash_scale": 5,
+    "crafting_alloy": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.7,
+   "rarity_weights": {
+    "3": 15,
+    "4": 35,
+    "5": 32
+   },
+   "tier": 1
+  },
+  "requires": "hunt_wyrm_8"
+ },
+ {
+  "id": "hunt_wyrm_10",
+  "type": "hunt",
+  "boss": "wyrm_of_ash",
+  "tier": 10,
+  "name": "Ash Wyrm Hunt 10",
+  "element": "flame",
+  "energy": 11,
+  "level": 50,
+  "enemies": [
+   "wyrm_of_ash",
+   "ember_imp",
+   "cinder_bat"
+  ],
+  "rewards": {
+   "gold": 1500,
+   "xp": 550,
+   "materials": {
+    "ash_scale": 6,
+    "crafting_alloy": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.75,
+   "rarity_weights": {
+    "3": 10,
+    "4": 35,
+    "5": 35
+   },
+   "tier": 1
+  },
+  "requires": "hunt_wyrm_9"
+ },
+ {
+  "id": "hunt_wyrm_11",
+  "type": "hunt",
+  "boss": "wyrm_of_ash",
+  "tier": 11,
+  "name": "Ash Wyrm Hunt 11",
+  "element": "flame",
+  "energy": 11,
+  "level": 53,
+  "enemies": [
+   "wyrm_of_ash",
+   "ember_imp",
+   "cinder_bat"
+  ],
+  "rewards": {
+   "gold": 1620,
+   "xp": 590,
+   "materials": {
+    "ash_scale": 6,
+    "crafting_alloy": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.8,
+   "rarity_weights": {
+    "3": 5,
+    "4": 35,
+    "5": 38
+   },
+   "tier": 1
+  },
+  "requires": "hunt_wyrm_10"
+ },
+ {
+  "id": "hunt_wyrm_12",
+  "type": "hunt",
+  "boss": "wyrm_of_ash",
+  "tier": 12,
+  "name": "Ash Wyrm Hunt 12",
+  "element": "flame",
+  "energy": 12,
+  "level": 56,
+  "enemies": [
+   "wyrm_of_ash",
+   "ember_imp",
+   "cinder_bat"
+  ],
+  "rewards": {
+   "gold": 1740,
+   "xp": 630,
+   "materials": {
+    "ash_scale": 7,
+    "crafting_alloy": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.8500000000000001,
+   "rarity_weights": {
+    "3": 5,
+    "4": 35,
+    "5": 41
+   },
+   "tier": 2
+  },
+  "requires": "hunt_wyrm_11"
+ },
+ {
+  "id": "hunt_wyrm_13",
+  "type": "hunt",
+  "boss": "wyrm_of_ash",
+  "tier": 13,
+  "name": "Ash Wyrm Hunt 13",
+  "element": "flame",
+  "energy": 12,
+  "level": 59,
+  "enemies": [
+   "wyrm_of_ash",
+   "ember_imp",
+   "cinder_bat"
+  ],
+  "rewards": {
+   "gold": 1860,
+   "xp": 670,
+   "materials": {
+    "ash_scale": 7,
+    "crafting_alloy": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.9,
+   "rarity_weights": {
+    "3": 5,
+    "4": 35,
+    "5": 44
+   },
+   "tier": 2
+  },
+  "requires": "hunt_wyrm_12"
+ },
+ {
+  "id": "hunt_glacial_1",
+  "type": "hunt",
+  "boss": "glacial_matriarch",
+  "tier": 1,
+  "name": "Glacial Hunt 1",
+  "element": "frost",
+  "energy": 8,
+  "level": 23,
+  "enemies": [
+   "glacial_matriarch",
+   "frost_wisp"
+  ],
+  "rewards": {
+   "gold": 420,
+   "xp": 190,
+   "materials": {
+    "rime_shard": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.3,
+   "rarity_weights": {
+    "3": 55,
+    "4": 35,
+    "5": 8
+   },
+   "tier": 1
+  },
+  "requires": ""
+ },
+ {
+  "id": "hunt_glacial_2",
+  "type": "hunt",
+  "boss": "glacial_matriarch",
+  "tier": 2,
+  "name": "Glacial Hunt 2",
+  "element": "frost",
+  "energy": 8,
+  "level": 26,
+  "enemies": [
+   "glacial_matriarch",
+   "frost_wisp"
+  ],
+  "rewards": {
+   "gold": 540,
+   "xp": 230,
+   "materials": {
+    "rime_shard": 2
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.35,
+   "rarity_weights": {
+    "3": 50,
+    "4": 35,
+    "5": 11
+   },
+   "tier": 1
+  },
+  "requires": "hunt_glacial_1"
+ },
+ {
+  "id": "hunt_glacial_3",
+  "type": "hunt",
+  "boss": "glacial_matriarch",
+  "tier": 3,
+  "name": "Glacial Hunt 3",
+  "element": "frost",
+  "energy": 9,
+  "level": 29,
+  "enemies": [
+   "glacial_matriarch",
+   "frost_wisp"
+  ],
+  "rewards": {
+   "gold": 660,
+   "xp": 270,
+   "materials": {
+    "rime_shard": 2
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.4,
+   "rarity_weights": {
+    "3": 45,
+    "4": 35,
+    "5": 14
+   },
+   "tier": 1
+  },
+  "requires": "hunt_glacial_2"
+ },
+ {
+  "id": "hunt_glacial_4",
+  "type": "hunt",
+  "boss": "glacial_matriarch",
+  "tier": 4,
+  "name": "Glacial Hunt 4",
+  "element": "frost",
+  "energy": 9,
+  "level": 32,
+  "enemies": [
+   "glacial_matriarch",
+   "frost_wisp",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 780,
+   "xp": 310,
+   "materials": {
+    "rime_shard": 3
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.45,
+   "rarity_weights": {
+    "3": 40,
+    "4": 35,
+    "5": 17
+   },
+   "tier": 1
+  },
+  "requires": "hunt_glacial_3"
+ },
+ {
+  "id": "hunt_glacial_5",
+  "type": "hunt",
+  "boss": "glacial_matriarch",
+  "tier": 5,
+  "name": "Glacial Hunt 5",
+  "element": "frost",
+  "energy": 9,
+  "level": 35,
+  "enemies": [
+   "glacial_matriarch",
+   "frost_wisp",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 900,
+   "xp": 350,
+   "materials": {
+    "rime_shard": 3
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.5,
+   "rarity_weights": {
+    "3": 35,
+    "4": 35,
+    "5": 20
+   },
+   "tier": 1
+  },
+  "requires": "hunt_glacial_4"
+ },
+ {
+  "id": "hunt_glacial_6",
+  "type": "hunt",
+  "boss": "glacial_matriarch",
+  "tier": 6,
+  "name": "Glacial Hunt 6",
+  "element": "frost",
+  "energy": 10,
+  "level": 38,
+  "enemies": [
+   "glacial_matriarch",
+   "frost_wisp",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 1020,
+   "xp": 390,
+   "materials": {
+    "rime_shard": 4
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.55,
+   "rarity_weights": {
+    "3": 30,
+    "4": 35,
+    "5": 23
+   },
+   "tier": 1
+  },
+  "requires": "hunt_glacial_5"
+ },
+ {
+  "id": "hunt_glacial_7",
+  "type": "hunt",
+  "boss": "glacial_matriarch",
+  "tier": 7,
+  "name": "Glacial Hunt 7",
+  "element": "frost",
+  "energy": 10,
+  "level": 41,
+  "enemies": [
+   "glacial_matriarch",
+   "frost_wisp",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 1140,
+   "xp": 430,
+   "materials": {
+    "rime_shard": 4,
+    "crafting_alloy": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.6000000000000001,
+   "rarity_weights": {
+    "3": 25,
+    "4": 35,
+    "5": 26
+   },
+   "tier": 1
+  },
+  "requires": "hunt_glacial_6"
+ },
+ {
+  "id": "hunt_glacial_8",
+  "type": "hunt",
+  "boss": "glacial_matriarch",
+  "tier": 8,
+  "name": "Glacial Hunt 8",
+  "element": "frost",
+  "energy": 10,
+  "level": 44,
+  "enemies": [
+   "glacial_matriarch",
+   "frost_wisp",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 1260,
+   "xp": 470,
+   "materials": {
+    "rime_shard": 5,
+    "crafting_alloy": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.65,
+   "rarity_weights": {
+    "3": 20,
+    "4": 35,
+    "5": 29
+   },
+   "tier": 1
+  },
+  "requires": "hunt_glacial_7"
+ },
+ {
+  "id": "hunt_glacial_9",
+  "type": "hunt",
+  "boss": "glacial_matriarch",
+  "tier": 9,
+  "name": "Glacial Hunt 9",
+  "element": "frost",
+  "energy": 11,
+  "level": 47,
+  "enemies": [
+   "glacial_matriarch",
+   "frost_wisp",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 1380,
+   "xp": 510,
+   "materials": {
+    "rime_shard": 5,
+    "crafting_alloy": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.7,
+   "rarity_weights": {
+    "3": 15,
+    "4": 35,
+    "5": 32
+   },
+   "tier": 1
+  },
+  "requires": "hunt_glacial_8"
+ },
+ {
+  "id": "hunt_glacial_10",
+  "type": "hunt",
+  "boss": "glacial_matriarch",
+  "tier": 10,
+  "name": "Glacial Hunt 10",
+  "element": "frost",
+  "energy": 11,
+  "level": 50,
+  "enemies": [
+   "glacial_matriarch",
+   "frost_wisp",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 1500,
+   "xp": 550,
+   "materials": {
+    "rime_shard": 6,
+    "crafting_alloy": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.75,
+   "rarity_weights": {
+    "3": 10,
+    "4": 35,
+    "5": 35
+   },
+   "tier": 1
+  },
+  "requires": "hunt_glacial_9"
+ },
+ {
+  "id": "hunt_glacial_11",
+  "type": "hunt",
+  "boss": "glacial_matriarch",
+  "tier": 11,
+  "name": "Glacial Hunt 11",
+  "element": "frost",
+  "energy": 11,
+  "level": 53,
+  "enemies": [
+   "glacial_matriarch",
+   "frost_wisp",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 1620,
+   "xp": 590,
+   "materials": {
+    "rime_shard": 6,
+    "crafting_alloy": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.8,
+   "rarity_weights": {
+    "3": 5,
+    "4": 35,
+    "5": 38
+   },
+   "tier": 1
+  },
+  "requires": "hunt_glacial_10"
+ },
+ {
+  "id": "hunt_glacial_12",
+  "type": "hunt",
+  "boss": "glacial_matriarch",
+  "tier": 12,
+  "name": "Glacial Hunt 12",
+  "element": "frost",
+  "energy": 12,
+  "level": 56,
+  "enemies": [
+   "glacial_matriarch",
+   "frost_wisp",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 1740,
+   "xp": 630,
+   "materials": {
+    "rime_shard": 7,
+    "crafting_alloy": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.8500000000000001,
+   "rarity_weights": {
+    "3": 5,
+    "4": 35,
+    "5": 41
+   },
+   "tier": 2
+  },
+  "requires": "hunt_glacial_11"
+ },
+ {
+  "id": "hunt_glacial_13",
+  "type": "hunt",
+  "boss": "glacial_matriarch",
+  "tier": 13,
+  "name": "Glacial Hunt 13",
+  "element": "frost",
+  "energy": 12,
+  "level": 59,
+  "enemies": [
+   "glacial_matriarch",
+   "frost_wisp",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 1860,
+   "xp": 670,
+   "materials": {
+    "rime_shard": 7,
+    "crafting_alloy": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.9,
+   "rarity_weights": {
+    "3": 5,
+    "4": 35,
+    "5": 44
+   },
+   "tier": 2
+  },
+  "requires": "hunt_glacial_12"
+ },
+ {
+  "id": "hunt_hollow_1",
+  "type": "hunt",
+  "boss": "hollow_king",
+  "tier": 1,
+  "name": "Hollow Hunt 1",
+  "element": "umbral",
+  "energy": 8,
+  "level": 23,
+  "enemies": [
+   "hollow_king",
+   "tomb_wraith"
+  ],
+  "rewards": {
+   "gold": 420,
+   "xp": 190,
+   "materials": {
+    "hollow_bone": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.3,
+   "rarity_weights": {
+    "3": 55,
+    "4": 35,
+    "5": 8
+   },
+   "tier": 1
+  },
+  "requires": ""
+ },
+ {
+  "id": "hunt_hollow_2",
+  "type": "hunt",
+  "boss": "hollow_king",
+  "tier": 2,
+  "name": "Hollow Hunt 2",
+  "element": "umbral",
+  "energy": 8,
+  "level": 26,
+  "enemies": [
+   "hollow_king",
+   "tomb_wraith"
+  ],
+  "rewards": {
+   "gold": 540,
+   "xp": 230,
+   "materials": {
+    "hollow_bone": 2
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.35,
+   "rarity_weights": {
+    "3": 50,
+    "4": 35,
+    "5": 11
+   },
+   "tier": 1
+  },
+  "requires": "hunt_hollow_1"
+ },
+ {
+  "id": "hunt_hollow_3",
+  "type": "hunt",
+  "boss": "hollow_king",
+  "tier": 3,
+  "name": "Hollow Hunt 3",
+  "element": "umbral",
+  "energy": 9,
+  "level": 29,
+  "enemies": [
+   "hollow_king",
+   "tomb_wraith"
+  ],
+  "rewards": {
+   "gold": 660,
+   "xp": 270,
+   "materials": {
+    "hollow_bone": 2
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.4,
+   "rarity_weights": {
+    "3": 45,
+    "4": 35,
+    "5": 14
+   },
+   "tier": 1
+  },
+  "requires": "hunt_hollow_2"
+ },
+ {
+  "id": "hunt_hollow_4",
+  "type": "hunt",
+  "boss": "hollow_king",
+  "tier": 4,
+  "name": "Hollow Hunt 4",
+  "element": "umbral",
+  "energy": 9,
+  "level": 32,
+  "enemies": [
+   "hollow_king",
+   "tomb_wraith",
+   "gloom_hound"
+  ],
+  "rewards": {
+   "gold": 780,
+   "xp": 310,
+   "materials": {
+    "hollow_bone": 3
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.45,
+   "rarity_weights": {
+    "3": 40,
+    "4": 35,
+    "5": 17
+   },
+   "tier": 1
+  },
+  "requires": "hunt_hollow_3"
+ },
+ {
+  "id": "hunt_hollow_5",
+  "type": "hunt",
+  "boss": "hollow_king",
+  "tier": 5,
+  "name": "Hollow Hunt 5",
+  "element": "umbral",
+  "energy": 9,
+  "level": 35,
+  "enemies": [
+   "hollow_king",
+   "tomb_wraith",
+   "gloom_hound"
+  ],
+  "rewards": {
+   "gold": 900,
+   "xp": 350,
+   "materials": {
+    "hollow_bone": 3
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.5,
+   "rarity_weights": {
+    "3": 35,
+    "4": 35,
+    "5": 20
+   },
+   "tier": 1
+  },
+  "requires": "hunt_hollow_4"
+ },
+ {
+  "id": "hunt_hollow_6",
+  "type": "hunt",
+  "boss": "hollow_king",
+  "tier": 6,
+  "name": "Hollow Hunt 6",
+  "element": "umbral",
+  "energy": 10,
+  "level": 38,
+  "enemies": [
+   "hollow_king",
+   "tomb_wraith",
+   "gloom_hound"
+  ],
+  "rewards": {
+   "gold": 1020,
+   "xp": 390,
+   "materials": {
+    "hollow_bone": 4
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.55,
+   "rarity_weights": {
+    "3": 30,
+    "4": 35,
+    "5": 23
+   },
+   "tier": 1
+  },
+  "requires": "hunt_hollow_5"
+ },
+ {
+  "id": "hunt_hollow_7",
+  "type": "hunt",
+  "boss": "hollow_king",
+  "tier": 7,
+  "name": "Hollow Hunt 7",
+  "element": "umbral",
+  "energy": 10,
+  "level": 41,
+  "enemies": [
+   "hollow_king",
+   "tomb_wraith",
+   "gloom_hound"
+  ],
+  "rewards": {
+   "gold": 1140,
+   "xp": 430,
+   "materials": {
+    "hollow_bone": 4,
+    "crafting_alloy": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.6000000000000001,
+   "rarity_weights": {
+    "3": 25,
+    "4": 35,
+    "5": 26
+   },
+   "tier": 1
+  },
+  "requires": "hunt_hollow_6"
+ },
+ {
+  "id": "hunt_hollow_8",
+  "type": "hunt",
+  "boss": "hollow_king",
+  "tier": 8,
+  "name": "Hollow Hunt 8",
+  "element": "umbral",
+  "energy": 10,
+  "level": 44,
+  "enemies": [
+   "hollow_king",
+   "tomb_wraith",
+   "gloom_hound"
+  ],
+  "rewards": {
+   "gold": 1260,
+   "xp": 470,
+   "materials": {
+    "hollow_bone": 5,
+    "crafting_alloy": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.65,
+   "rarity_weights": {
+    "3": 20,
+    "4": 35,
+    "5": 29
+   },
+   "tier": 1
+  },
+  "requires": "hunt_hollow_7"
+ },
+ {
+  "id": "hunt_hollow_9",
+  "type": "hunt",
+  "boss": "hollow_king",
+  "tier": 9,
+  "name": "Hollow Hunt 9",
+  "element": "umbral",
+  "energy": 11,
+  "level": 47,
+  "enemies": [
+   "hollow_king",
+   "tomb_wraith",
+   "gloom_hound"
+  ],
+  "rewards": {
+   "gold": 1380,
+   "xp": 510,
+   "materials": {
+    "hollow_bone": 5,
+    "crafting_alloy": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.7,
+   "rarity_weights": {
+    "3": 15,
+    "4": 35,
+    "5": 32
+   },
+   "tier": 1
+  },
+  "requires": "hunt_hollow_8"
+ },
+ {
+  "id": "hunt_hollow_10",
+  "type": "hunt",
+  "boss": "hollow_king",
+  "tier": 10,
+  "name": "Hollow Hunt 10",
+  "element": "umbral",
+  "energy": 11,
+  "level": 50,
+  "enemies": [
+   "hollow_king",
+   "tomb_wraith",
+   "gloom_hound"
+  ],
+  "rewards": {
+   "gold": 1500,
+   "xp": 550,
+   "materials": {
+    "hollow_bone": 6,
+    "crafting_alloy": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.75,
+   "rarity_weights": {
+    "3": 10,
+    "4": 35,
+    "5": 35
+   },
+   "tier": 1
+  },
+  "requires": "hunt_hollow_9"
+ },
+ {
+  "id": "hunt_hollow_11",
+  "type": "hunt",
+  "boss": "hollow_king",
+  "tier": 11,
+  "name": "Hollow Hunt 11",
+  "element": "umbral",
+  "energy": 11,
+  "level": 53,
+  "enemies": [
+   "hollow_king",
+   "tomb_wraith",
+   "gloom_hound"
+  ],
+  "rewards": {
+   "gold": 1620,
+   "xp": 590,
+   "materials": {
+    "hollow_bone": 6,
+    "crafting_alloy": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.8,
+   "rarity_weights": {
+    "3": 5,
+    "4": 35,
+    "5": 38
+   },
+   "tier": 1
+  },
+  "requires": "hunt_hollow_10"
+ },
+ {
+  "id": "hunt_hollow_12",
+  "type": "hunt",
+  "boss": "hollow_king",
+  "tier": 12,
+  "name": "Hollow Hunt 12",
+  "element": "umbral",
+  "energy": 12,
+  "level": 56,
+  "enemies": [
+   "hollow_king",
+   "tomb_wraith",
+   "gloom_hound"
+  ],
+  "rewards": {
+   "gold": 1740,
+   "xp": 630,
+   "materials": {
+    "hollow_bone": 7,
+    "crafting_alloy": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.8500000000000001,
+   "rarity_weights": {
+    "3": 5,
+    "4": 35,
+    "5": 41
+   },
+   "tier": 2
+  },
+  "requires": "hunt_hollow_11"
+ },
+ {
+  "id": "hunt_hollow_13",
+  "type": "hunt",
+  "boss": "hollow_king",
+  "tier": 13,
+  "name": "Hollow Hunt 13",
+  "element": "umbral",
+  "energy": 12,
+  "level": 59,
+  "enemies": [
+   "hollow_king",
+   "tomb_wraith",
+   "gloom_hound"
+  ],
+  "rewards": {
+   "gold": 1860,
+   "xp": 670,
+   "materials": {
+    "hollow_bone": 7,
+    "crafting_alloy": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 50
+  },
+  "turn_limit_for_star": 30,
+  "gear_drop": {
+   "chance": 0.9,
+   "rarity_weights": {
+    "3": 5,
+    "4": 35,
+    "5": 44
+   },
+   "tier": 2
+  },
+  "requires": "hunt_hollow_12"
+ },
+ {
+  "id": "tower_1",
+  "type": "tower",
+  "floor": 1,
+  "name": "Spire floor 1",
+  "element": "",
+  "energy": 0,
+  "level": 11,
+  "enemies": [
+   "marsh_archer",
+   "thorn_spider",
+   "bog_shaman",
+   "grunt"
+  ],
+  "rewards": {
+   "gold": 600,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "",
+  "once": true
+ },
+ {
+  "id": "tower_2",
+  "type": "tower",
+  "floor": 2,
+  "name": "Spire floor 2",
+  "element": "",
+  "energy": 0,
+  "level": 12,
+  "enemies": [
+   "cinder_bat",
+   "grunt",
+   "ember_imp",
+   "ember_brute"
+  ],
+  "rewards": {
+   "gold": 700,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_1",
+  "once": true
+ },
+ {
+  "id": "tower_3",
+  "type": "tower",
+  "floor": 3,
+  "name": "Spire floor 3",
+  "element": "",
+  "energy": 0,
+  "level": 13,
+  "enemies": [
+   "marsh_archer",
+   "frost_wisp",
+   "frost_golem",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 800,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_2",
+  "once": true
+ },
+ {
+  "id": "tower_4",
+  "type": "tower",
+  "floor": 4,
+  "name": "Spire floor 4",
+  "element": "",
+  "energy": 0,
+  "level": 14,
+  "enemies": [
+   "tomb_wraith",
+   "shadow_cutpurse",
+   "gloom_hound",
+   "thorn_spider"
+  ],
+  "rewards": {
+   "gold": 900,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_3",
+  "once": true
+ },
+ {
+  "id": "tower_5",
+  "type": "tower",
+  "floor": 5,
+  "name": "Spire floor 5",
+  "element": "",
+  "energy": 0,
+  "level": 15,
+  "enemies": [
+   "gilded_sentinel",
+   "bog_shaman",
+   "ember_imp",
+   "lantern_acolyte"
+  ],
+  "rewards": {
+   "gold": 1000,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_4",
+  "once": true
+ },
+ {
+  "id": "tower_6",
+  "type": "tower",
+  "floor": 6,
+  "name": "Spire floor 6",
+  "element": "",
+  "energy": 0,
+  "level": 16,
+  "enemies": [
+   "gloom_hound",
+   "ice_lurker",
+   "ember_brute",
+   "cinder_bat"
+  ],
+  "rewards": {
+   "gold": 1100,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_5",
+  "once": true
+ },
+ {
+  "id": "tower_7",
+  "type": "tower",
+  "floor": 7,
+  "name": "Spire floor 7",
+  "element": "",
+  "energy": 0,
+  "level": 17,
+  "enemies": [
+   "tomb_wraith",
+   "frost_golem",
+   "ice_lurker",
+   "gilded_sentinel"
+  ],
+  "rewards": {
+   "gold": 1200,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_6",
+  "once": true
+ },
+ {
+  "id": "tower_8",
+  "type": "tower",
+  "floor": 8,
+  "name": "Spire floor 8",
+  "element": "",
+  "energy": 0,
+  "level": 18,
+  "enemies": [
+   "shadow_cutpurse",
+   "gloom_hound",
+   "tomb_wraith",
+   "lantern_acolyte"
+  ],
+  "rewards": {
+   "gold": 1300,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_7",
+  "once": true
+ },
+ {
+  "id": "tower_9",
+  "type": "tower",
+  "floor": 9,
+  "name": "Spire floor 9",
+  "element": "",
+  "energy": 0,
+  "level": 19,
+  "enemies": [
+   "lantern_acolyte",
+   "ember_brute",
+   "frost_golem",
+   "gilded_sentinel"
+  ],
+  "rewards": {
+   "gold": 1400,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_8",
+  "once": true
+ },
+ {
+  "id": "tower_10",
+  "type": "tower",
+  "floor": 10,
+  "name": "Spire floor 10",
+  "element": "",
+  "energy": 0,
+  "level": 20,
+  "enemies": [
+   "wyrm_of_ash",
+   "gilded_sentinel",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 1500,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 150,
+   "summon_ticket": 1
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_9",
+  "once": true
+ },
+ {
+  "id": "tower_11",
+  "type": "tower",
+  "floor": 11,
+  "name": "Spire floor 11",
+  "element": "",
+  "energy": 0,
+  "level": 21,
+  "enemies": [
+   "bog_shaman",
+   "grunt",
+   "marsh_archer",
+   "thorn_spider"
+  ],
+  "rewards": {
+   "gold": 1600,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_10",
+  "once": true
+ },
+ {
+  "id": "tower_12",
+  "type": "tower",
+  "floor": 12,
+  "name": "Spire floor 12",
+  "element": "",
+  "energy": 0,
+  "level": 22,
+  "enemies": [
+   "ember_imp",
+   "ember_brute",
+   "cinder_bat",
+   "grunt"
+  ],
+  "rewards": {
+   "gold": 1700,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_11",
+  "once": true
+ },
+ {
+  "id": "tower_13",
+  "type": "tower",
+  "floor": 13,
+  "name": "Spire floor 13",
+  "element": "",
+  "energy": 0,
+  "level": 23,
+  "enemies": [
+   "frost_golem",
+   "ice_lurker",
+   "marsh_archer",
+   "frost_wisp"
+  ],
+  "rewards": {
+   "gold": 1800,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_12",
+  "once": true
+ },
+ {
+  "id": "tower_14",
+  "type": "tower",
+  "floor": 14,
+  "name": "Spire floor 14",
+  "element": "",
+  "energy": 0,
+  "level": 24,
+  "enemies": [
+   "gloom_hound",
+   "thorn_spider",
+   "tomb_wraith",
+   "shadow_cutpurse"
+  ],
+  "rewards": {
+   "gold": 1900,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_13",
+  "once": true
+ },
+ {
+  "id": "tower_15",
+  "type": "tower",
+  "floor": 15,
+  "name": "Spire floor 15",
+  "element": "",
+  "energy": 0,
+  "level": 25,
+  "enemies": [
+   "ember_imp",
+   "lantern_acolyte",
+   "gilded_sentinel",
+   "bog_shaman"
+  ],
+  "rewards": {
+   "gold": 2000,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_14",
+  "once": true
+ },
+ {
+  "id": "tower_16",
+  "type": "tower",
+  "floor": 16,
+  "name": "Spire floor 16",
+  "element": "",
+  "energy": 0,
+  "level": 26,
+  "enemies": [
+   "ember_brute",
+   "cinder_bat",
+   "gloom_hound",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 2100,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_15",
+  "once": true
+ },
+ {
+  "id": "tower_17",
+  "type": "tower",
+  "floor": 17,
+  "name": "Spire floor 17",
+  "element": "",
+  "energy": 0,
+  "level": 27,
+  "enemies": [
+   "ice_lurker",
+   "gilded_sentinel",
+   "tomb_wraith",
+   "frost_golem"
+  ],
+  "rewards": {
+   "gold": 2200,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_16",
+  "once": true
+ },
+ {
+  "id": "tower_18",
+  "type": "tower",
+  "floor": 18,
+  "name": "Spire floor 18",
+  "element": "",
+  "energy": 0,
+  "level": 28,
+  "enemies": [
+   "tomb_wraith",
+   "lantern_acolyte",
+   "shadow_cutpurse",
+   "gloom_hound"
+  ],
+  "rewards": {
+   "gold": 2300,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_17",
+  "once": true
+ },
+ {
+  "id": "tower_19",
+  "type": "tower",
+  "floor": 19,
+  "name": "Spire floor 19",
+  "element": "",
+  "energy": 0,
+  "level": 29,
+  "enemies": [
+   "frost_golem",
+   "gilded_sentinel",
+   "lantern_acolyte",
+   "ember_brute"
+  ],
+  "rewards": {
+   "gold": 2400,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_18",
+  "once": true
+ },
+ {
+  "id": "tower_20",
+  "type": "tower",
+  "floor": 20,
+  "name": "Spire floor 20",
+  "element": "",
+  "energy": 0,
+  "level": 30,
+  "enemies": [
+   "glacial_matriarch",
+   "tomb_wraith",
+   "shadow_cutpurse"
+  ],
+  "rewards": {
+   "gold": 2500,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 150,
+   "summon_ticket": 1
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_19",
+  "once": true
+ },
+ {
+  "id": "tower_21",
+  "type": "tower",
+  "floor": 21,
+  "name": "Spire floor 21",
+  "element": "",
+  "energy": 0,
+  "level": 31,
+  "enemies": [
+   "marsh_archer",
+   "thorn_spider",
+   "bog_shaman",
+   "grunt"
+  ],
+  "rewards": {
+   "gold": 2600,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_20",
+  "once": true
+ },
+ {
+  "id": "tower_22",
+  "type": "tower",
+  "floor": 22,
+  "name": "Spire floor 22",
+  "element": "",
+  "energy": 0,
+  "level": 32,
+  "enemies": [
+   "cinder_bat",
+   "grunt",
+   "ember_imp",
+   "ember_brute"
+  ],
+  "rewards": {
+   "gold": 2700,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_21",
+  "once": true
+ },
+ {
+  "id": "tower_23",
+  "type": "tower",
+  "floor": 23,
+  "name": "Spire floor 23",
+  "element": "",
+  "energy": 0,
+  "level": 33,
+  "enemies": [
+   "marsh_archer",
+   "frost_wisp",
+   "frost_golem",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 2800,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_22",
+  "once": true
+ },
+ {
+  "id": "tower_24",
+  "type": "tower",
+  "floor": 24,
+  "name": "Spire floor 24",
+  "element": "",
+  "energy": 0,
+  "level": 34,
+  "enemies": [
+   "tomb_wraith",
+   "shadow_cutpurse",
+   "gloom_hound",
+   "thorn_spider"
+  ],
+  "rewards": {
+   "gold": 2900,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_23",
+  "once": true
+ },
+ {
+  "id": "tower_25",
+  "type": "tower",
+  "floor": 25,
+  "name": "Spire floor 25",
+  "element": "",
+  "energy": 0,
+  "level": 35,
+  "enemies": [
+   "gilded_sentinel",
+   "bog_shaman",
+   "ember_imp",
+   "lantern_acolyte"
+  ],
+  "rewards": {
+   "gold": 3000,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_24",
+  "once": true
+ },
+ {
+  "id": "tower_26",
+  "type": "tower",
+  "floor": 26,
+  "name": "Spire floor 26",
+  "element": "",
+  "energy": 0,
+  "level": 36,
+  "enemies": [
+   "gloom_hound",
+   "ice_lurker",
+   "ember_brute",
+   "cinder_bat"
+  ],
+  "rewards": {
+   "gold": 3100,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_25",
+  "once": true
+ },
+ {
+  "id": "tower_27",
+  "type": "tower",
+  "floor": 27,
+  "name": "Spire floor 27",
+  "element": "",
+  "energy": 0,
+  "level": 37,
+  "enemies": [
+   "tomb_wraith",
+   "frost_golem",
+   "ice_lurker",
+   "gilded_sentinel"
+  ],
+  "rewards": {
+   "gold": 3200,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_26",
+  "once": true
+ },
+ {
+  "id": "tower_28",
+  "type": "tower",
+  "floor": 28,
+  "name": "Spire floor 28",
+  "element": "",
+  "energy": 0,
+  "level": 38,
+  "enemies": [
+   "shadow_cutpurse",
+   "gloom_hound",
+   "tomb_wraith",
+   "lantern_acolyte"
+  ],
+  "rewards": {
+   "gold": 3300,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_27",
+  "once": true
+ },
+ {
+  "id": "tower_29",
+  "type": "tower",
+  "floor": 29,
+  "name": "Spire floor 29",
+  "element": "",
+  "energy": 0,
+  "level": 39,
+  "enemies": [
+   "lantern_acolyte",
+   "ember_brute",
+   "frost_golem",
+   "gilded_sentinel"
+  ],
+  "rewards": {
+   "gold": 3400,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_28",
+  "once": true
+ },
+ {
+  "id": "tower_30",
+  "type": "tower",
+  "floor": 30,
+  "name": "Spire floor 30",
+  "element": "",
+  "energy": 0,
+  "level": 40,
+  "enemies": [
+   "hollow_king",
+   "gilded_sentinel",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 3500,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 150,
+   "summon_ticket": 1
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_29",
+  "once": true
+ },
+ {
+  "id": "tower_31",
+  "type": "tower",
+  "floor": 31,
+  "name": "Spire floor 31",
+  "element": "",
+  "energy": 0,
+  "level": 41,
+  "enemies": [
+   "bog_shaman",
+   "grunt",
+   "marsh_archer",
+   "thorn_spider"
+  ],
+  "rewards": {
+   "gold": 3600,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_30",
+  "once": true
+ },
+ {
+  "id": "tower_32",
+  "type": "tower",
+  "floor": 32,
+  "name": "Spire floor 32",
+  "element": "",
+  "energy": 0,
+  "level": 42,
+  "enemies": [
+   "ember_imp",
+   "ember_brute",
+   "cinder_bat",
+   "grunt"
+  ],
+  "rewards": {
+   "gold": 3700,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_31",
+  "once": true
+ },
+ {
+  "id": "tower_33",
+  "type": "tower",
+  "floor": 33,
+  "name": "Spire floor 33",
+  "element": "",
+  "energy": 0,
+  "level": 43,
+  "enemies": [
+   "frost_golem",
+   "ice_lurker",
+   "marsh_archer",
+   "frost_wisp"
+  ],
+  "rewards": {
+   "gold": 3800,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_32",
+  "once": true
+ },
+ {
+  "id": "tower_34",
+  "type": "tower",
+  "floor": 34,
+  "name": "Spire floor 34",
+  "element": "",
+  "energy": 0,
+  "level": 44,
+  "enemies": [
+   "gloom_hound",
+   "thorn_spider",
+   "tomb_wraith",
+   "shadow_cutpurse"
+  ],
+  "rewards": {
+   "gold": 3900,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_33",
+  "once": true
+ },
+ {
+  "id": "tower_35",
+  "type": "tower",
+  "floor": 35,
+  "name": "Spire floor 35",
+  "element": "",
+  "energy": 0,
+  "level": 45,
+  "enemies": [
+   "ember_imp",
+   "lantern_acolyte",
+   "gilded_sentinel",
+   "bog_shaman"
+  ],
+  "rewards": {
+   "gold": 4000,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_34",
+  "once": true
+ },
+ {
+  "id": "tower_36",
+  "type": "tower",
+  "floor": 36,
+  "name": "Spire floor 36",
+  "element": "",
+  "energy": 0,
+  "level": 46,
+  "enemies": [
+   "ember_brute",
+   "cinder_bat",
+   "gloom_hound",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 4100,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_35",
+  "once": true
+ },
+ {
+  "id": "tower_37",
+  "type": "tower",
+  "floor": 37,
+  "name": "Spire floor 37",
+  "element": "",
+  "energy": 0,
+  "level": 47,
+  "enemies": [
+   "ice_lurker",
+   "gilded_sentinel",
+   "tomb_wraith",
+   "frost_golem"
+  ],
+  "rewards": {
+   "gold": 4200,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_36",
+  "once": true
+ },
+ {
+  "id": "tower_38",
+  "type": "tower",
+  "floor": 38,
+  "name": "Spire floor 38",
+  "element": "",
+  "energy": 0,
+  "level": 48,
+  "enemies": [
+   "tomb_wraith",
+   "lantern_acolyte",
+   "shadow_cutpurse",
+   "gloom_hound"
+  ],
+  "rewards": {
+   "gold": 4300,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_37",
+  "once": true
+ },
+ {
+  "id": "tower_39",
+  "type": "tower",
+  "floor": 39,
+  "name": "Spire floor 39",
+  "element": "",
+  "energy": 0,
+  "level": 49,
+  "enemies": [
+   "frost_golem",
+   "gilded_sentinel",
+   "lantern_acolyte",
+   "ember_brute"
+  ],
+  "rewards": {
+   "gold": 4400,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_38",
+  "once": true
+ },
+ {
+  "id": "tower_40",
+  "type": "tower",
+  "floor": 40,
+  "name": "Spire floor 40",
+  "element": "",
+  "energy": 0,
+  "level": 50,
+  "enemies": [
+   "wyrm_of_ash",
+   "tomb_wraith",
+   "shadow_cutpurse"
+  ],
+  "rewards": {
+   "gold": 4500,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 150,
+   "summon_ticket": 1
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_39",
+  "once": true
+ },
+ {
+  "id": "tower_41",
+  "type": "tower",
+  "floor": 41,
+  "name": "Spire floor 41",
+  "element": "",
+  "energy": 0,
+  "level": 51,
+  "enemies": [
+   "marsh_archer",
+   "thorn_spider",
+   "bog_shaman",
+   "grunt"
+  ],
+  "rewards": {
+   "gold": 4600,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_40",
+  "once": true
+ },
+ {
+  "id": "tower_42",
+  "type": "tower",
+  "floor": 42,
+  "name": "Spire floor 42",
+  "element": "",
+  "energy": 0,
+  "level": 52,
+  "enemies": [
+   "cinder_bat",
+   "grunt",
+   "ember_imp",
+   "ember_brute"
+  ],
+  "rewards": {
+   "gold": 4700,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_41",
+  "once": true
+ },
+ {
+  "id": "tower_43",
+  "type": "tower",
+  "floor": 43,
+  "name": "Spire floor 43",
+  "element": "",
+  "energy": 0,
+  "level": 53,
+  "enemies": [
+   "marsh_archer",
+   "frost_wisp",
+   "frost_golem",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 4800,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_42",
+  "once": true
+ },
+ {
+  "id": "tower_44",
+  "type": "tower",
+  "floor": 44,
+  "name": "Spire floor 44",
+  "element": "",
+  "energy": 0,
+  "level": 54,
+  "enemies": [
+   "tomb_wraith",
+   "shadow_cutpurse",
+   "gloom_hound",
+   "thorn_spider"
+  ],
+  "rewards": {
+   "gold": 4900,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_43",
+  "once": true
+ },
+ {
+  "id": "tower_45",
+  "type": "tower",
+  "floor": 45,
+  "name": "Spire floor 45",
+  "element": "",
+  "energy": 0,
+  "level": 55,
+  "enemies": [
+   "gilded_sentinel",
+   "bog_shaman",
+   "ember_imp",
+   "lantern_acolyte"
+  ],
+  "rewards": {
+   "gold": 5000,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_44",
+  "once": true
+ },
+ {
+  "id": "tower_46",
+  "type": "tower",
+  "floor": 46,
+  "name": "Spire floor 46",
+  "element": "",
+  "energy": 0,
+  "level": 56,
+  "enemies": [
+   "gloom_hound",
+   "ice_lurker",
+   "ember_brute",
+   "cinder_bat"
+  ],
+  "rewards": {
+   "gold": 5100,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_45",
+  "once": true
+ },
+ {
+  "id": "tower_47",
+  "type": "tower",
+  "floor": 47,
+  "name": "Spire floor 47",
+  "element": "",
+  "energy": 0,
+  "level": 57,
+  "enemies": [
+   "tomb_wraith",
+   "frost_golem",
+   "ice_lurker",
+   "gilded_sentinel"
+  ],
+  "rewards": {
+   "gold": 5200,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_46",
+  "once": true
+ },
+ {
+  "id": "tower_48",
+  "type": "tower",
+  "floor": 48,
+  "name": "Spire floor 48",
+  "element": "",
+  "energy": 0,
+  "level": 58,
+  "enemies": [
+   "shadow_cutpurse",
+   "gloom_hound",
+   "tomb_wraith",
+   "lantern_acolyte"
+  ],
+  "rewards": {
+   "gold": 5300,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_47",
+  "once": true
+ },
+ {
+  "id": "tower_49",
+  "type": "tower",
+  "floor": 49,
+  "name": "Spire floor 49",
+  "element": "",
+  "energy": 0,
+  "level": 59,
+  "enemies": [
+   "lantern_acolyte",
+   "ember_brute",
+   "frost_golem",
+   "gilded_sentinel"
+  ],
+  "rewards": {
+   "gold": 5400,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_48",
+  "once": true
+ },
+ {
+  "id": "tower_50",
+  "type": "tower",
+  "floor": 50,
+  "name": "Spire floor 50",
+  "element": "",
+  "energy": 0,
+  "level": 60,
+  "enemies": [
+   "glacial_matriarch",
+   "gilded_sentinel",
+   "ice_lurker"
+  ],
+  "rewards": {
+   "gold": 5500,
+   "xp": 0,
+   "materials": {}
+  },
+  "first_clear": {
+   "crystals": 150,
+   "summon_ticket": 1
+  },
+  "turn_limit_for_star": 30,
+  "requires": "tower_49",
+  "once": true
+ },
+ {
+  "id": "daily_flame_1",
+  "type": "daily",
+  "element": "flame",
+  "difficulty": 1,
+  "name": "Flame Sanctum 1",
+  "weekdays": [
+   1,
+   4,
+   0
+  ],
+  "energy": 8,
+  "level": 20,
+  "enemies": [
+   "ember_imp",
+   "ember_brute",
+   "cinder_bat",
+   "ember_imp"
+  ],
+  "rewards": {
+   "gold": 200,
+   "xp": 100,
+   "materials": {
+    "flame_shard": 4
+   }
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 24,
+  "requires": ""
+ },
+ {
+  "id": "daily_flame_2",
+  "type": "daily",
+  "element": "flame",
+  "difficulty": 2,
+  "name": "Flame Sanctum 2",
+  "weekdays": [
+   1,
+   4,
+   0
+  ],
+  "energy": 10,
+  "level": 40,
+  "enemies": [
+   "ember_imp",
+   "ember_brute",
+   "cinder_bat",
+   "ember_imp"
+  ],
+  "rewards": {
+   "gold": 400,
+   "xp": 200,
+   "materials": {
+    "flame_shard": 8,
+    "flame_core": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 24,
+  "requires": "daily_flame_1"
+ },
+ {
+  "id": "daily_flame_3",
+  "type": "daily",
+  "element": "flame",
+  "difficulty": 3,
+  "name": "Flame Sanctum 3",
+  "weekdays": [
+   1,
+   4,
+   0
+  ],
+  "energy": 12,
+  "level": 60,
+  "enemies": [
+   "ember_imp",
+   "ember_brute",
+   "cinder_bat",
+   "ember_imp"
+  ],
+  "rewards": {
+   "gold": 600,
+   "xp": 300,
+   "materials": {
+    "flame_shard": 12,
+    "flame_core": 2
+   }
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 24,
+  "requires": "daily_flame_2"
+ },
+ {
+  "id": "daily_frost_1",
+  "type": "daily",
+  "element": "frost",
+  "difficulty": 1,
+  "name": "Frost Sanctum 1",
+  "weekdays": [
+   2,
+   5,
+   0
+  ],
+  "energy": 8,
+  "level": 20,
+  "enemies": [
+   "frost_wisp",
+   "frost_golem",
+   "ice_lurker",
+   "frost_wisp"
+  ],
+  "rewards": {
+   "gold": 200,
+   "xp": 100,
+   "materials": {
+    "frost_shard": 4
+   }
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 24,
+  "requires": ""
+ },
+ {
+  "id": "daily_frost_2",
+  "type": "daily",
+  "element": "frost",
+  "difficulty": 2,
+  "name": "Frost Sanctum 2",
+  "weekdays": [
+   2,
+   5,
+   0
+  ],
+  "energy": 10,
+  "level": 40,
+  "enemies": [
+   "frost_wisp",
+   "frost_golem",
+   "ice_lurker",
+   "frost_wisp"
+  ],
+  "rewards": {
+   "gold": 400,
+   "xp": 200,
+   "materials": {
+    "frost_shard": 8,
+    "frost_core": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 24,
+  "requires": "daily_frost_1"
+ },
+ {
+  "id": "daily_frost_3",
+  "type": "daily",
+  "element": "frost",
+  "difficulty": 3,
+  "name": "Frost Sanctum 3",
+  "weekdays": [
+   2,
+   5,
+   0
+  ],
+  "energy": 12,
+  "level": 60,
+  "enemies": [
+   "frost_wisp",
+   "frost_golem",
+   "ice_lurker",
+   "frost_wisp"
+  ],
+  "rewards": {
+   "gold": 600,
+   "xp": 300,
+   "materials": {
+    "frost_shard": 12,
+    "frost_core": 2
+   }
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 24,
+  "requires": "daily_frost_2"
+ },
+ {
+  "id": "daily_verdant_1",
+  "type": "daily",
+  "element": "verdant",
+  "difficulty": 1,
+  "name": "Verdant Sanctum 1",
+  "weekdays": [
+   3,
+   6,
+   0
+  ],
+  "energy": 8,
+  "level": 20,
+  "enemies": [
+   "grunt",
+   "marsh_archer",
+   "thorn_spider",
+   "bog_shaman"
+  ],
+  "rewards": {
+   "gold": 200,
+   "xp": 100,
+   "materials": {
+    "verdant_shard": 4
+   }
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 24,
+  "requires": ""
+ },
+ {
+  "id": "daily_verdant_2",
+  "type": "daily",
+  "element": "verdant",
+  "difficulty": 2,
+  "name": "Verdant Sanctum 2",
+  "weekdays": [
+   3,
+   6,
+   0
+  ],
+  "energy": 10,
+  "level": 40,
+  "enemies": [
+   "grunt",
+   "marsh_archer",
+   "thorn_spider",
+   "bog_shaman"
+  ],
+  "rewards": {
+   "gold": 400,
+   "xp": 200,
+   "materials": {
+    "verdant_shard": 8,
+    "verdant_core": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 24,
+  "requires": "daily_verdant_1"
+ },
+ {
+  "id": "daily_verdant_3",
+  "type": "daily",
+  "element": "verdant",
+  "difficulty": 3,
+  "name": "Verdant Sanctum 3",
+  "weekdays": [
+   3,
+   6,
+   0
+  ],
+  "energy": 12,
+  "level": 60,
+  "enemies": [
+   "grunt",
+   "marsh_archer",
+   "thorn_spider",
+   "bog_shaman"
+  ],
+  "rewards": {
+   "gold": 600,
+   "xp": 300,
+   "materials": {
+    "verdant_shard": 12,
+    "verdant_core": 2
+   }
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 24,
+  "requires": "daily_verdant_2"
+ },
+ {
+  "id": "daily_radiant_1",
+  "type": "daily",
+  "element": "radiant",
+  "difficulty": 1,
+  "name": "Radiant Sanctum 1",
+  "weekdays": [
+   1,
+   3,
+   5,
+   0
+  ],
+  "energy": 8,
+  "level": 20,
+  "enemies": [
+   "lantern_acolyte",
+   "gilded_sentinel",
+   "lantern_acolyte",
+   "gilded_sentinel"
+  ],
+  "rewards": {
+   "gold": 200,
+   "xp": 100,
+   "materials": {
+    "radiant_shard": 4
+   }
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 24,
+  "requires": ""
+ },
+ {
+  "id": "daily_radiant_2",
+  "type": "daily",
+  "element": "radiant",
+  "difficulty": 2,
+  "name": "Radiant Sanctum 2",
+  "weekdays": [
+   1,
+   3,
+   5,
+   0
+  ],
+  "energy": 10,
+  "level": 40,
+  "enemies": [
+   "lantern_acolyte",
+   "gilded_sentinel",
+   "lantern_acolyte",
+   "gilded_sentinel"
+  ],
+  "rewards": {
+   "gold": 400,
+   "xp": 200,
+   "materials": {
+    "radiant_shard": 8,
+    "radiant_core": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 24,
+  "requires": "daily_radiant_1"
+ },
+ {
+  "id": "daily_radiant_3",
+  "type": "daily",
+  "element": "radiant",
+  "difficulty": 3,
+  "name": "Radiant Sanctum 3",
+  "weekdays": [
+   1,
+   3,
+   5,
+   0
+  ],
+  "energy": 12,
+  "level": 60,
+  "enemies": [
+   "lantern_acolyte",
+   "gilded_sentinel",
+   "lantern_acolyte",
+   "gilded_sentinel"
+  ],
+  "rewards": {
+   "gold": 600,
+   "xp": 300,
+   "materials": {
+    "radiant_shard": 12,
+    "radiant_core": 2
+   }
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 24,
+  "requires": "daily_radiant_2"
+ },
+ {
+  "id": "daily_umbral_1",
+  "type": "daily",
+  "element": "umbral",
+  "difficulty": 1,
+  "name": "Umbral Sanctum 1",
+  "weekdays": [
+   2,
+   4,
+   6,
+   0
+  ],
+  "energy": 8,
+  "level": 20,
+  "enemies": [
+   "tomb_wraith",
+   "shadow_cutpurse",
+   "gloom_hound",
+   "tomb_wraith"
+  ],
+  "rewards": {
+   "gold": 200,
+   "xp": 100,
+   "materials": {
+    "umbral_shard": 4
+   }
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 24,
+  "requires": ""
+ },
+ {
+  "id": "daily_umbral_2",
+  "type": "daily",
+  "element": "umbral",
+  "difficulty": 2,
+  "name": "Umbral Sanctum 2",
+  "weekdays": [
+   2,
+   4,
+   6,
+   0
+  ],
+  "energy": 10,
+  "level": 40,
+  "enemies": [
+   "tomb_wraith",
+   "shadow_cutpurse",
+   "gloom_hound",
+   "tomb_wraith"
+  ],
+  "rewards": {
+   "gold": 400,
+   "xp": 200,
+   "materials": {
+    "umbral_shard": 8,
+    "umbral_core": 1
+   }
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 24,
+  "requires": "daily_umbral_1"
+ },
+ {
+  "id": "daily_umbral_3",
+  "type": "daily",
+  "element": "umbral",
+  "difficulty": 3,
+  "name": "Umbral Sanctum 3",
+  "weekdays": [
+   2,
+   4,
+   6,
+   0
+  ],
+  "energy": 12,
+  "level": 60,
+  "enemies": [
+   "tomb_wraith",
+   "shadow_cutpurse",
+   "gloom_hound",
+   "tomb_wraith"
+  ],
+  "rewards": {
+   "gold": 600,
+   "xp": 300,
+   "materials": {
+    "umbral_shard": 12,
+    "umbral_core": 2
+   }
+  },
+  "first_clear": {
+   "crystals": 20
+  },
+  "turn_limit_for_star": 24,
+  "requires": "daily_umbral_2"
+ }
+]

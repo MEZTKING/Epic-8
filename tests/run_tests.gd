@@ -795,6 +795,89 @@ func test_area_skill_side_effects_apply_once() -> void:
 	check(immunity_lines == 1, "all-allies side effect applied once (got %d)" % immunity_lines)
 	check(ally.has_effect("immunity"), "ally still immune")
 
+# ---------------------------------------------------------------- milestone 7
+
+func test_stages_load() -> void:
+	check(StageDB.all().size() >= 200, "stages loaded")
+	check(StageDB.of_type("adventure").size() == 100 and StageDB.of_type("hunt").size() == 39, "adventure and hunt counts")
+	check(StageDB.of_type("tower").size() == 50 and StageDB.of_type("daily").size() == 15, "tower and daily counts")
+	var s := StageDB.get_stage("1-10")
+	check(s != null and s.enemies[0] == "wyrm_of_ash" and s.requires == "1-9", "chapter boss stage")
+	check(StageDB.get_stage("2-1").requires == "1-10", "chapter unlock chain")
+	check(StageDB.get_stage("10-10").level == 60, "late stages reach level 60")
+
+
+func test_stage_unlock_and_energy() -> void:
+	var p := PlayerProfile.new(1000)
+	var rng := RandomNumberGenerator.new(); rng.seed = 1
+	var s1 := StageDB.get_stage("1-1")
+	var s2 := StageDB.get_stage("1-2")
+	check(StageService.is_available(p, s1, 1000) and not StageService.is_available(p, s2, 1000), "only first stage open")
+	check(not StageService.start(p, s2, 1000, rng)["ok"], "locked stage refused")
+	p.energy = 3
+	check(not StageService.start(p, s1, 1000, rng)["ok"] and "energy" in StageService.last_error, "needs energy")
+	p.energy = 20
+	var r := StageService.start(p, s1, 1000, rng)
+	check(r["ok"] and p.energy == 15 and r["enemy"].size() == 2, "started: energy spent, enemies built")
+	check(r["enemy"][0].level == s1.level and r["enemy"][0].max_hp() < HeroDB.get_hero("grunt").max_stats["hp"], "enemies scaled to stage level")
+
+
+func test_stage_complete_rewards_and_stars() -> void:
+	var p := PlayerProfile.new(0)
+	var rng := RandomNumberGenerator.new(); rng.seed = 2
+	var k := p.add_hero("kaelen")
+	var s1 := StageDB.get_stage("1-1")
+	var loss := StageService.complete(p, s1, {"winner": 1, "turns": 10, "survivors": 0, "team_uids": [k.uid]}, rng)
+	check(not loss["won"] and not StageService.is_cleared(p, "1-1"), "loss grants nothing")
+	var gold := p.gold
+	var res := StageService.complete(p, s1, {"winner": 0, "turns": 5, "survivors": 1, "team_uids": [k.uid]}, rng)
+	check(res["won"] and res["stars"] == 3 and res["first_clear"], "3-star first clear")
+	check(p.gold == gold + int(s1.rewards["gold"]) and k.level > 1, "gold and xp granted")
+	check(p.crystals == PlayerProfile.STARTING_CRYSTALS + 30 and int(p.materials.get("verdant_shard", 0)) == 1, "first-clear bonus and materials")
+	check(StageService.is_cleared(p, "1-1") and StageService.is_unlocked(p, StageDB.get_stage("1-2")), "next stage unlocked")
+	var res2 := StageService.complete(p, s1, {"winner": 0, "turns": 50, "survivors": 0, "team_uids": [k.uid]}, rng)
+	check(res2["stars"] == 1 and not res2["first_clear"] and res2["bonus"].is_empty(), "repeat clear: 1 star, no bonus")
+	check(StageService.best_stars(p, "1-1") == 3, "best stars kept")
+
+
+func test_hunt_gear_drops() -> void:
+	var p := PlayerProfile.new(0)
+	var rng := RandomNumberGenerator.new(); rng.seed = 3
+	var h := StageDB.get_stage("hunt_wyrm_13")
+	var drops := 0
+	for _i in range(40):
+		var r := StageService.complete(p, h, {"winner": 0, "turns": 10, "survivors": 4, "team_uids": []}, rng)
+		if r["gear"] != null:
+			drops += 1
+			var g: Gear = r["gear"]
+			check(g.set_id in GearEconomy.CRAFTABLE_SETS["ash_scale"] and g.tier == 2, "hunt drops boss sets at tier 2")
+	check(drops >= 25, "high tier drops often (got %d/40)" % drops)
+	check(int(p.materials.get("ash_scale", 0)) > 0 and int(p.materials.get("crafting_alloy", 0)) > 0, "boss materials granted")
+
+
+func test_tower_once_and_daily_weekdays() -> void:
+	var p := PlayerProfile.new(0)
+	var rng := RandomNumberGenerator.new(); rng.seed = 4
+	var t1 := StageDB.get_stage("tower_1")
+	check(StageService.start(p, t1, 0, rng)["ok"] and p.energy == PlayerProfile.ENERGY_MAX_BASE, "tower costs no energy")
+	StageService.complete(p, t1, {"winner": 0, "turns": 10, "survivors": 4, "team_uids": []}, rng)
+	check(not StageService.is_available(p, t1, 0) and StageService.start(p, t1, 0, rng)["error"] == "already cleared", "tower floor is once-only")
+	check(StageService.is_available(p, StageDB.get_stage("tower_2"), 0), "next floor unlocked")
+	var flame := StageDB.get_stage("daily_flame_1")
+	var monday := 1700438400   # 2023-11-20 is a Monday
+	check(StageService.weekday(monday) == 1, "weekday helper")
+	check(flame.is_open_on(1) and not flame.is_open_on(2) and flame.is_open_on(0), "flame sanctum on Mon/Thu/Sun")
+	check(StageService.start(p, flame, monday, rng)["ok"], "open on Monday")
+	check(not StageService.start(p, flame, monday + 86400, rng)["ok"], "closed on Tuesday")
+
+
+func test_dialogue_loads() -> void:
+	var d := Dialogue.for_stage("1-1")
+	check(d != null and d.lines.size() >= 4, "chapter 1 intro attached to stage 1-1")
+	check(Dialogue.for_stage("1-10") != null, "chapter boss dialogue")
+	var p := PlayerProfile.new(0)
+	check(Dialogue.mark_seen(p, d.id) and not Dialogue.mark_seen(p, d.id), "dialogue seen once")
+
 # ---------------------------------------------------------------- gear
 
 func test_gear_roll_and_enhance() -> void:

@@ -108,13 +108,19 @@ Goal: first thing that looks like a game. Screenshot: `docs/battle_scene.png`.
 - ⬜ Per-hero sprites and skill VFX (blocked on art; see `docs/ART_SPEC.md`)
 - ⬜ Elemental advantage indicator on target hover
 
-## Milestone 7 — PvE content ⬜ (next)
-- ⬜ Adventure chapters (10 chapters × 10 stages), stage rewards, star ratings
-- ⬜ Boss hunts (gear farming, 13 difficulty tiers)
-- ⬜ Ascension tower, daily material dungeons
-- ⬜ Story delivery: dialogue scenes with portraits (original writing only)
+## Milestone 7 — PvE content ✅ (data and rules)
+- ✅ `tools/gen_stages.py` → `data/stages.json`: 10 chapters × 10 stages with chapter bosses,
+  3 hunts × 13 tiers with gear drops, 50 tower floors (once-only, ticket rewards), 15 daily
+  element dungeons on a weekday rota
+- ✅ `StageService`: unlock chain, weekday gating, energy cost, enemy level scaling, star grading
+  (win / no deaths / turn limit), gold/XP/material rewards, first-clear bonuses, boss-set gear drops,
+  progress flags; `listing()` for menus
+- ✅ Original story dialogue (`data/story/*.json`) with a loader keyed by stage; validator checks
+  speakers, stages, enemies, chapters
+- ⬜ Stage select and dialogue screens (Milestone 8)
+- ⬜ More chapters' story text; enemy variety per chapter is still small
 
-## Milestone 8 — Meta UI ⬜
+## Milestone 8 — Meta UI ⬜ (next)
 - ⬜ Lobby, hero list, hero detail (stats, skills, gear), team presets
 - ⬜ Quests/achievements, mail, settings, localization framework (CSV → Godot translations)
 - ⬜ Accessibility: scalable UI, colour-blind safe element icons

@@ -1,0 +1,13 @@
+{
+  "id": "ch1_intro",
+  "title": "The Ember Oath",
+  "lines": [
+    {"speaker": "Narrator", "text": "The Covenant was sworn under a sky of falling stars. Five lights, five oaths, one promise: that the world would not be left to the Hollow."},
+    {"speaker": "Kaelen Ashvow", "text": "Thornwick again. Every time the marsh floods, something older than the water comes up with it."},
+    {"speaker": "Seraphi", "text": "The wardens' lanterns went dark three nights ago. Whatever is out there, it is not afraid of light anymore."},
+    {"speaker": "Kaelen Ashvow", "text": "Then we remind it. Stay behind me, keep the others standing, and do not let me get clever."},
+    {"speaker": "Seraphi", "text": "You? Clever? I will try to notice when it happens."},
+    {"speaker": "Narrator", "text": "Something in the reeds answered with a sound like a drowned bell."}
+  ],
+  "after_stage": "1-1"
+}

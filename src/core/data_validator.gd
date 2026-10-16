@@ -47,7 +47,70 @@ static func validate() -> Array[String]:
 			errors.append("banner %s: no cost" % b.id)
 		if b.ends_at > 0 and b.ends_at <= b.starts_at:
 			errors.append("banner %s: ends before it starts" % b.id)
+	_validate_stages(errors)
+	_validate_dialogues(errors)
 	return errors
+
+
+static func _validate_stages(errors: Array[String]) -> void:
+	StageDB.load_all(true)
+	var stages := StageDB.all()
+	if stages.is_empty():
+		errors.append("no stages loaded")
+	var ids := {}
+	for s in stages:
+		var tag := "stage %s" % s.id
+		if ids.has(s.id):
+			errors.append("%s: duplicate id" % tag)
+		ids[s.id] = true
+		if not s.type in ["adventure", "hunt", "tower", "daily"]:
+			errors.append("%s: bad type %s" % [tag, s.type])
+		if s.enemies.is_empty() or s.enemies.size() > 4:
+			errors.append("%s: needs 1..4 enemies" % tag)
+		for e in s.enemies:
+			var h := HeroDB.get_hero(e)
+			if h == null:
+				errors.append("%s: unknown enemy %s" % [tag, e])
+			elif h.kind == "hero":
+				errors.append("%s: playable hero %s used as enemy" % [tag, e])
+		if s.level < 1 or s.level > Stats.MAX_LEVEL:
+			errors.append("%s: level out of range" % tag)
+		if s.energy < 0 or s.energy > 50:
+			errors.append("%s: energy out of range" % tag)
+		if s.boss != "" and (HeroDB.get_hero(s.boss) == null or HeroDB.get_hero(s.boss).kind != "boss"):
+			errors.append("%s: boss %s is not a boss unit" % [tag, s.boss])
+		if not s.gear_drop.is_empty():
+			var c := float(s.gear_drop.get("chance", -1.0))
+			if c < 0.0 or c > 1.0:
+				errors.append("%s: gear drop chance out of range" % tag)
+		for w in s.weekdays:
+			if w < 0 or w > 6:
+				errors.append("%s: bad weekday %d" % [tag, w])
+	for s in stages:
+		if s.requires != "" and not ids.has(s.requires):
+			errors.append("stage %s: requires unknown stage %s" % [s.id, s.requires])
+	for c in range(1, 11):
+		if StageDB.chapter(c).size() != 10:
+			errors.append("chapter %d does not have 10 stages" % c)
+
+
+static func _validate_dialogues(errors: Array[String]) -> void:
+	Dialogue.load_all(true)
+	for d in Dialogue.all():
+		if d.lines.is_empty():
+			errors.append("dialogue %s: no lines" % d.id)
+		if d.after_stage != "" and StageDB.get_stage(d.after_stage) == null:
+			errors.append("dialogue %s: after_stage %s does not exist" % [d.id, d.after_stage])
+		for l in d.lines:
+			if l["text"] == "":
+				errors.append("dialogue %s: empty line" % d.id)
+			if l["speaker"] != "Narrator":
+				var found := false
+				for h in HeroDB.all_heroes():
+					if h.name == l["speaker"]:
+						found = true
+				if not found:
+					errors.append("dialogue %s: unknown speaker %s" % [d.id, l["speaker"]])
 
 
 static func _validate_skill(s: SkillData, errors: Array[String]) -> void:

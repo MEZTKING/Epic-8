@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Generates placeholder portrait SVGs for every unit in data/heroes.json.
 
-Placeholders are deliberately abstract (element colour, initials, rarity pips)
+Placeholders are deliberately abstract (element colour, kind shape, rarity pips;
+initials are drawn by the UI because Godot's SVG importer does not render text)
 so nothing here resembles any existing game's art. Replace with commissioned
 art per docs/ART_SPEC.md; keep the same file names.
 """
@@ -45,7 +46,6 @@ def svg(unit, size=256):
 <defs><radialGradient id="g" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="{light}"/><stop offset="1" stop-color="{dark}"/></radialGradient></defs>
 <rect width="{size}" height="{size}" rx="24" fill="#1b1f3a"/>
 {shape(kind, size)}
-<text x="{size/2}" y="{size/2 + 22}" font-family="Georgia, serif" font-size="80" font-weight="bold" text-anchor="middle" fill="#fff" stroke="#111" stroke-width="2">{initials(unit["name"])}</text>
 {stars}
 </svg>
 '''

@@ -92,16 +92,23 @@ Goal: adding a hero takes 15 minutes and no engine changes.
 - ⬜ Decision still open: paid crystals vs premium one-time purchase. Both paths are supported by the
   code; the store page and age rating depend on the choice (see LEGAL_NOTES)
 
-## Milestone 6 — Battle presentation ⬜ (next)
-Goal: first thing that looks like a game.
+## Milestone 6 — Battle presentation ✅ (first playable)
+Goal: first thing that looks like a game. Screenshot: `docs/battle_scene.png`.
 
-- ⬜ 2D battle scene: 4v4 layout, HP bars, turn-order bar driven by the gauge
-- ⬜ Skill buttons, target selection, auto/manual toggle, 1x/2x/3x speed
-- ⬜ Skill animation pipeline: AnimationPlayer per hero + VFX scenes
-- ⬜ Damage numbers, status icons, elemental advantage indicator
-- ⬜ Controller and keyboard navigation (Steam Deck verification needs this)
+- ✅ Battle scene (`scenes/battle/`): 4v4 cards with portrait, HP, barrier, gauge, status tags;
+  turn-order bar from `projected_order()`; scrolling log; result overlay
+- ✅ Skill buttons with cooldown/Resolve labels, click or key target selection, Resolve toggle,
+  auto/manual toggle, 1x/2x/3x speed, retreat
+- ✅ Floating damage/heal/effect text, crit emphasis, barrier absorption shown, lunge and flash tweens
+- ✅ Keyboard and controller actions (skill_1..3, cycle_target, confirm_action, toggle_auto,
+  toggle_resolve, cycle_speed) in `project.godot`
+- ✅ `Game` autoload hands teams to the battle scene and receives the result (with replay)
+- ✅ Scene smoke test plays a full battle headless (`tests/scene_smoke.gd`); screenshot driver
+  (`tests/screenshot.gd`, runs under xvfb)
+- ⬜ Per-hero sprites and skill VFX (blocked on art; see `docs/ART_SPEC.md`)
+- ⬜ Elemental advantage indicator on target hover
 
-## Milestone 7 — PvE content ⬜
+## Milestone 7 — PvE content ⬜ (next)
 - ⬜ Adventure chapters (10 chapters × 10 stages), stage rewards, star ratings
 - ⬜ Boss hunts (gear farming, 13 difficulty tiers)
 - ⬜ Ascension tower, daily material dungeons

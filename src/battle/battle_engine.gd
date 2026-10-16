@@ -133,6 +133,31 @@ func next_actor() -> BattleUnit:
 	return best
 
 
+## Predicts the next `count` actors without changing any state. Used by the
+## turn-order bar. Ignores future gauge pushes and speed changes.
+func projected_order(count: int) -> Array[BattleUnit]:
+	var gauges := {}
+	var alive: Array[BattleUnit] = []
+	for u in units:
+		if u.alive:
+			alive.append(u)
+			gauges[u] = u.gauge
+	var out: Array[BattleUnit] = []
+	while out.size() < count and not alive.is_empty():
+		var best: BattleUnit = null
+		var best_time := INF
+		for u in alive:
+			var t: float = (GAUGE_MAX - float(gauges[u])) / maxf(u.stat("spd"), 1.0)
+			if t < best_time - 0.000001 or (absf(t - best_time) <= 0.000001 and best != null and _tie_break(u, best)):
+				best = u
+				best_time = t
+		for u in alive:
+			gauges[u] = minf(float(gauges[u]) + u.stat("spd") * best_time, GAUGE_MAX)
+		gauges[best] = 0.0
+		out.append(best)
+	return out
+
+
 func _tie_break(a: BattleUnit, b: BattleUnit) -> bool:
 	if a.stat("spd") != b.stat("spd"):
 		return a.stat("spd") > b.stat("spd")
@@ -380,6 +405,7 @@ func use_skill(actor: BattleUnit, skill_index: int, targets: Array[BattleUnit], 
 				actor.add_effect(ef["id"], int(ef.get("turns", 1)))
 
 	var total_damage := 0.0
+	var first_target := true
 	for t in targets:
 		var r := {"target": t, "damage": 0.0, "absorbed": 0.0, "heal": 0.0, "crit": false, "effects": []}
 		if skill.is_damage() and t.team != actor.team:
@@ -413,7 +439,11 @@ func use_skill(actor: BattleUnit, skill_index: int, targets: Array[BattleUnit], 
 		if skill.gauge_push > 0.0 and t.team == actor.team and t.alive:
 			t.push_gauge(skill.gauge_push)
 		for ef in skill.effects:
-			_apply_effect(actor, t, ef, r)
+			# Effects aimed at the hit unit apply per target; anything else
+			# (self, all allies, all enemies, ...) applies once per skill use.
+			if ef.get("target", "hit") == "hit" or first_target:
+				_apply_effect(actor, t, ef, r)
+		first_target = false
 		results.append(r)
 
 	var lifesteal := actor.gear_flag_value("lifesteal")

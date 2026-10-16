@@ -12,6 +12,7 @@ func _ready() -> void:
 	%SummonButton.pressed.connect(_on_summon)
 	%RosterButton.pressed.connect(_on_roster)
 	%ProfileButton.pressed.connect(_on_profile)
+	%OpenBattleButton.pressed.connect(_on_open_battle)
 	_on_roster()
 
 
@@ -105,3 +106,12 @@ func _on_profile() -> void:
 	if back != null:
 		var unit := back.build_team([first.uid], 0)[0]
 		log_box.append_text("Rebuilt battle unit: %s HP %d flags %s\n" % [unit.display_name(), unit.max_hp(), unit.flags])
+
+
+func _on_open_battle() -> void:
+	var pb := DemoTeams.default_battle(int(seed_spin.value))
+	var game := get_node_or_null("/root/Game")
+	if game != null:
+		game.start_battle(pb["player"], pb["enemy"], int(seed_spin.value), false)
+	else:
+		get_tree().change_scene_to_file("res://scenes/battle/battle_scene.tscn")

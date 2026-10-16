@@ -762,6 +762,39 @@ func test_disclosure_text() -> void:
 	check("Kaelen Ashvow" in text, "pool lists heroes")
 	check(not ("Marsh Grunt" in text), "pool excludes enemies")
 
+# ---------------------------------------------------------------- milestone 6
+
+func test_projected_order_matches_engine() -> void:
+	var engine := BattleEngine.new(3)
+	var p: Array[BattleUnit] = [_unit("kaelen", 0, 0), _unit("vexmoor", 0, 1)]
+	var e: Array[BattleUnit] = [_unit("thorne", 1, 0), _unit("mira", 1, 1)]
+	engine.setup(p, e)
+	var predicted := engine.projected_order(4)
+	check(predicted.size() == 4 and predicted[0] == p[1] and predicted[1] == e[1], "fastest first: vexmoor then mira")
+	var gauges_before := []
+	for u in engine.units:
+		gauges_before.append(u.gauge)
+	engine.projected_order(8)
+	for i in engine.units.size():
+		check(engine.units[i].gauge == gauges_before[i], "projection does not mutate gauges")
+	# With no gauge pushes in play, the first predicted actor is the real next actor.
+	var actual := engine.next_actor()
+	check(actual == predicted[0], "prediction matches next_actor")
+
+func test_area_skill_side_effects_apply_once() -> void:
+	var engine := BattleEngine.new(4)
+	var ils := _unit("ilsabet", 0, 0)
+	var ally := _unit("mira", 0, 1)
+	var e: Array[BattleUnit] = [_unit("grunt", 1, 0), _unit("grunt", 1, 1), _unit("grunt", 1, 2)]
+	engine.setup([ils, ally], e)
+	engine.use_skill(ils, 2, engine.resolve_targets(ils, ils.skill(2), null))
+	var immunity_lines := 0
+	for l in engine.log_lines:
+		if "Mira Frostwhisper(P1) gains Immunity" in l:
+			immunity_lines += 1
+	check(immunity_lines == 1, "all-allies side effect applied once (got %d)" % immunity_lines)
+	check(ally.has_effect("immunity"), "ally still immune")
+
 # ---------------------------------------------------------------- gear
 
 func test_gear_roll_and_enhance() -> void:

@@ -80,14 +80,19 @@ Goal: adding a hero takes 15 minutes and no engine changes.
 - ✅ Gear magnitudes checked against a real endgame account export (`docs/CALIBRATION.md`)
 - ✅ Five new sets: Pierce, Wrath, Aegis, Bastion, Reckless; tier-2 scaling split (main ×1.05, subs ×1.25)
 
-## Milestone 5 — Summoning and store ⬜ (next)
-- ⬜ Banner definitions (featured hero, rotation dates, rate-up)
-- ⬜ Mileage/exchange currency alongside hard pity
-- ⬜ Rate disclosure panel (mandatory for Steam and most jurisdictions)
-- ⬜ Free pull timers, daily/weekly reward loops
-- ⬜ Decide: real-money purchases vs premium one-time purchase (see LEGAL_NOTES)
+## Milestone 5 — Summoning and store ✅
+- ✅ Banner definitions in `data/banners.json`: featured hero, time windows, rate-up, ticket item, free-pull interval
+- ✅ `SummonService`: pays with free pull / tickets / crystals, per-banner pity persisted in the profile,
+  mileage per pull, summon statistics; validator checks banners
+- ✅ Mileage exchange in the store (tickets, 5★ selector) alongside the hard pity
+- ✅ Rate disclosure text generator (rates, featured share, pity rule, pool listing)
+- ✅ Store offers with daily/weekly/once limits; real-money products behind a `PurchaseProvider`
+  interface with receipt de-duplication (Steam provider in Milestone 9)
+- ✅ Daily login rewards with 7-day cycle and streaks
+- ⬜ Decision still open: paid crystals vs premium one-time purchase. Both paths are supported by the
+  code; the store page and age rating depend on the choice (see LEGAL_NOTES)
 
-## Milestone 6 — Battle presentation ⬜
+## Milestone 6 — Battle presentation ⬜ (next)
 Goal: first thing that looks like a game.
 
 - ⬜ 2D battle scene: 4v4 layout, HP bars, turn-order bar driven by the gauge

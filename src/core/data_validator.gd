@@ -37,6 +37,16 @@ static func validate() -> Array[String]:
 	for s in skills:
 		if not used.has(s.id):
 			errors.append("skill %s is not used by any hero" % s.id)
+	BannerDB.load_all(true)
+	for b in BannerDB.all():
+		if b.type == "featured" and HeroDB.get_hero(b.featured_id) == null:
+			errors.append("banner %s: featured hero '%s' does not exist" % [b.id, b.featured_id])
+		if b.type == "featured" and (b.rate_up <= 0.0 or b.rate_up > 1.0):
+			errors.append("banner %s: rate_up out of range" % b.id)
+		if b.cost.is_empty():
+			errors.append("banner %s: no cost" % b.id)
+		if b.ends_at > 0 and b.ends_at <= b.starts_at:
+			errors.append("banner %s: ends before it starts" % b.id)
 	return errors
 
 

@@ -657,6 +657,111 @@ func test_tier_scaling() -> void:
 	var k: String = t1.substats.keys()[0]
 	check(float(t2.substats[k]) > float(t1.substats[k]) * 1.15, "tier 2 substat rolls ~+25%")
 
+# ---------------------------------------------------------------- milestone 5
+
+func test_banners_load_and_schedule() -> void:
+	check(BannerDB.all().size() >= 3, "banners loaded")
+	var limited := BannerDB.get_banner("halvard_call")
+	check(not limited.is_active(limited.starts_at - 1) and limited.is_active(limited.starts_at) and not limited.is_active(limited.ends_at), "time window")
+	check(BannerDB.get_banner("standard").is_active(0) and BannerDB.get_banner("standard").is_active(4000000000), "permanent banner always active")
+	check(BannerDB.active(1800000000).size() == 3 and BannerDB.active(100).size() == 2, "active list respects windows")
+
+
+func test_summon_service_payment_and_pity() -> void:
+	var p := PlayerProfile.new(0)
+	var rng := RandomNumberGenerator.new(); rng.seed = 99
+	var b := BannerDB.get_banner("elowen_call")
+	p.crystals = 950
+	var r := SummonService.pull(p, b, 10, 1000, rng)
+	check(not r["ok"] and "crystals" in r["error"], "10-pull refused without 1000 crystals")
+	p.crystals = 1000
+	r = SummonService.pull(p, b, 10, 1000, rng)
+	check(r["ok"] and r["results"].size() == 10 and p.crystals == 0 and p.heroes.size() == 10, "10-pull paid and granted")
+	check(p.mileage == 10 and int(p.flags["summon_stats"]["total"]) == 10, "mileage and stats recorded")
+	var all_results: Array = r["results"].duplicate()
+	p.grant({"summon_ticket": 3, "crystals": 200})
+	r = SummonService.pull(p, b, 5, 1000, rng)
+	check(r["ok"] and r["paid"].get("summon_ticket", 0) == 3 and r["paid"].get("crystals", 0) == 200, "tickets used before crystals")
+	all_results.append_array(r["results"])
+	var expected_pity := 0
+	for res in all_results:
+		expected_pity = 0 if res["featured"] else expected_pity + 1
+	check(SummonService.pity_counter(p, b) == expected_pity, "pity persisted across calls (expected %d)" % expected_pity)
+	p.flags["pity"][b.id] = SummonSystem.HARD_PITY - 1
+	p.grant({"crystals": 100})
+	r = SummonService.pull(p, b, 1, 1000, rng)
+	check(r["ok"] and r["results"][0]["hero_id"] == "elowen" and r["results"][0]["pity"], "hard pity from persisted counter")
+	check(SummonService.pity_counter(p, b) == 0, "pity reset after featured")
+	var inactive := BannerDB.get_banner("halvard_call")
+	check(not SummonService.pull(p, inactive, 1, 1000, rng)["ok"], "inactive banner refused")
+
+
+func test_summon_free_pull() -> void:
+	var p := PlayerProfile.new(0)
+	var rng := RandomNumberGenerator.new(); rng.seed = 5
+	var b := BannerDB.get_banner("standard")
+	p.crystals = 0
+	check(SummonService.free_pull_ready(p, b, 1000), "free pull available at start")
+	var r := SummonService.pull(p, b, 1, 1000, rng)
+	check(r["ok"] and r["free"] and p.heroes.size() == 1, "free pull granted without crystals")
+	check(not SummonService.pull(p, b, 1, 2000, rng)["ok"], "second free pull refused same day")
+	check(SummonService.pull(p, b, 1, 1000 + 86400, rng)["ok"], "free pull again after interval")
+	check(not SummonService.pull(p, b, 10, 1000 + 86400 * 2, rng)["ok"], "free pull never covers a multi")
+
+
+func test_store_offers_and_limits() -> void:
+	var p := PlayerProfile.new(0)
+	var day := 1700000000
+	p.crystals = 1000
+	check(Store.remaining(p, "gold_small", day) == 5, "daily limit 5")
+	for _i in range(5):
+		check(Store.buy(p, "gold_small", day), "buy gold pouch")
+	check(not Store.buy(p, "gold_small", day) and Store.last_error == "purchase limit reached", "6th refused")
+	check(Store.buy(p, "gold_small", day + 86400), "limit resets next day")
+	check(p.gold == PlayerProfile.STARTING_GOLD + 6 * 25000 and p.crystals == 1000 - 300, "rewards and costs applied")
+	check(not Store.buy(p, "nonexistent", day), "unknown offer")
+	p.mileage = 25
+	check(Store.buy(p, "mileage_ticket", day) and Store.buy(p, "mileage_ticket", day) and not Store.buy(p, "mileage_ticket", day), "mileage exchange")
+	check(p.materials["summon_ticket"] == 2 and p.mileage == 5, "tickets granted")
+	check(Store.buy(p, "starter_pack", day) and not Store.buy(p, "starter_pack", day + 86400 * 400), "once-only offer")
+
+
+func test_store_receipts() -> void:
+	var p := PlayerProfile.new(0)
+	var before := p.crystals
+	check(Store.apply_purchase(p, "crystals_m", "rcpt-1"), "purchase applied")
+	check(p.crystals == before + 1400, "crystals plus bonus granted")
+	check(not Store.apply_purchase(p, "crystals_m", "rcpt-1") and Store.last_error == "receipt already applied", "replayed receipt rejected")
+	check(not Store.apply_purchase(p, "crystals_m", ""), "empty receipt rejected")
+	var provider := PurchaseProvider.Offline.new()
+	var got: Array = []
+	provider.purchase_completed.connect(func(pid, rid): got.append([pid, rid]))
+	check(not provider.start_purchase("crystals_s") and got.is_empty(), "offline provider fails by default")
+	provider.auto_complete = true
+	check(provider.start_purchase("crystals_s") and got.size() == 1 and Store.apply_purchase(p, got[0][0], got[0][1]), "dev provider completes with receipt")
+
+
+func test_daily_rewards() -> void:
+	var p := PlayerProfile.new(0)
+	var day := 1700000000
+	var r1 := DailyRewards.claim(p, day)
+	check(not r1.is_empty() and DailyRewards.streak(p) == 1, "first claim")
+	check(DailyRewards.claim(p, day + 3600).is_empty(), "same day cannot claim twice")
+	check(not DailyRewards.claim(p, day + 86400).is_empty() and DailyRewards.streak(p) == 2, "consecutive day extends streak")
+	check(not DailyRewards.claim(p, day + 86400 * 4).is_empty() and DailyRewards.streak(p) == 1, "gap resets streak")
+	for i in range(1, 8):
+		DailyRewards.claim(p, day + 86400 * (4 + i))
+	check(DailyRewards.streak(p) == 8, "streak continues past 7 and cycle wraps")
+	check(p.materials.get("summon_ticket", 0) >= 3, "cycle rewards granted (tickets)")
+
+
+func test_disclosure_text() -> void:
+	var text := SummonService.disclosure(BannerDB.get_banner("elowen_call"))
+	check("1.50%" in text and "5.00%" in text and "93.50%" in text, "rates listed")
+	check("120" in text and "Elowen Starbright" in text, "pity and featured named")
+	check("Kaelen Ashvow" in text, "pool lists heroes")
+	check(not ("Marsh Grunt" in text), "pool excludes enemies")
+
 # ---------------------------------------------------------------- gear
 
 func test_gear_roll_and_enhance() -> void:

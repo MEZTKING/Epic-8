@@ -36,6 +36,7 @@ const SUB_ROLL := {
 
 const MAX_ENHANCE := 15
 
+var uid: String = ""          # unique id inside a player profile ("" until added)
 var slot: Slot
 var rarity: int = 3           # 2..5 stars; determines starting substat count
 var set_id: String = "swift"
@@ -56,13 +57,14 @@ func slot_name() -> String:
 
 func to_dict() -> Dictionary:
 	return {
-		"slot": slot, "rarity": rarity, "set_id": set_id, "level": level,
+		"uid": uid, "slot": slot, "rarity": rarity, "set_id": set_id, "level": level,
 		"main_stat": main_stat, "substats": substats.duplicate(), "tier": tier,
 	}
 
 
 static func from_dict(d: Dictionary) -> Gear:
 	var g := Gear.new()
+	g.uid = str(d.get("uid", ""))
 	g.slot = int(d["slot"]) as Slot
 	g.rarity = int(d.get("rarity", 3))
 	g.set_id = str(d.get("set_id", "swift"))

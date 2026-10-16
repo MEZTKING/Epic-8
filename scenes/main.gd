@@ -11,6 +11,7 @@ func _ready() -> void:
 	%BattleButton.pressed.connect(_on_battle)
 	%SummonButton.pressed.connect(_on_summon)
 	%RosterButton.pressed.connect(_on_roster)
+	%ProfileButton.pressed.connect(_on_profile)
 	_on_roster()
 
 
@@ -73,3 +74,34 @@ func _on_summon() -> void:
 	for row in SummonSystem.rate_table():
 		log_box.append_text("%d★ %.2f%%  " % [row["rarity"], row["rate"] * 100.0])
 	log_box.append_text("| hard pity at %d\n" % SummonSystem.HARD_PITY)
+
+
+func _on_profile() -> void:
+	log_box.clear()
+	var now := int(Time.get_unix_time_from_system())
+	var p := PlayerProfile.new(now)
+	var rng := RandomNumberGenerator.new()
+	rng.seed = int(seed_spin.value)
+	log_box.append_text("[b]Profile demo[/b]\n")
+	var summons := SummonSystem.new(int(seed_spin.value), "elowen")
+	for r in summons.pull_many(10):
+		p.add_hero(r["hero_id"])
+	p.crystals -= 10 * SummonSystem.COST_PER_PULL
+	var first: HeroInstance = p.heroes.values()[0]
+	first.add_xp(Progression.total_xp_to(first.level_cap()))
+	for slot in range(6):
+		var g := p.add_gear(GearGenerator.roll(rng, slot as Gear.Slot, 4, "swift"))
+		for _i in range(6):
+			GearGenerator.enhance(rng, g)
+		p.equip(first.uid, g.uid)
+	p.grant({"%s_shard" % first.data().element_name().to_lower(): 30, "gold": 20000})
+	p.awaken(first.uid)
+	var st := p.hero_stats(first.uid)
+	log_box.append_text("Owned heroes: %d | gold %d | crystals %d\n" % [p.heroes.size(), p.gold, p.crystals])
+	log_box.append_text("%s %d★ L%d awakening %d | ATK %d DEF %d HP %d SPD %d\n" % [first.data().name, first.stars, first.level, first.awakening, st["atk"], st["def"], st["hp"], st["spd"]])
+	var ok := SaveSystem.save(p)
+	var back := SaveSystem.load()
+	log_box.append_text("Saved to %s: %s | reloaded: %s\n" % [ProjectSettings.globalize_path(SaveSystem.SAVE_PATH), ok, back != null])
+	if back != null:
+		var unit := back.build_team([first.uid], 0)[0]
+		log_box.append_text("Rebuilt battle unit: %s HP %d flags %s\n" % [unit.display_name(), unit.max_hp(), unit.flags])

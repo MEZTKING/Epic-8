@@ -455,6 +455,105 @@ func test_boss_rotation_battle() -> void:
 	check(w != -1, "boss battle completes")
 	check("Molten Hide" in "\n".join(engine.log_lines), "boss passive fired")
 
+# ---------------------------------------------------------------- milestone 3
+
+func test_xp_curve_and_caps() -> void:
+	check(Progression.xp_for_level(2) > Progression.xp_for_level(1), "xp grows")
+	check(Progression.level_cap(3) == 30 and Progression.level_cap(6) == 60, "level caps")
+	var h := HeroInstance.create("bramble")   # 3-star
+	check(h.stars == 3 and h.level == 1, "fresh hero")
+	var gained := h.add_xp(Progression.total_xp_to(10))
+	check(gained == 9 and h.level == 10 and h.xp == 0, "exact xp reaches level 10 (got L%d +%d)" % [h.level, gained])
+	h.add_xp(10_000_000)
+	check(h.level == 30 and h.xp == 0 and h.is_max_level(), "xp caps at level 30 for 3 stars")
+
+
+func test_promotion() -> void:
+	var p := PlayerProfile.new(0)
+	var target := p.add_hero("bramble")
+	var f1 := p.add_hero("bramble")
+	var f2 := p.add_hero("grunt")
+	var f3 := p.add_hero("oskar")
+	check(not p.promote(target.uid, [f1.uid, f2.uid, f3.uid]), "cannot promote below max level")
+	target.add_xp(10_000_000)
+	check(not p.promote(target.uid, [f1.uid, f2.uid]), "needs 3 fodder for 3 stars")
+	f3.locked = true
+	check(not p.promote(target.uid, [f1.uid, f2.uid, f3.uid]), "locked fodder rejected")
+	f3.locked = false
+	check(not p.promote(target.uid, [f1.uid, f2.uid, f3.uid]), "cannot afford promotion gold")
+	p.grant({"gold": 50000})
+	var gold := p.gold
+	check(p.promote(target.uid, [f1.uid, f2.uid, f3.uid]), "promotion succeeds")
+	check(target.stars == 4 and target.level == 1 and target.level_cap() == 40, "promoted to 4 stars")
+	check(p.heroes.size() == 1 and p.gold == gold - Progression.PROMOTION_GOLD[3], "fodder consumed and gold spent")
+
+
+func test_awakening_and_bonds() -> void:
+	var p := PlayerProfile.new(0)
+	var k := p.add_hero("kaelen")
+	var base := p.hero_stats(k.uid)
+	check(not p.awaken(k.uid), "cannot awaken without materials")
+	p.grant({"flame_shard": 300, "flame_core": 100, "gold": 1000000})
+	check(p.awaken(k.uid) and k.awakening == 1, "awakening 1")
+	var after := p.hero_stats(k.uid)
+	check(after["atk"] > base["atk"] and after["hp"] > base["hp"], "awakening raises stats")
+	for _i in range(10):
+		p.awaken(k.uid)
+	check(k.awakening == Progression.MAX_AWAKENING, "awakening caps at 6")
+	var dupe := p.add_hero("kaelen")
+	var wrong := p.add_hero("mira")
+	check(not p.merge_bond(k.uid, wrong.uid), "bond needs the same hero")
+	check(p.merge_bond(k.uid, dupe.uid) and k.bond_level == 1, "bond merged")
+	check(p.get_hero(dupe.uid) == null, "dupe consumed")
+	var team := p.build_team([k.uid, wrong.uid], 0)
+	var solo_stats := p.hero_stats(wrong.uid)
+	check(team[1].base_stats["atk"] > solo_stats["atk"], "bond raises ally atk team-wide")
+
+
+func test_profile_gear_and_energy() -> void:
+	var p := PlayerProfile.new(1000)
+	var rng := RandomNumberGenerator.new(); rng.seed = 3
+	var k := p.add_hero("kaelen")
+	var m := p.add_hero("mira")
+	var w := p.add_gear(GearGenerator.roll(rng, Gear.Slot.WEAPON, 5, "might"))
+	check(p.equip(k.uid, w.uid) and p.gear_owner(w.uid) == k.uid, "equip weapon")
+	check(p.hero_stats(k.uid)["atk"] > HeroInstance.create("kaelen").compute_stats([])["atk"], "weapon adds atk")
+	check(p.equip(m.uid, w.uid) and p.gear_owner(w.uid) == m.uid and not k.equipped.has(int(Gear.Slot.WEAPON)), "equipping elsewhere moves the item")
+	check(p.set_team("A", [k.uid, m.uid]) and not p.set_team("B", [k.uid, k.uid]), "team validation")
+	p.energy = 0
+	p.regen_energy(1000 + PlayerProfile.ENERGY_REGEN_SECONDS * 3 + 10)
+	check(p.energy == 3, "regen 3 energy (got %d)" % p.energy)
+	p.regen_energy(1000 + PlayerProfile.ENERGY_REGEN_SECONDS * 4)
+	check(p.energy == 4, "partial tick carried over")
+	p.regen_energy(10_000_000)
+	check(p.energy == p.energy_max, "regen caps")
+	check(not p.spend({"gold": 999999999}) and p.spend({"gold": 100, "energy": 10}), "spend validation")
+
+
+func test_save_roundtrip_and_tamper() -> void:
+	var p := PlayerProfile.new(5)
+	var rng := RandomNumberGenerator.new(); rng.seed = 8
+	var k := p.add_hero("kaelen")
+	k.add_xp(50000)
+	k.set_skill_level(0, 2)
+	var g := p.add_gear(GearGenerator.roll(rng, Gear.Slot.BOOTS, 4, "swift"))
+	p.equip(k.uid, g.uid)
+	p.set_team("main", [k.uid])
+	p.grant({"frost_shard": 7})
+	var text := SaveSystem.encode(p)
+	var back := SaveSystem.decode(text)
+	check(back != null, "decode ok: %s" % SaveSystem.last_error)
+	if back != null:
+		check(back.get_hero(k.uid).level == k.level and back.get_hero(k.uid).skill_levels[0] == 2, "hero restored")
+		check(back.get_gear(g.uid).main_stat == g.main_stat and back.gear_owner(g.uid) == k.uid, "gear restored and equipped")
+		check(back.teams["main"] == [k.uid] and back.materials["frost_shard"] == 7, "teams and materials restored")
+		check(back.new_uid("h") != k.uid, "uid counter restored")
+	var tampered := text.replace('\\"gold\\":', '\\"gold\\":9')
+	check(tampered != text and SaveSystem.decode(tampered) == null, "edited save rejected (%s)" % SaveSystem.last_error)
+	var path := "user://test_save.json"
+	check(SaveSystem.save(p, path) and SaveSystem.load(path) != null, "file save/load")
+	DirAccess.remove_absolute(ProjectSettings.globalize_path(path))
+
 # ---------------------------------------------------------------- gear
 
 func test_gear_roll_and_enhance() -> void:

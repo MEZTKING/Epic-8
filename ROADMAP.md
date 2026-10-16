@@ -57,14 +57,16 @@ Goal: adding a hero takes 15 minutes and no engine changes.
   lowest_hp/highest_atk/lowest_def/random; bosses rotate skills and carry passives
 - ✅ Defense-scaling damage for knights
 
-## Milestone 3 — Progression ⬜ (next)
-- ⬜ Hero levels and experience, rarity promotion (3★→6★), level caps per rarity
-- ⬜ Awakening tiers using element materials
-- ⬜ Bonds (party-wide passive from duplicate heroes)
-- ⬜ Player profile, inventory, currencies (gold, premium crystals, energy)
-- ⬜ Save/load: local JSON with checksum; cloud save via Steam Cloud
+## Milestone 3 — Progression ✅
+- ✅ Hero levels and XP curve, star promotion 3★→6★ with same-star fodder and gold, level caps per star
+- ✅ Awakening tiers 1–6 using element shards/cores and gold, cumulative stat bonuses
+- ✅ Bonds: duplicate merge raises a role-based stat for the whole team (max 5)
+- ✅ Player profile: gold, crystals, mileage, energy with timed regen, materials, heroes, gear, team presets
+- ✅ Equip/unequip with ownership transfer; `build_team()` produces battle units with gear, skill levels and bonds
+- ✅ Save/load to `user://save.json` with checksum, backup file, tamper detection; 44 tests
+- ⬜ Steam Cloud sync (Milestone 9, needs GodotSteam)
 
-## Milestone 4 — Gear economy ⬜
+## Milestone 4 — Gear economy ⬜ (next)
 - ⬜ Inventory UI, equip/unequip, compare panel
 - ⬜ Enhancement cost curve, reforge at +15, gear conversion
 - ⬜ Crafting from boss materials

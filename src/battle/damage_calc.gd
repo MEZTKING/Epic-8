@@ -34,7 +34,14 @@ static func compute(attacker: BattleUnit, defender: BattleUnit, skill: SkillData
 		dmg *= attacker.stat("crit_dmg")
 	if adv > 0:
 		dmg *= ADV_DMG_MULT
-	dmg *= mitigation(defender.stat("def"))
+	var wrath := attacker.gear_flag_value("wrath")
+	if wrath > 0.0 and defender.has_any_debuff():
+		dmg *= 1.0 + wrath
+	var reckless := attacker.gear_flag_value("reckless")
+	if reckless > 0.0:
+		dmg *= 1.0 + reckless
+	var pierce := attacker.gear_flag_value("pierce")
+	dmg *= mitigation(defender.stat("def") * (1.0 - pierce))
 	dmg *= 1.0 + rng.randf_range(-VARIANCE, VARIANCE)
 	return {"damage": maxf(roundf(dmg), 1.0), "crit": crit, "advantage": adv}
 

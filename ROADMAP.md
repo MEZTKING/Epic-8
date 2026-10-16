@@ -76,6 +76,10 @@ Goal: adding a hero takes 15 minutes and no engine changes.
 - ✅ Lifesteal/counter/dual set behaviours (done in Milestone 1)
 - ➡ Inventory, equip and compare screens moved to Milestone 8 with the other meta UI
 
+## Calibration pass ✅
+- ✅ Gear magnitudes checked against a real endgame account export (`docs/CALIBRATION.md`)
+- ✅ Five new sets: Pierce, Wrath, Aegis, Bastion, Reckless; tier-2 scaling split (main ×1.05, subs ×1.25)
+
 ## Milestone 5 — Summoning and store ⬜ (next)
 - ⬜ Banner definitions (featured hero, rotation dates, rate-up)
 - ⬜ Mileage/exchange currency alongside hard pity
@@ -102,6 +106,8 @@ Goal: first thing that looks like a game.
 - ⬜ Lobby, hero list, hero detail (stats, skills, gear), team presets
 - ⬜ Quests/achievements, mail, settings, localization framework (CSV → Godot translations)
 - ⬜ Accessibility: scalable UI, colour-blind safe element icons
+- ⬜ In-game gear optimizer: best 6-piece set for a hero under constraints (min speed, min crit,
+  required sets), with a compare panel. See `docs/CALIBRATION.md`.
 
 ## Milestone 9 — Multiplayer and services ⬜
 - ⬜ Async arena: fight AI-controlled defence teams uploaded by other players

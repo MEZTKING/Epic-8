@@ -23,6 +23,11 @@ different art style", it is too close. Clean-room design: write the rules you
 want from memory in `docs/DESIGN.md`, then implement from that document, not
 from the other game's wiki.
 
+## Calibration data
+Aggregate numbers from a player's own account export (stat magnitudes, roll
+ranges) are used only to sanity-check our tuning. Nothing is imported
+verbatim; see `docs/CALIBRATION.md`.
+
 ## Asset sourcing
 - Code: this repository (MIT-style licensing of your own code is your choice).
 - Art/music: commission with written transfer of rights, or use assets whose

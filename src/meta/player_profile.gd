@@ -265,6 +265,8 @@ func build_team(uids: Array, team: int) -> Array[BattleUnit]:
 			Progression.apply_bond(stats, other.data().role, other.bond_level)
 		var unit := BattleUnit.new(h.data(), team, i, h.level, {}, GearSets.bonuses(items)["flags"])
 		unit.base_stats = stats
+		unit._penalties_applied = false
+		unit.apply_flag_penalties()
 		unit.hp = unit.max_hp()
 		for s in h.skill_levels.size():
 			unit.skill_levels[s] = h.skill_levels[s]

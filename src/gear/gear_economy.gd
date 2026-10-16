@@ -17,6 +17,7 @@ const CRAFTABLE_SETS := {
 	"rime_shard": ["swift", "keen", "ward"],
 	"hollow_bone": ["ruin", "precision", "twin", "vigor", "bulwark"],
 }
+## Later bosses (Milestone 7) unlock: pierce, wrath, aegis, bastion, reckless.
 
 ## Substat weights for the gear score (percent stats are scaled to be comparable).
 const SCORE_WEIGHTS := {

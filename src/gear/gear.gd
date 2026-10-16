@@ -22,19 +22,21 @@ const SUBSTAT_POOL := ["atk", "atk_pct", "def", "def_pct", "hp", "hp_pct", "spd"
 const MAIN_RANGE := {
 	"atk": [100.0, 525.0], "def": [60.0, 310.0], "hp": [540.0, 2835.0],
 	"atk_pct": [0.12, 0.65], "def_pct": [0.12, 0.65], "hp_pct": [0.12, 0.65],
-	"spd": [8.0, 45.0], "crit_rate": [0.10, 0.55], "crit_dmg": [0.14, 0.70],
+	"spd": [8.0, 45.0], "crit_rate": [0.10, 0.60], "crit_dmg": [0.14, 0.70],
 	"eff": [0.12, 0.65], "res": [0.12, 0.65],
 }
 
 ## Substat roll ranges per roll (min, max).
 const SUB_ROLL := {
-	"atk": [20.0, 45.0], "def": [15.0, 35.0], "hp": [100.0, 230.0],
+	"atk": [30.0, 45.0], "def": [25.0, 35.0], "hp": [150.0, 200.0],
 	"atk_pct": [0.04, 0.08], "def_pct": [0.04, 0.08], "hp_pct": [0.04, 0.08],
 	"spd": [2.0, 5.0], "crit_rate": [0.03, 0.05], "crit_dmg": [0.04, 0.07],
 	"eff": [0.04, 0.08], "res": [0.04, 0.08],
 }
 
 const MAX_ENHANCE := 15
+const TIER_MAIN_MULT := 0.05   # main stat gains +5% per tier above 1
+const TIER_SUB_MULT := 0.25    # substat rolls gain +25% per tier above 1
 
 var uid: String = ""          # unique id inside a player profile ("" until added)
 var slot: Slot
@@ -48,7 +50,7 @@ var tier: int = 1             # item level tier, scales rolls (1 = base)
 
 func main_value() -> float:
 	var r: Array = MAIN_RANGE[main_stat]
-	return lerpf(r[0], r[1], float(level) / MAX_ENHANCE) * (1.0 + 0.1 * (tier - 1))
+	return lerpf(r[0], r[1], float(level) / MAX_ENHANCE) * (1.0 + TIER_MAIN_MULT * (tier - 1))
 
 
 func slot_name() -> String:

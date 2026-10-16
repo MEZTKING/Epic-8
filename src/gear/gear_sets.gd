@@ -15,6 +15,11 @@ const SETS := {
 	"siphon": {"name": "Siphon", "pieces": 4, "mods": {}, "flags": ["lifesteal_20"]},
 	"fury": {"name": "Fury", "pieces": 4, "mods": {}, "flags": ["counter_20"]},
 	"twin": {"name": "Twin", "pieces": 2, "mods": {}, "flags": ["dual_20"]},
+	"pierce": {"name": "Pierce", "pieces": 2, "mods": {}, "flags": ["pierce_15"]},
+	"wrath": {"name": "Wrath", "pieces": 4, "mods": {}, "flags": ["wrath_30"]},
+	"aegis": {"name": "Aegis", "pieces": 2, "mods": {}, "flags": ["start_immunity_1"]},
+	"bastion": {"name": "Bastion", "pieces": 2, "mods": {}, "flags": ["start_barrier_10"]},
+	"reckless": {"name": "Reckless", "pieces": 2, "mods": {}, "flags": ["reckless_10"]},
 }
 
 

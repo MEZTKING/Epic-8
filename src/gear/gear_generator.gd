@@ -27,7 +27,7 @@ static func roll(rng: RandomNumberGenerator, slot: Gear.Slot, rarity: int, set_i
 
 static func _roll_sub(rng: RandomNumberGenerator, stat: String, tier: int) -> float:
 	var r: Array = Gear.SUB_ROLL[stat]
-	var v := rng.randf_range(r[0], r[1]) * (1.0 + 0.1 * (tier - 1))
+	var v := rng.randf_range(r[0], r[1]) * (1.0 + Gear.TIER_SUB_MULT * (tier - 1))
 	return snappedf(v, 0.001) if stat in ["atk_pct", "def_pct", "hp_pct", "crit_rate", "crit_dmg", "eff", "res"] else roundf(v)
 
 

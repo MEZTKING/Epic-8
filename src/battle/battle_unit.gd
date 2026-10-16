@@ -29,6 +29,26 @@ func _init(p_data: HeroData, p_team: int, p_slot: int, p_level: int = 60, gear_s
 	flags = p_flags.duplicate()
 	for _i in p_data.skills.size():
 		skill_levels.append(0)
+	apply_flag_penalties()
+
+
+## Permanent stat changes from gear flags (e.g. Reckless −10% max HP).
+func apply_flag_penalties() -> void:
+	var reckless := gear_flag_value("reckless")
+	if reckless > 0.0 and not _penalties_applied:
+		base_stats["hp"] = roundf(float(base_stats["hp"]) * (1.0 - reckless))
+		hp = minf(hp, base_stats["hp"])
+		_penalties_applied = true
+
+
+var _penalties_applied := false
+
+
+func has_any_debuff() -> bool:
+	for e in effects:
+		if EffectCatalog.is_debuff(e["id"]):
+			return true
+	return false
 
 
 func display_name() -> String:

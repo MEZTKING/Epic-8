@@ -614,6 +614,49 @@ func test_gear_crafting() -> void:
 	check(fives >= 1 and fives <= 7, "some crafts are 5-star (got %d/10)" % fives)
 	check(GearEconomy.craft(p, Gear.Slot.BOOTS, "swift", rng) == null, "out of materials")
 
+# ---------------------------------------------------------------- calibration sets
+
+func test_pierce_wrath_reckless() -> void:
+	var rng := RandomNumberGenerator.new()
+	var plain := _unit("kaelen", 0, 0)
+	var pierce := BattleUnit.new(HeroDB.get_hero("kaelen"), 0, 1, 60, {}, ["pierce_15"])
+	var wrath := BattleUnit.new(HeroDB.get_hero("kaelen"), 0, 2, 60, {}, ["wrath_30"])
+	var reckless := BattleUnit.new(HeroDB.get_hero("kaelen"), 0, 3, 60, {}, ["reckless_10"])
+	var t := _unit("halvard", 1, 0)
+	rng.seed = 1; var d_plain: float = DamageCalc.compute(plain, t, plain.skill(0), rng)["damage"]
+	rng.seed = 1; var d_pierce: float = DamageCalc.compute(pierce, t, pierce.skill(0), rng)["damage"]
+	rng.seed = 1; var d_wrath_clean: float = DamageCalc.compute(wrath, t, wrath.skill(0), rng)["damage"]
+	t.add_effect("def_down", 1)
+	t.remove_effect("def_down")
+	t.add_effect("spd_down", 1)
+	rng.seed = 1; var d_wrath: float = DamageCalc.compute(wrath, t, wrath.skill(0), rng)["damage"]
+	t.remove_effect("spd_down")
+	rng.seed = 1; var d_reck: float = DamageCalc.compute(reckless, t, reckless.skill(0), rng)["damage"]
+	check(d_pierce > d_plain, "pierce ignores part of defense")
+	check(is_equal_approx(d_wrath_clean, d_plain), "wrath does nothing vs clean target")
+	check(d_wrath > d_plain * 1.25, "wrath adds damage vs debuffed target")
+	check(d_reck > d_plain, "reckless adds damage")
+	check(is_equal_approx(reckless.max_hp(), roundf(plain.max_hp() * 0.9)), "reckless reduces max hp")
+
+
+func test_battle_start_sets() -> void:
+	var engine := BattleEngine.new(1)
+	var a := BattleUnit.new(HeroDB.get_hero("thorne"), 0, 0, 60, {}, ["start_immunity_1", "start_barrier_10"])
+	var b := _unit("grunt", 1, 0)
+	engine.setup([a], [b])
+	check(a.has_effect("immunity") and a.get_effect("immunity")["turns"] == 1, "immunity at battle start")
+	check(is_equal_approx(a.shield_value(), roundf(a.max_hp() * 0.1)), "barrier at battle start")
+
+
+func test_tier_scaling() -> void:
+	var rng := RandomNumberGenerator.new(); rng.seed = 5
+	var t1 := GearGenerator.roll(rng, Gear.Slot.WEAPON, 5, "swift", 1)
+	rng.seed = 5
+	var t2 := GearGenerator.roll(rng, Gear.Slot.WEAPON, 5, "swift", 2)
+	check(is_equal_approx(t2.main_value(), t1.main_value() * 1.05), "tier 2 main +5%")
+	var k: String = t1.substats.keys()[0]
+	check(float(t2.substats[k]) > float(t1.substats[k]) * 1.15, "tier 2 substat rolls ~+25%")
+
 # ---------------------------------------------------------------- gear
 
 func test_gear_roll_and_enhance() -> void:

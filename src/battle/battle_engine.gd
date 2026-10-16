@@ -54,6 +54,17 @@ func setup(player_team: Array[BattleUnit], enemy_team: Array[BattleUnit]) -> voi
 	resolve = [0, 0]
 	awaiting_input = false
 	current_actor = null
+	for u in units:
+		_apply_start_flags(u)
+
+
+func _apply_start_flags(u: BattleUnit) -> void:
+	var imm := u.gear_flag_value("start_immunity")
+	if imm > 0.0:
+		u.add_effect("immunity", int(roundf(imm * 100.0)))
+	var bar := u.gear_flag_value("start_barrier")
+	if bar > 0.0:
+		u.add_barrier(roundf(u.max_hp() * bar), 2)
 
 
 func add_log(msg: String) -> void:

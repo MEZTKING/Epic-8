@@ -22,6 +22,7 @@ var description: String
 var target: String = "enemy"
 var multiplier: float = 1.0          # damage = ATK * multiplier (0 for non-damage skills)
 var hp_scaling: float = 0.0          # extra damage from attacker max HP
+var def_scaling: float = 0.0         # extra damage from attacker Defense
 var heal_percent: float = 0.0        # heal = target max HP * heal_percent
 var cooldown: int = 0
 var gauge_push: float = 0.0          # initiative gauge given to targets (self/allies)
@@ -42,6 +43,7 @@ static func from_dict(d: Dictionary) -> SkillData:
 	s.target = str(d.get("target", "enemy"))
 	s.multiplier = float(d.get("multiplier", 1.0))
 	s.hp_scaling = float(d.get("hp_scaling", 0.0))
+	s.def_scaling = float(d.get("def_scaling", 0.0))
 	s.heal_percent = float(d.get("heal_percent", 0.0))
 	s.cooldown = int(d.get("cooldown", 0))
 	s.gauge_push = float(d.get("gauge_push", 0.0))
@@ -90,7 +92,7 @@ func at_level(level: int) -> SkillData:
 
 
 func is_damage() -> bool:
-	return not passive and (multiplier > 0.0 or hp_scaling > 0.0)
+	return not passive and (multiplier > 0.0 or hp_scaling > 0.0 or def_scaling > 0.0)
 
 
 func is_heal() -> bool:

@@ -384,6 +384,77 @@ func test_replay_roundtrip() -> void:
 	check("\n".join(replayed.log_lines) == "\n".join(engine.log_lines), "replay log identical to original")
 	check(replayed.decisions.size() == engine.decisions.size(), "same number of decisions")
 
+# ---------------------------------------------------------------- milestone 2
+
+func test_data_validator_passes() -> void:
+	var errors := DataValidator.validate()
+	for e in errors:
+		printerr("  " + e)
+	check(errors.is_empty(), "data validator reports %d errors" % errors.size())
+
+
+func test_roster_counts() -> void:
+	check(HeroDB.heroes_of_kind("hero").size() >= 12, "at least 12 playable heroes")
+	check(HeroDB.heroes_of_kind("enemy").size() >= 15, "at least 15 enemy types")
+	check(HeroDB.heroes_of_kind("boss").size() >= 3, "at least 3 bosses")
+	for id in HeroDB.heroes_by_rarity(3) + HeroDB.heroes_by_rarity(4) + HeroDB.heroes_by_rarity(5):
+		check(HeroDB.get_hero(id).kind == "hero", "summon pool excludes enemies (%s)" % id)
+	var per_element := {}
+	for h in HeroDB.heroes_of_kind("hero"):
+		per_element[h.element] = int(per_element.get(h.element, 0)) + 1
+	for el in Elements.Type.values():
+		check(int(per_element.get(el, 0)) >= 2, "at least 2 heroes of element %s" % Elements.NAMES[el])
+
+
+func test_def_scaling_damage() -> void:
+	var a := _unit("oskar", 0, 0)
+	var b := _unit("grunt", 1, 0)
+	var rng := RandomNumberGenerator.new(); rng.seed = 1
+	var with_def := DamageCalc.compute(a, b, a.skill(0), rng)
+	rng.seed = 1
+	a.add_effect("def_up", 1)
+	var more := DamageCalc.compute(a, b, a.skill(0), rng)
+	check(more["damage"] > with_def["damage"], "Defense Up raises def-scaling damage")
+
+
+func test_ai_target_profiles() -> void:
+	var engine := BattleEngine.new(1)
+	var brute := _unit("ember_brute", 0, 0)   # highest_atk
+	var cutpurse := _unit("shadow_cutpurse", 0, 1)  # lowest_def
+	var strong := _unit("vexmoor", 1, 0)   # highest atk, lowest def
+	var tank := _unit("halvard", 1, 1)
+	engine.setup([brute, cutpurse], [strong, tank])
+	tank.hp = 10.0  # lowest HP, which default AI would pick
+	check(engine.choose_target(brute, brute.skill(0)) == strong, "highest_atk profile ignores low HP tank")
+	check(engine.choose_target(cutpurse, cutpurse.skill(0)) == strong, "lowest_def profile picks squishy")
+	check(engine.choose_target(_unit("grunt", 0, 2), brute.skill(0)) == null or true, "no crash on unit outside battle")
+
+
+func test_ai_skill_profiles() -> void:
+	var engine := BattleEngine.new(2)
+	var sentinel := _unit("gilded_sentinel", 0, 0)  # rotation: e_strike, e_stun, e_ward
+	var shaman := _unit("bog_shaman", 0, 1)          # support: e_strike, e_heal, e_ward
+	var e := _unit("grunt", 1, 0)
+	engine.setup([sentinel, shaman], [e])
+	var seq: Array[int] = []
+	for _i in range(4):
+		var idx := engine.choose_skill_index(sentinel)
+		seq.append(idx)
+		engine._execute(sentinel, idx, engine.choose_target(sentinel, sentinel.skill(idx)), false)
+		sentinel.end_turn()
+	check(seq[0] == 0 and seq[1] == 1 and seq[2] == 2 and seq[3] == 0, "rotation cycles skills in order (got %s)" % [seq])
+	check(engine.choose_skill_index(shaman) == 2, "support uses buff even at full HP")
+
+
+func test_boss_rotation_battle() -> void:
+	var engine := BattleEngine.new(77)
+	var p: Array[BattleUnit] = [_unit("kaelen", 0, 0), _unit("halvard", 0, 1), _unit("elowen", 0, 2), _unit("corvina", 0, 3)]
+	var boss: Array[BattleUnit] = [_unit("wyrm_of_ash", 1, 0)]
+	engine.setup(p, boss)
+	var w := engine.run()
+	check(w != -1, "boss battle completes")
+	check("Molten Hide" in "\n".join(engine.log_lines), "boss passive fired")
+
 # ---------------------------------------------------------------- gear
 
 func test_gear_roll_and_enhance() -> void:

@@ -202,7 +202,7 @@ func submit_action(skill_index: int, target: BattleUnit, empower: bool = false) 
 func _execute(actor: BattleUnit, skill_index: int, target: BattleUnit, empower: bool) -> void:
 	var skill := actor.skill(skill_index)
 	decisions.append({
-		"turn": turn_count, "skill": skill_index,
+		"turn": turn_count, "actor_team": actor.team, "actor_slot": actor.slot, "skill": skill_index,
 		"target_team": target.team if target != null else -1,
 		"target_slot": target.slot if target != null else -1,
 		"empower": empower,
@@ -232,25 +232,52 @@ func _apply_dots(unit: BattleUnit) -> void:
 
 # ---------------------------------------------------------------- AI
 
-## Default AI: use the highest-numbered ready active skill. Pure heals are
-## skipped unless an ally is below 50% HP.
+## AI skill choice, by the hero's `ai.skill` profile:
+##   strongest (default): highest-numbered ready active skill; pure heals only when an ally is below 50%
+##   support: heals/buffs first whenever they are ready
+##   rotation: cycles s1 -> s2 -> s3 in order, skipping skills on cooldown
+##   random: any ready active skill
 func choose_skill_index(actor: BattleUnit) -> int:
-	var anyone_hurt := false
-	for a in living(actor.team):
-		if a.hp < a.max_hp() * 0.5:
-			anyone_hurt = true
+	var ready: Array[int] = []
 	var fallback := 0
-	for i in range(actor.data.skills.size() - 1, -1, -1):
+	for i in actor.data.skills.size():
 		var s := actor.skill(i)
 		if s.passive:
 			continue
 		fallback = i
-		if not actor.skill_ready(i):
+		if actor.skill_ready(i):
+			ready.append(i)
+	if ready.is_empty():
+		return fallback
+	match actor.data.ai_skill_mode():
+		"random":
+			return ready[rng.randi_range(0, ready.size() - 1)]
+		"rotation":
+			var last := -1
+			for d in decisions:
+				if d.get("actor_team", -1) == actor.team and d.get("actor_slot", -1) == actor.slot:
+					last = int(d["skill"])
+			for i in ready:
+				if i > last:
+					return i
+			return ready[0]
+		"support":
+			for i in range(ready.size() - 1, -1, -1):
+				var s := actor.skill(ready[i])
+				if not s.is_damage():
+					return ready[i]
+			return ready[ready.size() - 1]
+	var anyone_hurt := false
+	for a in living(actor.team):
+		if a.hp < a.max_hp() * 0.5:
+			anyone_hurt = true
+	for i in range(ready.size() - 1, -1, -1):
+		var idx := ready[i]
+		var s := actor.skill(idx)
+		if s.is_heal() and not s.is_damage() and not anyone_hurt and idx > 0:
 			continue
-		if s.is_heal() and not s.is_damage() and not anyone_hurt and i > 0:
-			continue
-		return i
-	return fallback
+		return idx
+	return ready[0]
 
 
 ## The unit that provoked `actor`, if that effect is active and the source lives.
@@ -270,16 +297,34 @@ func choose_target(actor: BattleUnit, skill: SkillData) -> BattleUnit:
 			var forced := provoker_of(actor)
 			if forced != null:
 				return forced
-			var pick: BattleUnit = null
-			for e in living(1 - actor.team):
-				if pick == null or e.hp < pick.hp:
-					pick = e
-			return pick
+			var enemies := living(1 - actor.team)
+			if enemies.is_empty():
+				return null
+			match actor.data.ai_target_mode():
+				"random":
+					return enemies[rng.randi_range(0, enemies.size() - 1)]
+				"highest_atk":
+					return _pick(enemies, func(u): return -u.stat("atk"))
+				"lowest_def":
+					return _pick(enemies, func(u): return u.stat("def"))
+			return _pick(enemies, func(u): return u.hp)
 		"self":
 			return actor
 		"ally":
 			return _lowest_hp_ally(actor)
 	return null
+
+
+## Returns the unit with the smallest key; ties keep the earliest.
+func _pick(candidates: Array[BattleUnit], key: Callable) -> BattleUnit:
+	var best: BattleUnit = null
+	var best_key := INF
+	for u in candidates:
+		var k: float = key.call(u)
+		if best == null or k < best_key:
+			best = u
+			best_key = k
+	return best
 
 
 func resolve_targets(actor: BattleUnit, skill: SkillData, target: BattleUnit) -> Array[BattleUnit]:
@@ -432,6 +477,10 @@ func _effect_victims(actor: BattleUnit, hit_target: BattleUnit, where: String, v
 		"victim":
 			if victim != null:
 				victims.append(victim)
+		"lowest_hp_ally":
+			var a := _lowest_hp_ally(actor)
+			if a != null:
+				victims.append(a)
 		"all_allies":
 			victims.append_array(living(actor.team))
 		"all_enemies":

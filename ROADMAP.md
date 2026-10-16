@@ -41,16 +41,23 @@ Goal: the battle rules feel complete enough to balance against.
   sustain beats burst 93.5% and draws control by timeout. Heal output and the
   300-turn cap need tuning before PvE content is built on top.
 
-## Milestone 2 — Content pipeline ⬜ (next)
+## Milestone 2 — Content pipeline ✅
 Goal: adding a hero takes 15 minutes and no engine changes.
 
-- ⬜ Switch hero/skill definitions to Godot `Resource` (.tres) with a JSON export for tooling
-- ⬜ Data validator run in CI (missing skills, bad effect ids, stat ranges)
-- ⬜ Placeholder art spec: 1 portrait, 1 idle sprite, 1 attack sprite per hero
-- ⬜ 12 launch heroes (2 per element + 2 extra), 15 enemy types, 3 bosses
-- ⬜ Enemy AI profiles (aggressive, support, boss patterns)
+- ✅ Decision: keep JSON as the source of truth (diffable, moddable, validator-friendly,
+  works under the headless runner). Godot Resources can wrap it later if the editor
+  inspector becomes the preferred authoring tool.
+- ✅ Data validator (`src/core/data_validator.gd`, `tests/validate_data.gd`): schema,
+  ranges, orphan skills, effect ids, AI profiles, portrait existence
+- ✅ GitHub Actions workflow: import, validate, test, balance snapshot on every push
+- ✅ Art spec (`docs/ART_SPEC.md`) and generated placeholder portraits for all 30 units
+  (`tools/gen_portraits.py`, abstract shapes only)
+- ✅ 12 playable heroes (≥2 per element), 15 enemy types, 3 hunt bosses
+- ✅ Enemy AI profiles: skill modes strongest/support/rotation/random, target modes
+  lowest_hp/highest_atk/lowest_def/random; bosses rotate skills and carry passives
+- ✅ Defense-scaling damage for knights
 
-## Milestone 3 — Progression ⬜
+## Milestone 3 — Progression ⬜ (next)
 - ⬜ Hero levels and experience, rarity promotion (3★→6★), level caps per rarity
 - ⬜ Awakening tiers using element materials
 - ⬜ Bonds (party-wide passive from duplicate heroes)

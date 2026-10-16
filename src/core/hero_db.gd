@@ -53,10 +53,28 @@ static func all_heroes() -> Array[HeroData]:
 	return out
 
 
+## Summonable heroes (kind == "hero") of the given rarity.
 static func heroes_by_rarity(rarity: int) -> Array[String]:
 	load_all()
 	var out: Array[String] = []
 	for h in all_heroes():
-		if h.rarity == rarity:
+		if h.rarity == rarity and h.kind == "hero":
 			out.append(h.id)
+	return out
+
+
+static func heroes_of_kind(kind: String) -> Array[HeroData]:
+	load_all()
+	var out: Array[HeroData] = []
+	for h in all_heroes():
+		if h.kind == kind:
+			out.append(h)
+	return out
+
+
+static func all_skills() -> Array[SkillData]:
+	load_all()
+	var out: Array[SkillData] = []
+	for s in _skills.values():
+		out.append(s)
 	return out

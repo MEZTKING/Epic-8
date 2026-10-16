@@ -26,7 +26,7 @@ static func crit_chance(attacker: BattleUnit, defender: BattleUnit) -> float:
 
 ## Returns {"damage": float, "crit": bool, "advantage": int}
 static func compute(attacker: BattleUnit, defender: BattleUnit, skill: SkillData, rng: RandomNumberGenerator, force_crit := false) -> Dictionary:
-	var raw := attacker.stat("atk") * skill.multiplier + attacker.max_hp() * skill.hp_scaling
+	var raw := attacker.stat("atk") * skill.multiplier + attacker.max_hp() * skill.hp_scaling + attacker.stat("def") * skill.def_scaling
 	var adv := Elements.advantage(attacker.data.element, defender.data.element)
 	var crit := force_crit or rng.randf() < crit_chance(attacker, defender)
 	var dmg := raw

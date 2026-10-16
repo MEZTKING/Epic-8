@@ -330,21 +330,6 @@
   ]
  },
  {
-  "id": "grunt_s1",
-  "name": "Club Swing",
-  "description": "Attacks one enemy.",
-  "target": "enemy",
-  "multiplier": 1.0
- },
- {
-  "id": "grunt_s2",
-  "name": "Heavy Swing",
-  "description": "Attacks one enemy with extra force.",
-  "target": "enemy",
-  "multiplier": 1.5,
-  "cooldown": 3
- },
- {
   "id": "thorne_p",
   "name": "Deep Roots",
   "description": "Passive. When attacked, gains Defense Up for 1 turn. Triggers at most once every 2 turns.",
@@ -455,6 +440,782 @@
    },
    {
     "chance": 0.05
+   }
+  ]
+ },
+ {
+  "id": "rosalind_s1",
+  "name": "Cinder Bolt",
+  "description": "Attacks one enemy with a 40% chance to inflict Burn for 2 turns.",
+  "target": "enemy",
+  "multiplier": 1.0,
+  "effects": [
+   {
+    "id": "burn",
+    "chance": 0.4,
+    "turns": 2,
+    "target": "hit"
+   }
+  ],
+  "upgrades": [
+   {
+    "multiplier": 0.05
+   },
+   {
+    "chance": 0.1
+   },
+   {
+    "multiplier": 0.1
+   }
+  ]
+ },
+ {
+  "id": "rosalind_s2",
+  "name": "Kindling",
+  "description": "Grants self Attack Up for 2 turns and pushes own initiative by 30%.",
+  "target": "self",
+  "multiplier": 0,
+  "cooldown": 3,
+  "gauge_push": 30,
+  "effects": [
+   {
+    "id": "atk_up",
+    "chance": 1.0,
+    "turns": 2,
+    "target": "hit"
+   }
+  ],
+  "upgrades": [
+   {
+    "cooldown": -1
+   }
+  ]
+ },
+ {
+  "id": "rosalind_s3",
+  "name": "Wildfire",
+  "description": "Attacks all enemies with a 65% chance to inflict Burn for 2 turns.",
+  "target": "all_enemies",
+  "multiplier": 1.0,
+  "cooldown": 5,
+  "resolve_cost": 20,
+  "effects": [
+   {
+    "id": "burn",
+    "chance": 0.65,
+    "turns": 2,
+    "target": "hit"
+   }
+  ],
+  "upgrades": [
+   {
+    "multiplier": 0.05
+   },
+   {
+    "chance": 0.1
+   },
+   {
+    "multiplier": 0.05
+   },
+   {
+    "cooldown": -1
+   }
+  ]
+ },
+ {
+  "id": "oskar_s1",
+  "name": "Shield Bash",
+  "description": "Attacks one enemy. Damage increases with the caster's Defense.",
+  "target": "enemy",
+  "multiplier": 0.5,
+  "def_scaling": 0.9,
+  "upgrades": [
+   {
+    "multiplier": 0.05
+   },
+   {
+    "multiplier": 0.05
+   }
+  ]
+ },
+ {
+  "id": "oskar_s2",
+  "name": "Hold the Line",
+  "description": "Provokes all enemies for 1 turn and grants self Defense Up for 2 turns.",
+  "target": "self",
+  "multiplier": 0,
+  "cooldown": 4,
+  "effects": [
+   {
+    "id": "def_up",
+    "chance": 1.0,
+    "turns": 2,
+    "target": "self"
+   },
+   {
+    "id": "provoke",
+    "chance": 0.8,
+    "turns": 1,
+    "target": "all_enemies"
+   }
+  ],
+  "upgrades": [
+   {
+    "chance": 0.1
+   },
+   {
+    "cooldown": -1
+   }
+  ]
+ },
+ {
+  "id": "oskar_p",
+  "name": "Frostbound",
+  "description": "Passive. When attacked, 30% chance to inflict Speed Down on the attacker for 1 turn.",
+  "passive": true,
+  "trigger": "on_hit",
+  "chance": 0.3,
+  "effects": [
+   {
+    "id": "spd_down",
+    "chance": 1.0,
+    "turns": 1,
+    "target": "hit"
+   }
+  ],
+  "upgrades": [
+   {
+    "chance": 0.05
+   },
+   {
+    "chance": 0.05
+   }
+  ]
+ },
+ {
+  "id": "corvina_s1",
+  "name": "Hex Dart",
+  "description": "Attacks one enemy with a 50% chance to inflict Attack Down for 2 turns.",
+  "target": "enemy",
+  "multiplier": 0.9,
+  "effects": [
+   {
+    "id": "atk_down",
+    "chance": 0.5,
+    "turns": 2,
+    "target": "hit"
+   }
+  ],
+  "upgrades": [
+   {
+    "chance": 0.1
+   },
+   {
+    "multiplier": 0.1
+   }
+  ]
+ },
+ {
+  "id": "corvina_s2",
+  "name": "Unravel",
+  "description": "Attacks one enemy and removes up to 2 buffs.",
+  "target": "enemy",
+  "multiplier": 1.1,
+  "cooldown": 3,
+  "effects": [
+   {
+    "op": "dispel",
+    "count": 2,
+    "chance": 1.0,
+    "target": "hit"
+   }
+  ],
+  "upgrades": [
+   {
+    "multiplier": 0.1
+   },
+   {
+    "cooldown": -1
+   }
+  ]
+ },
+ {
+  "id": "corvina_s3",
+  "name": "Night Unending",
+  "description": "Attacks all enemies with a 70% chance to inflict Defense Down and Heal Block for 2 turns.",
+  "target": "all_enemies",
+  "multiplier": 0.95,
+  "cooldown": 5,
+  "resolve_cost": 20,
+  "effects": [
+   {
+    "id": "def_down",
+    "chance": 0.7,
+    "turns": 2,
+    "target": "hit"
+   },
+   {
+    "id": "heal_block",
+    "chance": 0.7,
+    "turns": 2,
+    "target": "hit"
+   }
+  ],
+  "upgrades": [
+   {
+    "chance": 0.1
+   },
+   {
+    "multiplier": 0.05
+   },
+   {
+    "cooldown": -1
+   }
+  ]
+ },
+ {
+  "id": "halvard_s1",
+  "name": "Hammerfall",
+  "description": "Attacks one enemy. Damage increases with the caster's max Health.",
+  "target": "enemy",
+  "multiplier": 0.55,
+  "hp_scaling": 0.09,
+  "upgrades": [
+   {
+    "multiplier": 0.05
+   },
+   {
+    "multiplier": 0.05
+   }
+  ]
+ },
+ {
+  "id": "halvard_s2",
+  "name": "Unyielding",
+  "description": "Grants self Immunity and Defense Up for 2 turns.",
+  "target": "self",
+  "multiplier": 0,
+  "cooldown": 4,
+  "effects": [
+   {
+    "id": "immunity",
+    "chance": 1.0,
+    "turns": 2,
+    "target": "self"
+   },
+   {
+    "id": "def_up",
+    "chance": 1.0,
+    "turns": 2,
+    "target": "self"
+   }
+  ],
+  "upgrades": [
+   {
+    "cooldown": -1
+   }
+  ]
+ },
+ {
+  "id": "halvard_s3",
+  "name": "Quake",
+  "description": "Attacks all enemies with a 60% chance to Stun for 1 turn. Damage increases with max Health.",
+  "target": "all_enemies",
+  "multiplier": 0.5,
+  "hp_scaling": 0.1,
+  "cooldown": 5,
+  "resolve_cost": 20,
+  "effects": [
+   {
+    "id": "stun",
+    "chance": 0.6,
+    "turns": 1,
+    "target": "hit"
+   }
+  ],
+  "upgrades": [
+   {
+    "chance": 0.1
+   },
+   {
+    "multiplier": 0.05
+   },
+   {
+    "cooldown": -1
+   }
+  ]
+ },
+ {
+  "id": "elowen_s1",
+  "name": "Starlight",
+  "description": "Attacks one enemy and grants the ally with the lowest Health Speed Up for 1 turn.",
+  "target": "enemy",
+  "multiplier": 0.8,
+  "effects": [
+   {
+    "id": "spd_up",
+    "chance": 1.0,
+    "turns": 1,
+    "target": "lowest_hp_ally"
+   }
+  ],
+  "upgrades": [
+   {
+    "multiplier": 0.1
+   }
+  ]
+ },
+ {
+  "id": "elowen_s2",
+  "name": "Constellation",
+  "description": "Grants all allies Attack Up and Critical Up for 2 turns.",
+  "target": "all_allies",
+  "multiplier": 0,
+  "cooldown": 4,
+  "effects": [
+   {
+    "id": "atk_up",
+    "chance": 1.0,
+    "turns": 2,
+    "target": "hit"
+   },
+   {
+    "id": "crit_up",
+    "chance": 1.0,
+    "turns": 2,
+    "target": "hit"
+   }
+  ],
+  "upgrades": [
+   {
+    "cooldown": -1
+   }
+  ]
+ },
+ {
+  "id": "elowen_s3",
+  "name": "Dawnbreak",
+  "description": "Heals all allies for 20%, removes 2 debuffs from each, and pushes their initiative by 25%.",
+  "target": "all_allies",
+  "multiplier": 0,
+  "heal_percent": 0.2,
+  "cooldown": 5,
+  "gauge_push": 25,
+  "resolve_cost": 20,
+  "effects": [
+   {
+    "op": "cleanse",
+    "count": 2,
+    "chance": 1.0,
+    "target": "hit"
+   }
+  ],
+  "upgrades": [
+   {
+    "heal_percent": 0.05
+   },
+   {
+    "gauge_push": 10
+   },
+   {
+    "cooldown": -1
+   }
+  ]
+ },
+ {
+  "id": "e_strike",
+  "name": "Strike",
+  "description": "Attacks one enemy.",
+  "target": "enemy",
+  "multiplier": 1.0
+ },
+ {
+  "id": "e_heavy",
+  "name": "Heavy Blow",
+  "description": "Attacks one enemy with extra force.",
+  "target": "enemy",
+  "multiplier": 1.5,
+  "cooldown": 3
+ },
+ {
+  "id": "e_sweep",
+  "name": "Sweep",
+  "description": "Attacks all enemies.",
+  "target": "all_enemies",
+  "multiplier": 0.7,
+  "cooldown": 3
+ },
+ {
+  "id": "e_bleed",
+  "name": "Rend",
+  "description": "Attacks one enemy with a 60% chance to inflict Bleed for 2 turns.",
+  "target": "enemy",
+  "multiplier": 0.9,
+  "cooldown": 2,
+  "effects": [
+   {
+    "id": "bleed",
+    "chance": 0.6,
+    "turns": 2,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "e_burn",
+  "name": "Scorch",
+  "description": "Attacks one enemy with a 60% chance to inflict Burn for 2 turns.",
+  "target": "enemy",
+  "multiplier": 0.9,
+  "cooldown": 2,
+  "effects": [
+   {
+    "id": "burn",
+    "chance": 0.6,
+    "turns": 2,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "e_freeze",
+  "name": "Chill",
+  "description": "Attacks one enemy with a 60% chance to inflict Speed Down for 2 turns.",
+  "target": "enemy",
+  "multiplier": 0.9,
+  "cooldown": 2,
+  "effects": [
+   {
+    "id": "spd_down",
+    "chance": 0.6,
+    "turns": 2,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "e_sunder",
+  "name": "Sunder",
+  "description": "Attacks one enemy with a 60% chance to inflict Defense Down for 2 turns.",
+  "target": "enemy",
+  "multiplier": 0.9,
+  "cooldown": 2,
+  "effects": [
+   {
+    "id": "def_down",
+    "chance": 0.6,
+    "turns": 2,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "e_stun",
+  "name": "Concuss",
+  "description": "Attacks one enemy with a 50% chance to Stun for 1 turn.",
+  "target": "enemy",
+  "multiplier": 0.8,
+  "cooldown": 3,
+  "effects": [
+   {
+    "id": "stun",
+    "chance": 0.5,
+    "turns": 1,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "e_heal",
+  "name": "Mend",
+  "description": "Heals all allies for 20% of their max Health.",
+  "target": "all_allies",
+  "multiplier": 0,
+  "heal_percent": 0.2,
+  "cooldown": 3
+ },
+ {
+  "id": "e_rally",
+  "name": "War Chant",
+  "description": "Grants all allies Attack Up for 2 turns.",
+  "target": "all_allies",
+  "multiplier": 0,
+  "cooldown": 4,
+  "effects": [
+   {
+    "id": "atk_up",
+    "chance": 1.0,
+    "turns": 2,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "e_ward",
+  "name": "Ward",
+  "description": "Grants all allies Defense Up for 2 turns.",
+  "target": "all_allies",
+  "multiplier": 0,
+  "cooldown": 4,
+  "effects": [
+   {
+    "id": "def_up",
+    "chance": 1.0,
+    "turns": 2,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "e_drain",
+  "name": "Drain",
+  "description": "Attacks one enemy and heals the ally with the lowest Health for 15% of their max Health.",
+  "target": "enemy",
+  "multiplier": 0.9,
+  "heal_percent": 0.15,
+  "cooldown": 2
+ },
+ {
+  "id": "boss_ash_s1",
+  "name": "Ash Breath",
+  "description": "Attacks all enemies with a 50% chance to inflict Burn for 2 turns.",
+  "target": "all_enemies",
+  "multiplier": 0.8,
+  "effects": [
+   {
+    "id": "burn",
+    "chance": 0.5,
+    "turns": 2,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "boss_ash_s2",
+  "name": "Tail Crush",
+  "description": "Attacks one enemy with a 70% chance to Stun for 1 turn.",
+  "target": "enemy",
+  "multiplier": 1.6,
+  "cooldown": 3,
+  "effects": [
+   {
+    "id": "stun",
+    "chance": 0.7,
+    "turns": 1,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "boss_ash_s3",
+  "name": "Immolation",
+  "description": "Devastates all enemies and removes 1 buff from each.",
+  "target": "all_enemies",
+  "multiplier": 1.4,
+  "cooldown": 5,
+  "effects": [
+   {
+    "op": "dispel",
+    "count": 1,
+    "chance": 1.0,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "boss_ash_p",
+  "name": "Molten Hide",
+  "description": "Passive. At the start of its turn, gains Defense Up for 1 turn.",
+  "passive": true,
+  "trigger": "on_turn_start",
+  "chance": 1.0,
+  "effects": [
+   {
+    "id": "def_up",
+    "chance": 1.0,
+    "turns": 1,
+    "target": "self"
+   }
+  ]
+ },
+ {
+  "id": "boss_glacial_s1",
+  "name": "Hoarfrost",
+  "description": "Attacks one enemy with a 75% chance to inflict Speed Down for 2 turns.",
+  "target": "enemy",
+  "multiplier": 1.1,
+  "effects": [
+   {
+    "id": "spd_down",
+    "chance": 0.75,
+    "turns": 2,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "boss_glacial_s2",
+  "name": "Shatter",
+  "description": "Attacks all enemies. Stuns enemies for 1 turn with a 40% chance.",
+  "target": "all_enemies",
+  "multiplier": 0.9,
+  "cooldown": 4,
+  "effects": [
+   {
+    "id": "stun",
+    "chance": 0.4,
+    "turns": 1,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "boss_glacial_s3",
+  "name": "Deep Winter",
+  "description": "Removes all debuffs from self, grants a Barrier equal to 20% of max Health for 2 turns, and heals 15%.",
+  "target": "self",
+  "multiplier": 0,
+  "heal_percent": 0.15,
+  "cooldown": 5,
+  "effects": [
+   {
+    "op": "cleanse",
+    "count": 9,
+    "chance": 1.0,
+    "target": "self"
+   },
+   {
+    "id": "barrier",
+    "turns": 2,
+    "shield_hp_pct": 0.2,
+    "target": "self"
+   }
+  ]
+ },
+ {
+  "id": "boss_glacial_p",
+  "name": "Rime",
+  "description": "Passive. When attacked, 40% chance to inflict Speed Down on the attacker for 1 turn.",
+  "passive": true,
+  "trigger": "on_hit",
+  "chance": 0.4,
+  "effects": [
+   {
+    "id": "spd_down",
+    "chance": 1.0,
+    "turns": 1,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "boss_hollow_s1",
+  "name": "Grave Touch",
+  "description": "Attacks one enemy with Heal Block for 2 turns.",
+  "target": "enemy",
+  "multiplier": 1.2,
+  "effects": [
+   {
+    "id": "heal_block",
+    "chance": 0.85,
+    "turns": 2,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "boss_hollow_s2",
+  "name": "Dread Chorus",
+  "description": "Attacks all enemies with a 60% chance to inflict Attack Down for 2 turns.",
+  "target": "all_enemies",
+  "multiplier": 0.85,
+  "cooldown": 3,
+  "effects": [
+   {
+    "id": "atk_down",
+    "chance": 0.6,
+    "turns": 2,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "boss_hollow_s3",
+  "name": "Reaping",
+  "description": "A devastating strike on one enemy. Heals self for 30% of max Health.",
+  "target": "enemy",
+  "multiplier": 2.5,
+  "heal_percent": 0.3,
+  "cooldown": 5
+ },
+ {
+  "id": "boss_hollow_p",
+  "name": "Unquiet",
+  "description": "Passive. After defeating an enemy, pushes own initiative by 100%.",
+  "passive": true,
+  "trigger": "on_kill",
+  "chance": 1.0,
+  "gauge_push": 100
+ },
+ {
+  "id": "ilsabet_s3",
+  "name": "Daybreak Verdict",
+  "description": "Attacks all enemies and removes one buff from each. Allies gain Immunity for 1 turn.",
+  "target": "all_enemies",
+  "multiplier": 0.9,
+  "cooldown": 5,
+  "resolve_cost": 20,
+  "effects": [
+   {
+    "op": "dispel",
+    "count": 1,
+    "chance": 0.8,
+    "target": "hit"
+   },
+   {
+    "id": "immunity",
+    "chance": 1.0,
+    "turns": 1,
+    "target": "all_allies"
+   }
+  ],
+  "upgrades": [
+   {
+    "multiplier": 0.05
+   },
+   {
+    "chance": 0.1
+   },
+   {
+    "cooldown": -1
+   }
+  ]
+ },
+ {
+  "id": "oskar_s3",
+  "name": "Avalanche Charge",
+  "description": "Attacks one enemy with a 70% chance to Stun for 1 turn. Damage increases with Defense.",
+  "target": "enemy",
+  "multiplier": 0.6,
+  "def_scaling": 1.3,
+  "cooldown": 4,
+  "effects": [
+   {
+    "id": "stun",
+    "chance": 0.7,
+    "turns": 1,
+    "target": "hit"
+   }
+  ],
+  "upgrades": [
+   {
+    "chance": 0.1
+   },
+   {
+    "multiplier": 0.1
+   },
+   {
+    "cooldown": -1
    }
   ]
  }

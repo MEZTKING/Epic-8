@@ -20,7 +20,9 @@
    "kaelen_s1",
    "kaelen_s2",
    "kaelen_s3"
-  ]
+  ],
+  "kind": "hero",
+  "portrait": "res://assets/portraits/kaelen.svg"
  },
  {
   "id": "mira",
@@ -43,7 +45,9 @@
    "mira_s1",
    "mira_s2",
    "mira_s3"
-  ]
+  ],
+  "kind": "hero",
+  "portrait": "res://assets/portraits/mira.svg"
  },
  {
   "id": "thorne",
@@ -67,7 +71,9 @@
    "thorne_s2",
    "thorne_s3",
    "thorne_p"
-  ]
+  ],
+  "kind": "hero",
+  "portrait": "res://assets/portraits/thorne.svg"
  },
  {
   "id": "seraphi",
@@ -90,7 +96,9 @@
    "seraphi_s1",
    "seraphi_s2",
    "seraphi_s3"
-  ]
+  ],
+  "kind": "hero",
+  "portrait": "res://assets/portraits/seraphi.svg"
  },
  {
   "id": "vexmoor",
@@ -114,7 +122,9 @@
    "vexmoor_s2",
    "vexmoor_s3",
    "vexmoor_p"
-  ]
+  ],
+  "kind": "hero",
+  "portrait": "res://assets/portraits/vexmoor.svg"
  },
  {
   "id": "bramble",
@@ -137,7 +147,9 @@
    "bramble_s1",
    "bramble_s2",
    "bramble_s3"
-  ]
+  ],
+  "kind": "hero",
+  "portrait": "res://assets/portraits/bramble.svg"
  },
  {
   "id": "grunt",
@@ -157,9 +169,11 @@
    "res": 0.0
   },
   "skills": [
-   "grunt_s1",
-   "grunt_s2"
-  ]
+   "e_strike",
+   "e_heavy"
+  ],
+  "kind": "enemy",
+  "portrait": "res://assets/portraits/grunt.svg"
  },
  {
   "id": "ilsabet",
@@ -181,7 +195,600 @@
   "skills": [
    "ilsabet_s1",
    "ilsabet_s2",
+   "ilsabet_s3",
    "ilsabet_p"
-  ]
+  ],
+  "kind": "hero",
+  "portrait": "res://assets/portraits/ilsabet.svg"
+ },
+ {
+  "id": "rosalind",
+  "name": "Rosalind Pyrewick",
+  "title": "Hearthwitch",
+  "element": "flame",
+  "role": "mage",
+  "rarity": 4,
+  "kind": "hero",
+  "max_stats": {
+   "atk": 1150,
+   "def": 480,
+   "hp": 4900,
+   "spd": 106,
+   "crit_rate": 0.15,
+   "crit_dmg": 1.5,
+   "eff": 0.1,
+   "res": 0.0
+  },
+  "skills": [
+   "rosalind_s1",
+   "rosalind_s2",
+   "rosalind_s3"
+  ],
+  "portrait": "res://assets/portraits/rosalind.svg"
+ },
+ {
+  "id": "oskar",
+  "name": "Oskar Hailguard",
+  "title": "Wallbreaker",
+  "element": "frost",
+  "role": "knight",
+  "rarity": 3,
+  "kind": "hero",
+  "max_stats": {
+   "atk": 640,
+   "def": 760,
+   "hp": 6900,
+   "spd": 96,
+   "crit_rate": 0.15,
+   "crit_dmg": 1.5,
+   "eff": 0.0,
+   "res": 0.15
+  },
+  "skills": [
+   "oskar_s1",
+   "oskar_s2",
+   "oskar_s3",
+   "oskar_p"
+  ],
+  "portrait": "res://assets/portraits/oskar.svg"
+ },
+ {
+  "id": "corvina",
+  "name": "Corvina Duskmantle",
+  "title": "Hexweaver",
+  "element": "umbral",
+  "role": "mage",
+  "rarity": 4,
+  "kind": "hero",
+  "max_stats": {
+   "atk": 1120,
+   "def": 500,
+   "hp": 4850,
+   "spd": 110,
+   "crit_rate": 0.15,
+   "crit_dmg": 1.5,
+   "eff": 0.25,
+   "res": 0.0
+  },
+  "skills": [
+   "corvina_s1",
+   "corvina_s2",
+   "corvina_s3"
+  ],
+  "portrait": "res://assets/portraits/corvina.svg"
+ },
+ {
+  "id": "halvard",
+  "name": "Halvard Stonebrow",
+  "title": "The Unmoved",
+  "element": "verdant",
+  "role": "knight",
+  "rarity": 5,
+  "kind": "hero",
+  "max_stats": {
+   "atk": 780,
+   "def": 820,
+   "hp": 7800,
+   "spd": 100,
+   "crit_rate": 0.15,
+   "crit_dmg": 1.5,
+   "eff": 0.0,
+   "res": 0.2
+  },
+  "skills": [
+   "halvard_s1",
+   "halvard_s2",
+   "halvard_s3"
+  ],
+  "portrait": "res://assets/portraits/halvard.svg"
+ },
+ {
+  "id": "elowen",
+  "name": "Elowen Starbright",
+  "title": "Skyreader",
+  "element": "radiant",
+  "role": "healer",
+  "rarity": 5,
+  "kind": "hero",
+  "max_stats": {
+   "atk": 900,
+   "def": 640,
+   "hp": 6100,
+   "spd": 114,
+   "crit_rate": 0.15,
+   "crit_dmg": 1.5,
+   "eff": 0.0,
+   "res": 0.1
+  },
+  "skills": [
+   "elowen_s1",
+   "elowen_s2",
+   "elowen_s3"
+  ],
+  "portrait": "res://assets/portraits/elowen.svg"
+ },
+ {
+  "id": "marsh_archer",
+  "name": "Marsh Archer",
+  "title": "",
+  "element": "verdant",
+  "role": "ranger",
+  "rarity": 3,
+  "kind": "enemy",
+  "max_stats": {
+   "atk": 900,
+   "def": 400,
+   "hp": 3800,
+   "spd": 104,
+   "crit_rate": 0.15,
+   "crit_dmg": 1.5,
+   "eff": 0.0,
+   "res": 0.0
+  },
+  "skills": [
+   "e_strike",
+   "e_bleed"
+  ],
+  "ai": {
+   "target": "lowest_def"
+  },
+  "portrait": "res://assets/portraits/marsh_archer.svg"
+ },
+ {
+  "id": "thorn_spider",
+  "name": "Thorn Spider",
+  "title": "",
+  "element": "verdant",
+  "role": "assassin",
+  "rarity": 3,
+  "kind": "enemy",
+  "max_stats": {
+   "atk": 850,
+   "def": 380,
+   "hp": 3600,
+   "spd": 112,
+   "crit_rate": 0.15,
+   "crit_dmg": 1.5,
+   "eff": 0.0,
+   "res": 0.0
+  },
+  "skills": [
+   "e_strike",
+   "e_bleed"
+  ],
+  "ai": {
+   "target": "lowest_hp"
+  },
+  "portrait": "res://assets/portraits/thorn_spider.svg"
+ },
+ {
+  "id": "bog_shaman",
+  "name": "Bog Shaman",
+  "title": "",
+  "element": "verdant",
+  "role": "healer",
+  "rarity": 3,
+  "kind": "enemy",
+  "max_stats": {
+   "atk": 700,
+   "def": 450,
+   "hp": 4000,
+   "spd": 100,
+   "crit_rate": 0.15,
+   "crit_dmg": 1.5,
+   "eff": 0.0,
+   "res": 0.0
+  },
+  "skills": [
+   "e_strike",
+   "e_heal",
+   "e_ward"
+  ],
+  "ai": {
+   "skill": "support"
+  },
+  "portrait": "res://assets/portraits/bog_shaman.svg"
+ },
+ {
+  "id": "ember_imp",
+  "name": "Ember Imp",
+  "title": "",
+  "element": "flame",
+  "role": "mage",
+  "rarity": 3,
+  "kind": "enemy",
+  "max_stats": {
+   "atk": 880,
+   "def": 380,
+   "hp": 3500,
+   "spd": 110,
+   "crit_rate": 0.15,
+   "crit_dmg": 1.5,
+   "eff": 0.0,
+   "res": 0.0
+  },
+  "skills": [
+   "e_strike",
+   "e_burn"
+  ],
+  "portrait": "res://assets/portraits/ember_imp.svg"
+ },
+ {
+  "id": "ember_brute",
+  "name": "Ember Brute",
+  "title": "",
+  "element": "flame",
+  "role": "warrior",
+  "rarity": 3,
+  "kind": "enemy",
+  "max_stats": {
+   "atk": 980,
+   "def": 520,
+   "hp": 5200,
+   "spd": 92,
+   "crit_rate": 0.15,
+   "crit_dmg": 1.5,
+   "eff": 0.0,
+   "res": 0.0
+  },
+  "skills": [
+   "e_strike",
+   "e_heavy",
+   "e_sweep"
+  ],
+  "ai": {
+   "target": "highest_atk"
+  },
+  "portrait": "res://assets/portraits/ember_brute.svg"
+ },
+ {
+  "id": "cinder_bat",
+  "name": "Cinder Bat",
+  "title": "",
+  "element": "flame",
+  "role": "assassin",
+  "rarity": 3,
+  "kind": "enemy",
+  "max_stats": {
+   "atk": 820,
+   "def": 350,
+   "hp": 3200,
+   "spd": 120,
+   "crit_rate": 0.15,
+   "crit_dmg": 1.5,
+   "eff": 0.0,
+   "res": 0.0
+  },
+  "skills": [
+   "e_strike",
+   "e_burn"
+  ],
+  "ai": {
+   "target": "random"
+  },
+  "portrait": "res://assets/portraits/cinder_bat.svg"
+ },
+ {
+  "id": "frost_wisp",
+  "name": "Frost Wisp",
+  "title": "",
+  "element": "frost",
+  "role": "mage",
+  "rarity": 3,
+  "kind": "enemy",
+  "max_stats": {
+   "atk": 860,
+   "def": 400,
+   "hp": 3400,
+   "spd": 108,
+   "crit_rate": 0.15,
+   "crit_dmg": 1.5,
+   "eff": 0.0,
+   "res": 0.0
+  },
+  "skills": [
+   "e_strike",
+   "e_freeze"
+  ],
+  "portrait": "res://assets/portraits/frost_wisp.svg"
+ },
+ {
+  "id": "frost_golem",
+  "name": "Frost Golem",
+  "title": "",
+  "element": "frost",
+  "role": "knight",
+  "rarity": 3,
+  "kind": "enemy",
+  "max_stats": {
+   "atk": 700,
+   "def": 720,
+   "hp": 6200,
+   "spd": 88,
+   "crit_rate": 0.15,
+   "crit_dmg": 1.5,
+   "eff": 0.0,
+   "res": 0.0
+  },
+  "skills": [
+   "e_strike",
+   "e_stun"
+  ],
+  "ai": {
+   "target": "highest_atk"
+  },
+  "portrait": "res://assets/portraits/frost_golem.svg"
+ },
+ {
+  "id": "ice_lurker",
+  "name": "Ice Lurker",
+  "title": "",
+  "element": "frost",
+  "role": "assassin",
+  "rarity": 3,
+  "kind": "enemy",
+  "max_stats": {
+   "atk": 900,
+   "def": 420,
+   "hp": 3700,
+   "spd": 114,
+   "crit_rate": 0.15,
+   "crit_dmg": 1.5,
+   "eff": 0.0,
+   "res": 0.0
+  },
+  "skills": [
+   "e_strike",
+   "e_freeze",
+   "e_heavy"
+  ],
+  "ai": {
+   "target": "lowest_hp"
+  },
+  "portrait": "res://assets/portraits/ice_lurker.svg"
+ },
+ {
+  "id": "tomb_wraith",
+  "name": "Tomb Wraith",
+  "title": "",
+  "element": "umbral",
+  "role": "mage",
+  "rarity": 3,
+  "kind": "enemy",
+  "max_stats": {
+   "atk": 920,
+   "def": 400,
+   "hp": 3600,
+   "spd": 106,
+   "crit_rate": 0.15,
+   "crit_dmg": 1.5,
+   "eff": 0.0,
+   "res": 0.0
+  },
+  "skills": [
+   "e_strike",
+   "e_drain"
+  ],
+  "portrait": "res://assets/portraits/tomb_wraith.svg"
+ },
+ {
+  "id": "shadow_cutpurse",
+  "name": "Shadow Cutpurse",
+  "title": "",
+  "element": "umbral",
+  "role": "assassin",
+  "rarity": 3,
+  "kind": "enemy",
+  "max_stats": {
+   "atk": 940,
+   "def": 380,
+   "hp": 3400,
+   "spd": 118,
+   "crit_rate": 0.15,
+   "crit_dmg": 1.5,
+   "eff": 0.0,
+   "res": 0.0
+  },
+  "skills": [
+   "e_strike",
+   "e_sunder"
+  ],
+  "ai": {
+   "target": "lowest_def"
+  },
+  "portrait": "res://assets/portraits/shadow_cutpurse.svg"
+ },
+ {
+  "id": "gloom_hound",
+  "name": "Gloom Hound",
+  "title": "",
+  "element": "umbral",
+  "role": "warrior",
+  "rarity": 3,
+  "kind": "enemy",
+  "max_stats": {
+   "atk": 880,
+   "def": 450,
+   "hp": 4300,
+   "spd": 110,
+   "crit_rate": 0.15,
+   "crit_dmg": 1.5,
+   "eff": 0.0,
+   "res": 0.0
+  },
+  "skills": [
+   "e_strike",
+   "e_bleed"
+  ],
+  "ai": {
+   "target": "random"
+  },
+  "portrait": "res://assets/portraits/gloom_hound.svg"
+ },
+ {
+  "id": "lantern_acolyte",
+  "name": "Lantern Acolyte",
+  "title": "",
+  "element": "radiant",
+  "role": "healer",
+  "rarity": 3,
+  "kind": "enemy",
+  "max_stats": {
+   "atk": 720,
+   "def": 460,
+   "hp": 4100,
+   "spd": 102,
+   "crit_rate": 0.15,
+   "crit_dmg": 1.5,
+   "eff": 0.0,
+   "res": 0.0
+  },
+  "skills": [
+   "e_strike",
+   "e_heal",
+   "e_rally"
+  ],
+  "ai": {
+   "skill": "support"
+  },
+  "portrait": "res://assets/portraits/lantern_acolyte.svg"
+ },
+ {
+  "id": "gilded_sentinel",
+  "name": "Gilded Sentinel",
+  "title": "",
+  "element": "radiant",
+  "role": "knight",
+  "rarity": 3,
+  "kind": "enemy",
+  "max_stats": {
+   "atk": 760,
+   "def": 700,
+   "hp": 6000,
+   "spd": 94,
+   "crit_rate": 0.15,
+   "crit_dmg": 1.5,
+   "eff": 0.0,
+   "res": 0.0
+  },
+  "skills": [
+   "e_strike",
+   "e_stun",
+   "e_ward"
+  ],
+  "ai": {
+   "skill": "rotation"
+  },
+  "portrait": "res://assets/portraits/gilded_sentinel.svg"
+ },
+ {
+  "id": "wyrm_of_ash",
+  "name": "Wyrm of Ash",
+  "title": "Hunt Boss",
+  "element": "flame",
+  "role": "warrior",
+  "rarity": 5,
+  "kind": "boss",
+  "max_stats": {
+   "atk": 1300,
+   "def": 700,
+   "hp": 32000,
+   "spd": 105,
+   "crit_rate": 0.15,
+   "crit_dmg": 1.5,
+   "eff": 0.0,
+   "res": 0.3
+  },
+  "skills": [
+   "boss_ash_s1",
+   "boss_ash_s2",
+   "boss_ash_s3",
+   "boss_ash_p"
+  ],
+  "ai": {
+   "skill": "rotation",
+   "target": "highest_atk"
+  },
+  "portrait": "res://assets/portraits/wyrm_of_ash.svg"
+ },
+ {
+  "id": "glacial_matriarch",
+  "name": "Glacial Matriarch",
+  "title": "Hunt Boss",
+  "element": "frost",
+  "role": "mage",
+  "rarity": 5,
+  "kind": "boss",
+  "max_stats": {
+   "atk": 1250,
+   "def": 650,
+   "hp": 30000,
+   "spd": 110,
+   "crit_rate": 0.15,
+   "crit_dmg": 1.5,
+   "eff": 0.0,
+   "res": 0.3
+  },
+  "skills": [
+   "boss_glacial_s1",
+   "boss_glacial_s2",
+   "boss_glacial_s3",
+   "boss_glacial_p"
+  ],
+  "ai": {
+   "skill": "rotation",
+   "target": "lowest_hp"
+  },
+  "portrait": "res://assets/portraits/glacial_matriarch.svg"
+ },
+ {
+  "id": "hollow_king",
+  "name": "The Hollow King",
+  "title": "Hunt Boss",
+  "element": "umbral",
+  "role": "assassin",
+  "rarity": 5,
+  "kind": "boss",
+  "max_stats": {
+   "atk": 1400,
+   "def": 600,
+   "hp": 28000,
+   "spd": 118,
+   "crit_rate": 0.15,
+   "crit_dmg": 1.5,
+   "eff": 0.0,
+   "res": 0.3
+  },
+  "skills": [
+   "boss_hollow_s1",
+   "boss_hollow_s2",
+   "boss_hollow_s3",
+   "boss_hollow_p"
+  ],
+  "ai": {
+   "skill": "rotation",
+   "target": "lowest_hp"
+  },
+  "portrait": "res://assets/portraits/hollow_king.svg"
  }
 ]

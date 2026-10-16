@@ -1,4 +1,4 @@
-# Covenant of Stars (working title)
+# EPIC_8 — Covenant of Stars (working title)
 
 Original turn-based hero-collector RPG built in Godot 4.3. See
 [ROADMAP.md](ROADMAP.md) for the milestone plan and

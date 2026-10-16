@@ -66,13 +66,17 @@ Goal: adding a hero takes 15 minutes and no engine changes.
 - ✅ Save/load to `user://save.json` with checksum, backup file, tamper detection; 44 tests
 - ⬜ Steam Cloud sync (Milestone 9, needs GodotSteam)
 
-## Milestone 4 — Gear economy ⬜ (next)
-- ⬜ Inventory UI, equip/unequip, compare panel
-- ⬜ Enhancement cost curve, reforge at +15, gear conversion
-- ⬜ Crafting from boss materials
-- ⬜ Lifesteal/counter set behaviours wired into engine
+## Milestone 4 — Gear economy ✅
+- ✅ Enhancement gold curve by rarity, level and tier; `GearEconomy.enhance()`
+- ✅ Reforge at +15: tier 2, main ×1.1, substats ×1.15, costs gold + reforge stone
+- ✅ Sell/convert gear for gold (auto-unequips)
+- ✅ Crafting: boss materials map to sets (ash_scale → might/siphon/fury, rime_shard → swift/keen/ward,
+  hollow_bone → ruin/precision/twin/vigor/bulwark); 30% 5★ chance
+- ✅ Gear score for sorting and compare panels
+- ✅ Lifesteal/counter/dual set behaviours (done in Milestone 1)
+- ➡ Inventory, equip and compare screens moved to Milestone 8 with the other meta UI
 
-## Milestone 5 — Summoning and store ⬜
+## Milestone 5 — Summoning and store ⬜ (next)
 - ⬜ Banner definitions (featured hero, rotation dates, rate-up)
 - ⬜ Mileage/exchange currency alongside hard pity
 - ⬜ Rate disclosure panel (mandatory for Steam and most jurisdictions)

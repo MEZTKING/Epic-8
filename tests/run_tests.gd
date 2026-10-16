@@ -554,6 +554,66 @@ func test_save_roundtrip_and_tamper() -> void:
 	check(SaveSystem.save(p, path) and SaveSystem.load(path) != null, "file save/load")
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(path))
 
+# ---------------------------------------------------------------- milestone 4
+
+func test_gear_enhance_economy() -> void:
+	var p := PlayerProfile.new(0)
+	var rng := RandomNumberGenerator.new(); rng.seed = 21
+	var g := p.add_gear(GearGenerator.roll(rng, Gear.Slot.RING, 5, "swift"))
+	check(GearEconomy.enhance_cost(g) > 0, "enhance has a cost")
+	var c0 := GearEconomy.enhance_cost(g)
+	p.gold = 0
+	check(not GearEconomy.enhance(p, g.uid, rng) and g.level == 0, "cannot enhance without gold")
+	p.gold = 10_000_000
+	check(GearEconomy.enhance(p, g.uid, rng) and g.level == 1 and p.gold == 10_000_000 - c0, "enhance spends gold")
+	check(GearEconomy.enhance_cost(g) > c0, "cost rises with level")
+	var s0 := GearEconomy.score(g)
+	while g.level < Gear.MAX_ENHANCE:
+		GearEconomy.enhance(p, g.uid, rng)
+	check(GearEconomy.score(g) > s0, "score rises with substat rolls")
+	check(GearEconomy.enhance_cost(g) == 0 and not GearEconomy.enhance(p, g.uid, rng), "+15 cannot enhance")
+
+
+func test_gear_reforge_and_sell() -> void:
+	var p := PlayerProfile.new(0)
+	var rng := RandomNumberGenerator.new(); rng.seed = 22
+	var k := p.add_hero("kaelen")
+	var g := p.add_gear(GearGenerator.roll(rng, Gear.Slot.WEAPON, 4, "might"))
+	p.equip(k.uid, g.uid)
+	check(not GearEconomy.reforge(p, g.uid), "reforge needs +15")
+	for _i in range(15):
+		GearGenerator.enhance(rng, g)
+	p.grant({"gold": 100000})
+	check(not GearEconomy.reforge(p, g.uid), "reforge needs a stone")
+	p.grant({"reforge_stone": 1})
+	var main_before := g.main_value()
+	var sub_key: String = g.substats.keys()[0]
+	var sub_before := float(g.substats[sub_key])
+	check(GearEconomy.reforge(p, g.uid) and g.tier == 2, "reforge succeeds")
+	check(g.main_value() > main_before and float(g.substats[sub_key]) > sub_before, "reforge boosts stats")
+	check(not GearEconomy.reforge(p, g.uid), "cannot reforge twice")
+	var gold := p.gold
+	var value := GearEconomy.sell(p, g.uid)
+	check(value > 0 and p.gold == gold + value, "sell pays gold")
+	check(p.get_gear(g.uid) == null and not k.equipped.has(int(Gear.Slot.WEAPON)), "sold gear removed and unequipped")
+
+
+func test_gear_crafting() -> void:
+	var p := PlayerProfile.new(0)
+	var rng := RandomNumberGenerator.new(); rng.seed = 23
+	check(GearEconomy.craft(p, Gear.Slot.BOOTS, "swift", rng) == null, "craft needs materials")
+	check(GearEconomy.craft_cost("nonexistent").is_empty(), "unknown set not craftable")
+	p.grant({"gold": 1_000_000, "rime_shard": 80, "crafting_alloy": 30})
+	var fives := 0
+	for _i in range(10):
+		var g := GearEconomy.craft(p, Gear.Slot.BOOTS, "swift", rng)
+		check(g != null and g.slot == Gear.Slot.BOOTS and g.set_id == "swift" and g.rarity >= 4, "crafted the requested item")
+		if g != null and g.rarity == 5:
+			fives += 1
+	check(p.materials["rime_shard"] == 0 and p.gear.size() == 10, "materials consumed, items added")
+	check(fives >= 1 and fives <= 7, "some crafts are 5-star (got %d/10)" % fives)
+	check(GearEconomy.craft(p, Gear.Slot.BOOTS, "swift", rng) == null, "out of materials")
+
 # ---------------------------------------------------------------- gear
 
 func test_gear_roll_and_enhance() -> void:

@@ -41,6 +41,35 @@ Buffs cannot be resisted. Debuffs roll: base chance, then
 `resist = max(RES − EFF, 0.15)`. Immunity blocks debuffs. Provoke forces the
 provoked unit to attack its provoker. Heal Block prevents healing.
 
+## Reactions and passives
+- **Counterattack** (Fury set): when hit by a single-target attack, 20% chance to
+  reply with skill 1. Stunned units cannot counter.
+- **Dual attack** (Twin set): when an ally lands a single-target attack, each
+  Twin-wearing ally has a 20% chance to follow up with skill 1. One per attack.
+- **Lifesteal** (Siphon set): heal 20% of damage dealt.
+- **Extra turn**: the skill refills the actor's gauge to 100 immediately.
+- Reactions never set cooldowns and never trigger further reactions.
+- **Passives** fire on a trigger (`on_turn_start`, `on_hit`, `on_ally_attacked`,
+  `on_kill`), with an optional chance and cooldown. They can heal, push the
+  owner's gauge, and apply effects to the owner, the attacker, or the victim.
+
+## Barriers, dispel, cleanse
+- **Barrier** absorbs damage before HP. Its size scales with the caster's Attack
+  and/or the target's max HP. A new barrier replaces a weaker one, never stacks.
+- **Dispel** removes N buffs from an enemy (newest first). It rolls against
+  Resistance like a debuff.
+- **Cleanse** removes N debuffs from an ally.
+
+## Skill enhancement
+Each skill has an ordered list of upgrade deltas (multiplier, chance, cooldown,
+heal, gauge push). A hero's skill level selects how many apply. Base data is
+never mutated.
+
+## Manual play and replays
+Teams in `manual_teams` pause the engine for input. Every action (AI or human)
+is recorded as a decision. Seed + team specs + decisions replay to an identical
+log, which is the basis for bug reports and asynchronous PvP verification.
+
 ## Gear
 Six slots: Weapon (ATK), Helm (HP), Armor (DEF) have fixed main stats;
 Necklace, Ring, Boots roll theirs. Rarity 2–5★ gives 1–4 starting substats.

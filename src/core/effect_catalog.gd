@@ -23,6 +23,7 @@ const EFFECTS := {
 	"provoke": {"name": "Provoke", "kind": "debuff", "flags": ["taunt"]},
 	"heal_block": {"name": "Heal Block", "kind": "debuff", "flags": ["no_heal"]},
 	"immunity": {"name": "Immunity", "kind": "buff", "flags": ["immune"]},
+	"barrier": {"name": "Barrier", "kind": "buff", "flags": ["barrier"]},
 }
 
 

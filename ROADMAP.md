@@ -25,18 +25,23 @@ Goal: a project that runs, with the core rules implemented as pure, testable cod
 - ✅ Text-mode sandbox scene: roster, auto-battle log, 10x summon (`scenes/main.tscn`)
 - ✅ Legal guardrails document (`docs/LEGAL_NOTES.md`)
 
-## Milestone 1 — Combat depth 🔄 (next)
+## Milestone 1 — Combat depth ✅
 Goal: the battle rules feel complete enough to balance against.
 
-- ⬜ Counterattack, dual attack, extra turn, lifesteal (Siphon/Fury set flags exist, no behaviour yet)
-- ⬜ Dispel / strip / cleanse, buff steal, barrier (shield) effects
-- ⬜ Passive skills (on-hit, on-turn-start, on-ally-attacked triggers)
-- ⬜ Skill enhancement tiers (+1..+5 upgrades that bump multiplier/chance/cooldown)
-- ⬜ Manual Resolve spending API (player chooses when to empower)
-- ⬜ Battle replay file format (seed + decisions) for bug reports and PvP sharing
-- ⬜ Balance harness: run N thousand seeded battles and report win rates per team
+- ✅ Counterattack (Fury set), dual attack (Twin set), lifesteal (Siphon set), extra turn
+- ✅ Dispel, cleanse, barrier (shield) effects
+- ✅ Passive skills: on_turn_start, on_hit, on_ally_attacked, on_kill triggers with chance and cooldown
+- ✅ Skill enhancement tiers (ordered upgrade deltas per skill; `BattleUnit.set_skill_level`)
+- ✅ Manual input API: `manual_teams`, `submit_action(skill, target, empower)`; Resolve spent by the player
+- ✅ Battle replay: `BattleEngine.to_replay()` → JSON → `BattleReplay.run()`; verified bit-identical logs
+- ✅ Balance harness (`tests/balance_harness.gd`) with per-matchup and per-hero win rates
+- ✅ New hero Ilsabet Dawnforge (barrier, dispel, cleanse, passive); 33 tests
+- ⬜ Buff steal, stat-scaling barriers from DEF/HP, passive cooldown display
+- ⬜ Balance pass. First harness run (200 games per matchup, no gear) found:
+  sustain beats burst 93.5% and draws control by timeout. Heal output and the
+  300-turn cap need tuning before PvE content is built on top.
 
-## Milestone 2 — Content pipeline ⬜
+## Milestone 2 — Content pipeline ⬜ (next)
 Goal: adding a hero takes 15 minutes and no engine changes.
 
 - ⬜ Switch hero/skill definitions to Godot `Resource` (.tres) with a JSON export for tooling

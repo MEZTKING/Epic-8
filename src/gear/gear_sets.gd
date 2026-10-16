@@ -14,6 +14,7 @@ const SETS := {
 	"ward": {"name": "Ward", "pieces": 2, "mods": {"res": 0.20}},
 	"siphon": {"name": "Siphon", "pieces": 4, "mods": {}, "flags": ["lifesteal_20"]},
 	"fury": {"name": "Fury", "pieces": 4, "mods": {}, "flags": ["counter_20"]},
+	"twin": {"name": "Twin", "pieces": 2, "mods": {}, "flags": ["dual_20"]},
 }
 
 

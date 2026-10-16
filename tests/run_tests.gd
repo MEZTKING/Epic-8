@@ -52,7 +52,10 @@ func test_data_loads() -> void:
 		check(h.max_stats["hp"] > 0, "%s has hp" % h.id)
 		for s in h.skills:
 			for ef in s.effects:
-				check(not EffectCatalog.get_effect(ef["id"]).is_empty(), "%s effect %s exists" % [s.id, ef["id"]])
+				if ef.has("op"):
+					check(ef["op"] in ["dispel", "cleanse"], "%s op %s known" % [s.id, ef["op"]])
+				else:
+					check(not EffectCatalog.get_effect(ef["id"]).is_empty(), "%s effect %s exists" % [s.id, ef["id"]])
 
 
 func test_stats_scale_with_level() -> void:
@@ -168,8 +171,8 @@ func test_provoke_forces_target() -> void:
 	var enemy := _unit("grunt", 1, 0)
 	engine.setup([tank, squishy], [enemy])
 	enemy.add_effect("provoke", 1, tank)
-	var targets := engine.choose_targets(enemy, enemy.data.skills[0])
-	check(targets.size() == 1 and targets[0] == tank, "provoked unit attacks provoker")
+	var target := engine.choose_target(enemy, enemy.data.skills[0])
+	check(target == tank, "provoked unit attacks provoker")
 
 
 func test_cooldowns() -> void:
@@ -183,6 +186,203 @@ func test_cooldowns() -> void:
 	a.end_turn()
 	check(not a.skill_ready(2), "skill on cooldown after use")
 	check(engine.choose_skill_index(a) == 1, "falls back to next ready skill")
+
+# ---------------------------------------------------------------- milestone 1
+
+func test_ai_skips_passives() -> void:
+	var engine := BattleEngine.new(1)
+	var a := _unit("thorne", 0, 0)
+	var b := _unit("grunt", 1, 0)
+	engine.setup([a], [b])
+	for _i in range(6):
+		check(not a.skill(engine.choose_skill_index(a)).passive, "AI never picks a passive")
+		a.end_turn()
+
+
+func test_barrier_absorbs() -> void:
+	var u := _unit("grunt", 1, 0)
+	u.add_barrier(500.0, 2)
+	var dealt := u.take_damage(300.0)
+	check(dealt == 0.0 and u.hp == u.max_hp(), "barrier absorbs fully")
+	check(is_equal_approx(u.shield_value(), 200.0), "barrier reduced")
+	dealt = u.take_damage(300.0)
+	check(is_equal_approx(dealt, 100.0) and is_equal_approx(u.last_absorbed, 200.0), "overflow hits hp")
+	check(not u.has_effect("barrier"), "depleted barrier removed")
+	u.add_barrier(100.0, 1)
+	u.add_barrier(50.0, 1)
+	check(u.shield_value() == 100.0, "weaker barrier does not replace stronger")
+
+
+func test_barrier_skill() -> void:
+	var engine := BattleEngine.new(2)
+	var ils := _unit("ilsabet", 0, 0)
+	var ally := _unit("mira", 0, 1)
+	var e := _unit("grunt", 1, 0)
+	engine.setup([ils, ally], [e])
+	ally.add_effect("atk_down", 2)
+	engine.use_skill(ils, 1, engine.resolve_targets(ils, ils.skill(1), null))
+	check(ally.has_effect("barrier") and ils.has_effect("barrier"), "all allies get barrier")
+	check(is_equal_approx(ally.shield_value(), roundf(ils.stat("atk") * 1.2)), "barrier scales with caster atk")
+	check(not ally.has_effect("atk_down"), "cleanse removed the debuff")
+
+
+func test_dispel_and_cleanse() -> void:
+	var u := _unit("grunt", 1, 0)
+	u.add_effect("atk_up", 2)
+	u.add_effect("def_up", 2)
+	u.add_effect("stun", 1)
+	var removed := u.remove_buffs(1)
+	check(removed.size() == 1 and removed[0] == "def_up", "dispel removes newest buff first")
+	check(u.has_effect("stun"), "dispel leaves debuffs")
+	check(u.remove_debuffs(5).size() == 1 and not u.has_effect("stun"), "cleanse removes debuffs only")
+	check(u.has_effect("atk_up"), "cleanse leaves buffs")
+
+
+func test_lifesteal() -> void:
+	var engine := BattleEngine.new(3)
+	var a := BattleUnit.new(HeroDB.get_hero("kaelen"), 0, 0, 60, {}, ["lifesteal_20"])
+	var b := _unit("grunt", 1, 0)
+	engine.setup([a], [b])
+	a.hp = 1000.0
+	var res := engine.use_skill(a, 0, [b])
+	check(is_equal_approx(a.hp, 1000.0 + res[0]["damage"] * 0.2), "heals 20% of damage dealt")
+
+
+func test_counterattack() -> void:
+	var engine := BattleEngine.new(4)
+	var a := _unit("grunt", 0, 0)
+	var b := BattleUnit.new(HeroDB.get_hero("thorne"), 1, 0, 60, {}, ["counter_100"])
+	engine.setup([a], [b])
+	engine.use_skill(a, 0, [b])
+	check(a.hp < a.max_hp(), "defender countered")
+	check("counterattacks" in "\n".join(engine.log_lines), "counter logged")
+	b.add_effect("stun", 1)
+	var before := a.hp
+	engine.use_skill(a, 0, [b])
+	check(a.hp == before, "stunned unit cannot counter")
+
+
+func test_dual_attack() -> void:
+	var engine := BattleEngine.new(5)
+	var a := _unit("kaelen", 0, 0)
+	var partner := BattleUnit.new(HeroDB.get_hero("vexmoor"), 0, 1, 60, {}, ["dual_100"])
+	var b := _unit("thorne", 1, 0)
+	engine.setup([a, partner], [b])
+	engine.use_skill(a, 0, [b])
+	check("dual attack" in "\n".join(engine.log_lines), "partner joined")
+	check(partner.skill_ready(0), "nested attack set no cooldown")
+	engine.log_lines.clear()
+	engine.use_skill(a, 2, engine.resolve_targets(a, a.skill(2), null))
+	check(not ("dual attack" in "\n".join(engine.log_lines)), "no dual attack on area skills")
+
+
+func test_extra_turn() -> void:
+	var engine := BattleEngine.new(6)
+	var a := _unit("bramble", 0, 0)
+	var b := _unit("thorne", 1, 0)
+	engine.setup([a], [b])
+	engine.manual_teams = [0]
+	engine.step()
+	check(engine.awaiting_input and engine.current_actor == a, "bramble acts first and waits for input")
+	check(engine.submit_action(1, null), "Volley accepted")
+	check(a.gauge == 100.0, "extra turn refills gauge")
+	engine.step()
+	check(engine.current_actor == a, "bramble acts again immediately")
+
+
+func test_passive_on_hit() -> void:
+	var engine := BattleEngine.new(7)
+	var a := _unit("grunt", 0, 0)
+	var t := _unit("thorne", 1, 0)
+	engine.setup([a], [t])
+	engine.use_skill(a, 0, [t])
+	check(t.has_effect("def_up"), "Deep Roots grants Defense Up when hit")
+	var idx := t.data.skill_ids.find("thorne_p")
+	check(not t.skill_ready(idx), "passive goes on cooldown")
+
+
+func test_passive_on_kill() -> void:
+	var engine := BattleEngine.new(8)
+	var v := _unit("vexmoor", 0, 0)
+	var g := _unit("grunt", 1, 0)
+	engine.setup([v], [g])
+	g.hp = 1.0
+	engine.use_skill(v, 0, [g])
+	check(not g.alive, "grunt died")
+	check(v.gauge == 50.0 and v.has_effect("crit_up"), "Bloodscent pushed gauge and buffed")
+
+
+func test_passive_on_ally_attacked() -> void:
+	var hit := 0
+	for seed_value in range(40):
+		var engine := BattleEngine.new(seed_value)
+		var a := _unit("grunt", 0, 0)
+		var ils := _unit("ilsabet", 1, 0)
+		var ally := _unit("thorne", 1, 1)
+		engine.setup([a], [ils, ally])
+		engine.use_skill(a, 0, [ally])
+		if ally.has_effect("barrier"):
+			hit += 1
+	check(hit > 3 and hit < 20, "Vigil triggers about 25%% of the time (got %d/40)" % hit)
+
+
+func test_skill_upgrades() -> void:
+	var base := HeroDB.get_skill("kaelen_s1")
+	var up := base.at_level(5)
+	check(is_equal_approx(up.multiplier, 1.2), "multiplier upgrades summed")
+	check(is_equal_approx(float(up.effects[0]["chance"]), 0.7), "chance upgrades summed")
+	check(is_equal_approx(base.multiplier, 1.0) and is_equal_approx(float(base.effects[0]["chance"]), 0.5), "base skill untouched")
+	var s3 := HeroDB.get_skill("kaelen_s3").at_level(4)
+	check(s3.cooldown == 4, "cooldown reduced by upgrade")
+	var u := _unit("kaelen", 0, 0)
+	u.set_skill_level(0, 99)
+	check(u.skill_levels[0] == 5, "level clamps to max")
+	check(is_equal_approx(u.skill(0).multiplier, 1.2), "unit uses upgraded skill")
+	check(u.skill(1) == u.data.skills[1], "unupgraded skill is the shared base")
+
+
+func test_manual_input_validation() -> void:
+	var engine := BattleEngine.new(9)
+	var m := _unit("mira", 0, 0)
+	var ally := _unit("thorne", 0, 1)
+	var e := _unit("grunt", 1, 0)
+	engine.setup([m, ally], [e])
+	engine.manual_teams = [0]
+	check(engine.run() == -1 and engine.awaiting_input, "run pauses for input")
+	check(engine.current_actor == m, "fastest manual unit is up")
+	check(not engine.submit_action(0, ally), "cannot attack an ally")
+	check(not engine.submit_action(7, e), "invalid skill index")
+	check(not engine.submit_action(2, null, true), "cannot empower without Resolve")
+	check(engine.submit_action(1, e), "valid attack accepted")
+	check(not engine.awaiting_input and e.hp < e.max_hp(), "action executed")
+	check(engine.decisions.size() == 1 and engine.decisions[0]["skill"] == 1, "decision recorded")
+
+
+func test_replay_roundtrip() -> void:
+	var engine := BattleEngine.new(2024)
+	var rng := RandomNumberGenerator.new(); rng.seed = 2024
+	var p: Array[BattleUnit] = []
+	var e: Array[BattleUnit] = []
+	var ids := ["kaelen", "ilsabet", "vexmoor", "seraphi"]
+	for i in ids.size():
+		var hero := HeroDB.get_hero(ids[i])
+		var items: Array = []
+		for s in range(6):
+			items.append(GearGenerator.roll(rng, s as Gear.Slot, 4, "fury" if i == 1 else "twin"))
+		var bonus := GearGenerator.total_bonus(Stats.at_level(hero.max_stats, 60), items)
+		var u := BattleUnit.new(hero, 0, i, 60, bonus, GearSets.bonuses(items)["flags"])
+		u.set_skill_level(0, 2)
+		p.append(u)
+	for i in 4:
+		e.append(_unit(["mira", "thorne", "bramble", "grunt"][i], 1, i, 58))
+	engine.setup(p, e)
+	engine.run()
+	check(engine.is_over(), "original battle finished")
+	var json := BattleReplay.to_json(engine.to_replay())
+	var replayed := BattleReplay.run(BattleReplay.from_json(json))
+	check(replayed.is_over() and replayed.winner == engine.winner, "replay reaches same winner")
+	check("\n".join(replayed.log_lines) == "\n".join(engine.log_lines), "replay log identical to original")
+	check(replayed.decisions.size() == engine.decisions.size(), "same number of decisions")
 
 # ---------------------------------------------------------------- gear
 

@@ -1,28 +1,461 @@
 [
-  {"id": "kaelen_s1", "name": "Ember Cleave", "description": "Attacks one enemy with a burning blade, with a 50% chance to inflict Burn for 2 turns.", "target": "enemy", "multiplier": 1.0, "effects": [{"id": "burn", "chance": 0.5, "turns": 2, "target": "hit"}]},
-  {"id": "kaelen_s2", "name": "Rally Cry", "description": "Grants Attack Up to all allies for 2 turns and pushes their initiative by 20%.", "target": "all_allies", "multiplier": 0, "cooldown": 4, "gauge_push": 20, "effects": [{"id": "atk_up", "chance": 1.0, "turns": 2, "target": "hit"}]},
-  {"id": "kaelen_s3", "name": "Pyre Judgment", "description": "Strikes all enemies with a 75% chance to lower Defense for 2 turns.", "target": "all_enemies", "multiplier": 0.9, "cooldown": 5, "resolve_cost": 20, "effects": [{"id": "def_down", "chance": 0.75, "turns": 2, "target": "hit"}]},
-
-  {"id": "mira_s1", "name": "Frost Needle", "description": "Attacks one enemy with a 35% chance to inflict Speed Down for 1 turn.", "target": "enemy", "multiplier": 1.0, "effects": [{"id": "spd_down", "chance": 0.35, "turns": 1, "target": "hit"}]},
-  {"id": "mira_s2", "name": "Glacial Prison", "description": "Attacks one enemy and has a 70% chance to Stun for 1 turn.", "target": "enemy", "multiplier": 1.2, "cooldown": 4, "effects": [{"id": "stun", "chance": 0.7, "turns": 1, "target": "hit"}]},
-  {"id": "mira_s3", "name": "Winter's End", "description": "Unleashes a blizzard on all enemies, with a 60% chance to inflict Speed Down for 2 turns.", "target": "all_enemies", "multiplier": 1.1, "cooldown": 5, "resolve_cost": 20, "effects": [{"id": "spd_down", "chance": 0.6, "turns": 2, "target": "hit"}]},
-
-  {"id": "thorne_s1", "name": "Root Smash", "description": "Attacks one enemy. Damage increases with the caster's max Health.", "target": "enemy", "multiplier": 0.6, "hp_scaling": 0.08},
-  {"id": "thorne_s2", "name": "Barkskin", "description": "Grants Defense Up to all allies for 2 turns and Provokes the enemy with the highest Attack.", "target": "all_allies", "multiplier": 0, "cooldown": 4, "effects": [{"id": "def_up", "chance": 1.0, "turns": 2, "target": "hit"}, {"id": "provoke", "chance": 0.85, "turns": 1, "target": "highest_atk_enemy"}]},
-  {"id": "thorne_s3", "name": "Earthen Bulwark", "description": "Grants Immunity to all allies for 2 turns and heals them for 15% of their max Health.", "target": "all_allies", "multiplier": 0, "heal_percent": 0.15, "cooldown": 5, "effects": [{"id": "immunity", "chance": 1.0, "turns": 2, "target": "hit"}]},
-
-  {"id": "seraphi_s1", "name": "Gleam", "description": "Attacks one enemy and heals the ally with the lowest Health for 10% of their max Health.", "target": "enemy", "multiplier": 0.8, "heal_percent": 0.10},
-  {"id": "seraphi_s2", "name": "Dawn Mantle", "description": "Heals all allies for 25% of their max Health.", "target": "all_allies", "multiplier": 0, "heal_percent": 0.25, "cooldown": 3},
-  {"id": "seraphi_s3", "name": "Sunrise Choir", "description": "Heals all allies for 20%, grants Speed Up for 2 turns, and pushes initiative by 30%.", "target": "all_allies", "multiplier": 0, "heal_percent": 0.20, "cooldown": 5, "gauge_push": 30, "resolve_cost": 20, "effects": [{"id": "spd_up", "chance": 1.0, "turns": 2, "target": "hit"}]},
-
-  {"id": "vexmoor_s1", "name": "Shadow Nick", "description": "Attacks one enemy with a 40% chance to inflict Bleed for 2 turns.", "target": "enemy", "multiplier": 1.0, "effects": [{"id": "bleed", "chance": 0.4, "turns": 2, "target": "hit"}]},
-  {"id": "vexmoor_s2", "name": "Fade Step", "description": "Grants self Critical Up for 2 turns and pushes own initiative by 50%.", "target": "self", "multiplier": 0, "cooldown": 3, "gauge_push": 50, "effects": [{"id": "crit_up", "chance": 1.0, "turns": 2, "target": "hit"}]},
-  {"id": "vexmoor_s3", "name": "Gravewhisper", "description": "A devastating strike on one enemy. Inflicts Heal Block for 2 turns.", "target": "enemy", "multiplier": 2.2, "cooldown": 5, "resolve_cost": 20, "effects": [{"id": "heal_block", "chance": 0.9, "turns": 2, "target": "hit"}]},
-
-  {"id": "bramble_s1", "name": "Thorn Shot", "description": "Attacks one enemy. 30% chance to lower Attack for 1 turn.", "target": "enemy", "multiplier": 1.0, "effects": [{"id": "atk_down", "chance": 0.3, "turns": 1, "target": "hit"}]},
-  {"id": "bramble_s2", "name": "Volley", "description": "Attacks all enemies.", "target": "all_enemies", "multiplier": 0.75, "cooldown": 3},
-  {"id": "bramble_s3", "name": "Deadeye", "description": "Attacks one enemy with a guaranteed critical hit.", "target": "enemy", "multiplier": 1.8, "cooldown": 4, "effects": [{"id": "crit_up", "chance": 1.0, "turns": 1, "target": "self_before"}]},
-
-  {"id": "grunt_s1", "name": "Club Swing", "description": "Attacks one enemy.", "target": "enemy", "multiplier": 1.0},
-  {"id": "grunt_s2", "name": "Heavy Swing", "description": "Attacks one enemy with extra force.", "target": "enemy", "multiplier": 1.5, "cooldown": 3}
+ {
+  "id": "kaelen_s1",
+  "name": "Ember Cleave",
+  "description": "Attacks one enemy with a burning blade, with a 50% chance to inflict Burn for 2 turns.",
+  "target": "enemy",
+  "multiplier": 1.0,
+  "effects": [
+   {
+    "id": "burn",
+    "chance": 0.5,
+    "turns": 2,
+    "target": "hit"
+   }
+  ],
+  "upgrades": [
+   {
+    "multiplier": 0.05
+   },
+   {
+    "chance": 0.1
+   },
+   {
+    "multiplier": 0.05
+   },
+   {
+    "chance": 0.1
+   },
+   {
+    "multiplier": 0.1
+   }
+  ]
+ },
+ {
+  "id": "kaelen_s2",
+  "name": "Rally Cry",
+  "description": "Grants Attack Up to all allies for 2 turns and pushes their initiative by 20%.",
+  "target": "all_allies",
+  "multiplier": 0,
+  "cooldown": 4,
+  "gauge_push": 20,
+  "effects": [
+   {
+    "id": "atk_up",
+    "chance": 1.0,
+    "turns": 2,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "kaelen_s3",
+  "name": "Pyre Judgment",
+  "description": "Strikes all enemies with a 75% chance to lower Defense for 2 turns.",
+  "target": "all_enemies",
+  "multiplier": 0.9,
+  "cooldown": 5,
+  "resolve_cost": 20,
+  "effects": [
+   {
+    "id": "def_down",
+    "chance": 0.75,
+    "turns": 2,
+    "target": "hit"
+   }
+  ],
+  "upgrades": [
+   {
+    "multiplier": 0.05
+   },
+   {
+    "chance": 0.1
+   },
+   {
+    "multiplier": 0.05
+   },
+   {
+    "cooldown": -1
+   }
+  ]
+ },
+ {
+  "id": "mira_s1",
+  "name": "Frost Needle",
+  "description": "Attacks one enemy with a 35% chance to inflict Speed Down for 1 turn.",
+  "target": "enemy",
+  "multiplier": 1.0,
+  "effects": [
+   {
+    "id": "spd_down",
+    "chance": 0.35,
+    "turns": 1,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "mira_s2",
+  "name": "Glacial Prison",
+  "description": "Attacks one enemy and has a 70% chance to Stun for 1 turn.",
+  "target": "enemy",
+  "multiplier": 1.2,
+  "cooldown": 4,
+  "effects": [
+   {
+    "id": "stun",
+    "chance": 0.7,
+    "turns": 1,
+    "target": "hit"
+   }
+  ],
+  "upgrades": [
+   {
+    "multiplier": 0.05
+   },
+   {
+    "chance": 0.1
+   },
+   {
+    "cooldown": -1
+   }
+  ]
+ },
+ {
+  "id": "mira_s3",
+  "name": "Winter's End",
+  "description": "Unleashes a blizzard on all enemies, with a 60% chance to inflict Speed Down for 2 turns.",
+  "target": "all_enemies",
+  "multiplier": 1.1,
+  "cooldown": 5,
+  "resolve_cost": 20,
+  "effects": [
+   {
+    "id": "spd_down",
+    "chance": 0.6,
+    "turns": 2,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "thorne_s1",
+  "name": "Root Smash",
+  "description": "Attacks one enemy. Damage increases with the caster's max Health.",
+  "target": "enemy",
+  "multiplier": 0.6,
+  "hp_scaling": 0.08
+ },
+ {
+  "id": "thorne_s2",
+  "name": "Barkskin",
+  "description": "Grants Defense Up to all allies for 2 turns and Provokes the enemy with the highest Attack.",
+  "target": "all_allies",
+  "multiplier": 0,
+  "cooldown": 4,
+  "effects": [
+   {
+    "id": "def_up",
+    "chance": 1.0,
+    "turns": 2,
+    "target": "hit"
+   },
+   {
+    "id": "provoke",
+    "chance": 0.85,
+    "turns": 1,
+    "target": "highest_atk_enemy"
+   }
+  ]
+ },
+ {
+  "id": "thorne_s3",
+  "name": "Earthen Bulwark",
+  "description": "Grants Immunity to all allies for 2 turns and heals them for 15% of their max Health.",
+  "target": "all_allies",
+  "multiplier": 0,
+  "heal_percent": 0.15,
+  "cooldown": 5,
+  "effects": [
+   {
+    "id": "immunity",
+    "chance": 1.0,
+    "turns": 2,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "seraphi_s1",
+  "name": "Gleam",
+  "description": "Attacks one enemy and heals the ally with the lowest Health for 10% of their max Health.",
+  "target": "enemy",
+  "multiplier": 0.8,
+  "heal_percent": 0.1
+ },
+ {
+  "id": "seraphi_s2",
+  "name": "Dawn Mantle",
+  "description": "Heals all allies for 25% of their max Health and removes one debuff from each.",
+  "target": "all_allies",
+  "multiplier": 0,
+  "heal_percent": 0.25,
+  "cooldown": 3,
+  "effects": [
+   {
+    "op": "cleanse",
+    "count": 1,
+    "chance": 1.0,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "seraphi_s3",
+  "name": "Sunrise Choir",
+  "description": "Heals all allies for 20%, grants Speed Up for 2 turns, and pushes initiative by 30%.",
+  "target": "all_allies",
+  "multiplier": 0,
+  "heal_percent": 0.2,
+  "cooldown": 5,
+  "gauge_push": 30,
+  "resolve_cost": 20,
+  "effects": [
+   {
+    "id": "spd_up",
+    "chance": 1.0,
+    "turns": 2,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "vexmoor_s1",
+  "name": "Shadow Nick",
+  "description": "Attacks one enemy with a 40% chance to inflict Bleed for 2 turns.",
+  "target": "enemy",
+  "multiplier": 1.0,
+  "effects": [
+   {
+    "id": "bleed",
+    "chance": 0.4,
+    "turns": 2,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "vexmoor_s2",
+  "name": "Fade Step",
+  "description": "Grants self Critical Up for 2 turns and pushes own initiative by 50%.",
+  "target": "self",
+  "multiplier": 0,
+  "cooldown": 3,
+  "gauge_push": 50,
+  "effects": [
+   {
+    "id": "crit_up",
+    "chance": 1.0,
+    "turns": 2,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "vexmoor_s3",
+  "name": "Gravewhisper",
+  "description": "A devastating strike on one enemy. Inflicts Heal Block for 2 turns.",
+  "target": "enemy",
+  "multiplier": 2.2,
+  "cooldown": 5,
+  "resolve_cost": 20,
+  "effects": [
+   {
+    "id": "heal_block",
+    "chance": 0.9,
+    "turns": 2,
+    "target": "hit"
+   }
+  ],
+  "upgrades": [
+   {
+    "multiplier": 0.1
+   },
+   {
+    "multiplier": 0.1
+   },
+   {
+    "cooldown": -1
+   }
+  ]
+ },
+ {
+  "id": "bramble_s1",
+  "name": "Thorn Shot",
+  "description": "Attacks one enemy. 30% chance to lower Attack for 1 turn.",
+  "target": "enemy",
+  "multiplier": 1.0,
+  "effects": [
+   {
+    "id": "atk_down",
+    "chance": 0.3,
+    "turns": 1,
+    "target": "hit"
+   }
+  ]
+ },
+ {
+  "id": "bramble_s2",
+  "name": "Volley",
+  "description": "Attacks all enemies, then grants an extra turn.",
+  "target": "all_enemies",
+  "multiplier": 0.75,
+  "cooldown": 4,
+  "extra_turn": true
+ },
+ {
+  "id": "bramble_s3",
+  "name": "Deadeye",
+  "description": "Attacks one enemy with a guaranteed critical hit.",
+  "target": "enemy",
+  "multiplier": 1.8,
+  "cooldown": 4,
+  "effects": [
+   {
+    "id": "crit_up",
+    "chance": 1.0,
+    "turns": 1,
+    "target": "self_before"
+   }
+  ]
+ },
+ {
+  "id": "grunt_s1",
+  "name": "Club Swing",
+  "description": "Attacks one enemy.",
+  "target": "enemy",
+  "multiplier": 1.0
+ },
+ {
+  "id": "grunt_s2",
+  "name": "Heavy Swing",
+  "description": "Attacks one enemy with extra force.",
+  "target": "enemy",
+  "multiplier": 1.5,
+  "cooldown": 3
+ },
+ {
+  "id": "thorne_p",
+  "name": "Deep Roots",
+  "description": "Passive. When attacked, gains Defense Up for 1 turn. Triggers at most once every 2 turns.",
+  "passive": true,
+  "trigger": "on_hit",
+  "chance": 1.0,
+  "cooldown": 2,
+  "effects": [
+   {
+    "id": "def_up",
+    "chance": 1.0,
+    "turns": 1,
+    "target": "self"
+   }
+  ]
+ },
+ {
+  "id": "vexmoor_p",
+  "name": "Bloodscent",
+  "description": "Passive. After defeating an enemy, pushes own initiative by 50% and gains Critical Up for 1 turn.",
+  "passive": true,
+  "trigger": "on_kill",
+  "chance": 1.0,
+  "gauge_push": 50,
+  "effects": [
+   {
+    "id": "crit_up",
+    "chance": 1.0,
+    "turns": 1,
+    "target": "self"
+   }
+  ]
+ },
+ {
+  "id": "ilsabet_s1",
+  "name": "Lantern Strike",
+  "description": "Attacks one enemy with a 50% chance to remove one buff.",
+  "target": "enemy",
+  "multiplier": 1.0,
+  "effects": [
+   {
+    "op": "dispel",
+    "count": 1,
+    "chance": 0.5,
+    "target": "hit"
+   }
+  ],
+  "upgrades": [
+   {
+    "multiplier": 0.05
+   },
+   {
+    "chance": 0.1
+   },
+   {
+    "multiplier": 0.1
+   }
+  ]
+ },
+ {
+  "id": "ilsabet_s2",
+  "name": "Aegis of Dawn",
+  "description": "Grants all allies a Barrier equal to 120% of the caster's Attack for 2 turns and removes one debuff from each.",
+  "target": "all_allies",
+  "multiplier": 0,
+  "cooldown": 4,
+  "effects": [
+   {
+    "op": "cleanse",
+    "count": 1,
+    "chance": 1.0,
+    "target": "hit"
+   },
+   {
+    "id": "barrier",
+    "turns": 2,
+    "shield_atk_mult": 1.2,
+    "target": "hit"
+   }
+  ],
+  "upgrades": [
+   {
+    "cooldown": -1
+   }
+  ]
+ },
+ {
+  "id": "ilsabet_p",
+  "name": "Vigil",
+  "description": "Passive. When an ally is attacked, 25% chance to grant them a Barrier equal to 60% of the caster's Attack for 1 turn.",
+  "passive": true,
+  "trigger": "on_ally_attacked",
+  "chance": 0.25,
+  "effects": [
+   {
+    "id": "barrier",
+    "turns": 1,
+    "shield_atk_mult": 0.6,
+    "target": "victim"
+   }
+  ],
+  "upgrades": [
+   {
+    "chance": 0.05
+   },
+   {
+    "chance": 0.05
+   },
+   {
+    "chance": 0.05
+   }
+  ]
+ }
 ]

@@ -31,7 +31,7 @@ func _on_battle() -> void:
 	rng.seed = int(seed_spin.value)
 	var p: Array[BattleUnit] = []
 	var e: Array[BattleUnit] = []
-	var ids := ["kaelen", "mira", "thorne", "seraphi"]
+	var ids := ["kaelen", "mira", "ilsabet", "seraphi"]
 	for i in ids.size():
 		p.append(_geared_unit(rng, ids[i], 0, i, 60, 4))
 	var eids := ["vexmoor", "bramble", "grunt", "grunt"]
@@ -48,13 +48,13 @@ func _geared_unit(rng: RandomNumberGenerator, id: String, team: int, slot: int, 
 	var hero := HeroDB.get_hero(id)
 	var base := Stats.at_level(hero.max_stats, level)
 	var items: Array = []
-	var set_id := "swift" if slot % 2 == 0 else "might"
+	var set_id: String = ["swift", "might", "fury", "siphon"][slot % 4]
 	for s in range(6):
 		var g := GearGenerator.roll(rng, s as Gear.Slot, gear_rarity, set_id)
 		for _i in range(9):
 			GearGenerator.enhance(rng, g)
 		items.append(g)
-	return BattleUnit.new(hero, team, slot, level, GearGenerator.total_bonus(base, items))
+	return BattleUnit.new(hero, team, slot, level, GearGenerator.total_bonus(base, items), GearSets.bonuses(items)["flags"])
 
 
 func _on_summon() -> void:

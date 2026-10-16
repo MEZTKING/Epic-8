@@ -1,0 +1,69 @@
+[gd_scene load_steps=2 format=3 uid="uid://cos_main_scene"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_main"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_main")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="Margin/VBox"]
+layout_mode = 2
+text = "Covenant of Stars — Milestone 0 sandbox"
+
+[node name="Toolbar" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="RosterButton" type="Button" parent="Margin/VBox/Toolbar"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Roster"
+
+[node name="BattleButton" type="Button" parent="Margin/VBox/Toolbar"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Simulate Battle"
+
+[node name="SummonButton" type="Button" parent="Margin/VBox/Toolbar"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Summon x10"
+
+[node name="SeedLabel" type="Label" parent="Margin/VBox/Toolbar"]
+layout_mode = 2
+text = "Seed:"
+
+[node name="Seed" type="SpinBox" parent="Margin/VBox/Toolbar"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 999999.0
+value = 42.0
+
+[node name="Log" type="RichTextLabel" parent="Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+scroll_following = false
+selection_enabled = true

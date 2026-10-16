@@ -1,0 +1,23 @@
+[
+  {"id": "kaelen", "name": "Kaelen Ashvow", "title": "Ember Knight", "element": "flame", "role": "warrior", "rarity": 5,
+   "max_stats": {"atk": 1180, "def": 560, "hp": 5400, "spd": 108, "crit_rate": 0.15, "crit_dmg": 1.50, "eff": 0.0, "res": 0.0},
+   "skills": ["kaelen_s1", "kaelen_s2", "kaelen_s3"]},
+  {"id": "mira", "name": "Mira Frostwhisper", "title": "Winter Oracle", "element": "frost", "role": "mage", "rarity": 5,
+   "max_stats": {"atk": 1240, "def": 500, "hp": 4800, "spd": 112, "crit_rate": 0.15, "crit_dmg": 1.50, "eff": 0.15, "res": 0.0},
+   "skills": ["mira_s1", "mira_s2", "mira_s3"]},
+  {"id": "thorne", "name": "Thorne Ironroot", "title": "Oakwarden", "element": "verdant", "role": "knight", "rarity": 4,
+   "max_stats": {"atk": 720, "def": 740, "hp": 7200, "spd": 98, "crit_rate": 0.15, "crit_dmg": 1.50, "eff": 0.0, "res": 0.15},
+   "skills": ["thorne_s1", "thorne_s2", "thorne_s3"]},
+  {"id": "seraphi", "name": "Seraphi", "title": "Dawn Cantor", "element": "radiant", "role": "healer", "rarity": 4,
+   "max_stats": {"atk": 820, "def": 620, "hp": 5900, "spd": 104, "crit_rate": 0.15, "crit_dmg": 1.50, "eff": 0.0, "res": 0.10},
+   "skills": ["seraphi_s1", "seraphi_s2", "seraphi_s3"]},
+  {"id": "vexmoor", "name": "Vexmoor", "title": "Gravewhisper", "element": "umbral", "role": "assassin", "rarity": 5,
+   "max_stats": {"atk": 1320, "def": 460, "hp": 4600, "spd": 118, "crit_rate": 0.20, "crit_dmg": 1.60, "eff": 0.0, "res": 0.0},
+   "skills": ["vexmoor_s1", "vexmoor_s2", "vexmoor_s3"]},
+  {"id": "bramble", "name": "Bramblewick", "title": "Hedge Ranger", "element": "verdant", "role": "ranger", "rarity": 3,
+   "max_stats": {"atk": 980, "def": 480, "hp": 4700, "spd": 110, "crit_rate": 0.15, "crit_dmg": 1.50, "eff": 0.0, "res": 0.0},
+   "skills": ["bramble_s1", "bramble_s2", "bramble_s3"]},
+  {"id": "grunt", "name": "Marsh Grunt", "title": "", "element": "verdant", "role": "warrior", "rarity": 3,
+   "max_stats": {"atk": 800, "def": 450, "hp": 4200, "spd": 95, "crit_rate": 0.10, "crit_dmg": 1.50, "eff": 0.0, "res": 0.0},
+   "skills": ["grunt_s1", "grunt_s2"]}
+]
